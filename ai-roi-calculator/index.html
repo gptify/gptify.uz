@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI ROI Kalkulyatori — GPTify Uzbekistan</title>
+  <meta name="description" content="Sun’iy intellekt joriy etish orqali tejab qolinadigan vaqt va xarajatlarni hisoblang.">
+  <link rel="icon" href="../assets/images/gptify-avatar.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #ffffff;
+      color: #0f172a;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+    .gptify-nav-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 76px;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid #e2e8f0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+    }
+    .gptify-nav-container {
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .gptify-nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: #0f172a;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: 21px;
+      letter-spacing: -0.02em;
+    }
+    .gptify-nav-logo .badge-uz {
+      background: #e6f6f3;
+      color: #087f6a;
+      border: 1px solid #b7f34a;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 6px;
+      text-transform: uppercase;
+    }
+    .gptify-nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+    .gptify-nav-links a {
+      text-decoration: none;
+      color: #334155;
+      font-weight: 600;
+      font-size: 14.5px;
+      transition: color 0.15s ease;
+    }
+    .gptify-nav-links a:hover { color: #087f6a; }
+    .gptify-nav-right { display: flex; align-items: center; gap: 16px; }
+    .gptify-lang-pill {
+      display: inline-flex;
+      background: #f1f5f9;
+      padding: 3px;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .gptify-lang-pill span {
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: #ffffff;
+      color: #087f6a;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+    }
+    .gptify-lang-pill a {
+      padding: 4px 10px;
+      border-radius: 6px;
+      text-decoration: none;
+      color: #64748b;
+    }
+    .gptify-lang-pill a:hover { color: #0f172a; }
+    .gptify-nav-cta {
+      background: #087f6a;
+      color: #ffffff !important;
+      font-weight: 700;
+      font-size: 13.5px;
+      padding: 9px 18px;
+      border-radius: 9px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      transition: background 0.15s ease;
+      box-shadow: 0 4px 12px rgba(8, 127, 106, 0.18);
+    }
+    .gptify-nav-cta:hover { background: #055e4e; }
+    .gptify-standalone-footer {
+      background: #f8fafc;
+      border-top: 1px solid #e2e8f0;
+      padding: 40px 24px 30px 24px;
+      font-size: 13px;
+      color: #64748b;
+      margin-top: 60px;
+    }
+    .gptify-footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    .gptify-footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+    .gptify-footer-links a { color: #475569; text-decoration: none; font-weight: 500; }
+    .gptify-footer-links a:hover { color: #087f6a; }
+    .subpage-container {
+      padding-top: 96px;
+      min-height: 80vh;
+    }
+
+  </style>
+</head>
+<body>
+  <header class="gptify-nav-header" role="banner">
+    <div class="gptify-nav-container">
+      <a href="../" class="gptify-nav-logo" aria-label="GPTify Uzbekistan">
+        <span>GPTify</span>
+        <span class="badge-uz">UZ</span>
+      </a>
+
+      <nav class="gptify-nav-links" aria-label="Asosiy menyu">
+        <a href="../#gptify-services">Xizmatlar</a>
+        <a href="../#gptify-tools">Bepul Vositalar</a>
+        <a href="../#gptify-team">Jamoa</a>
+        <a href="https://t.me/GPTify_uz_bot?start=ai_asoslari" target="_blank" rel="noopener">AI Asoslari Kursi</a>
+        <a href="../#gptify-contact">Bog‘lanish</a>
+      </nav>
+
+      <div class="gptify-nav-right">
+        <!-- Language Switcher -->
+        
+
+        <!-- Telegram CTA -->
+        <a href="https://t.me/GPTify_uz_bot" target="_blank" rel="noopener" class="gptify-nav-cta">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.534-.199 1.002.122.828.928z"/>
+          </svg>
+          <span>Telegram</span>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="gptify-nav-mobile-btn" onclick="toggleMobileNav()" aria-label="Menyu">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+  <main class="subpage-container">
+    
+
+		<div data-elementor-type="wp-page" data-elementor-id="5031" class="elementor elementor-5031">
+						<section class="elementor-section elementor-top-section elementor-element elementor-element-c17fa12 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="c17fa12" data-element_type="section" data-e-type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-1a134e8" data-id="1a134e8" data-element_type="column" data-e-type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-d96e7a6 elementor-widget elementor-widget-html" data-id="d96e7a6" data-element_type="widget" data-e-type="widget" data-widget_type="html.default">
+				<div class="elementor-widget-container">
+					<!-- GPTIFY AI ROI CALCULATOR — ELEMENTOR HTML WIDGET
+
+Create a page with slug /ai-roi-calculator/, choose Elementor Full Width, hide the page title,
+
+then paste this complete file into ONE HTML widget. Kenta supplies the header and footer. -->
+
+<main class="groi">
+
+  <section class="groi-hero">
+
+    <div class="groi-hero-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19V9m6 10V5m6 14v-7m4 7H2"/><path d="m4 7 5-4 5 4 6-5"/></svg></div>
+
+    <div><p class="groi-kicker"> </p><h1>AI ROI Calculator</h1><p>Estimate the time, cost savings and potential return from automating a repetitive business task.</p></div>
+
+    <div class="groi-trust"><span><b>✓</b> No sign-up</span><span><b>✓</b> Runs in your browser</span><span><b>✓</b> Editable assumptions</span></div>
+
+  </section>
+
+
+
+  <section class="groi-tool" id="groi-calculator">
+
+    <div class="groi-toolbar"><div><span class="groi-spark" aria-hidden="true">✦</span><strong>GPTify ROI Workspace</strong></div><span><i></i> Your data stays in this browser</span></div>
+
+    <form class="groi-inputs" id="groi-form">
+
+      <div class="groi-panel-head"><div><b>01</b><div><strong>Current task</strong><small>Describe the cost and workload</small></div></div><button type="button" id="groi-reset">Reset</button></div>
+
+      <div class="groi-presets"><span>Example scenarios</span><div><button type="button" data-preset="admin">Admin task</button><button type="button" data-preset="research">Lead research</button><button type="button" data-preset="content">Content workflow</button><button type="button" data-preset="reporting">Reporting</button></div></div>
+
+      <div class="groi-field-grid">
+
+        <label>Currency<select id="groi-currency"><option value="EUR">EUR (€)</option><option value="USD">USD ($)</option><option value="GBP">GBP (£)</option></select></label>
+
+        <label>Hourly employee cost<span>Salary, benefits and overhead</span><input id="groi-hourly" type="number" min="0" step="1" value="45" inputmode="decimal"></label>
+
+        <label>People doing the task<input id="groi-people" type="number" min="1" step="1" value="3" inputmode="numeric"></label>
+
+        <label>Minutes per task<input id="groi-minutes" type="number" min="1" step="1" value="30" inputmode="numeric"></label>
+
+        <label>Tasks per person each week<input id="groi-frequency" type="number" min="0" step="1" value="20" inputmode="numeric"></label>
+
+        <label>Working weeks per year<input id="groi-weeks" type="number" min="1" max="52" step="1" value="48" inputmode="numeric"></label>
+
+      </div>
+
+      <div class="groi-divider"><span>Automation assumptions</span></div>
+
+      <label class="groi-range-label"><span><b>Estimated task time automated</b><output id="groi-rate-output">60%</output></span><input id="groi-rate" type="range" min="0" max="100" step="5" value="60"></label>
+
+      <div class="groi-field-grid groi-costs">
+
+        <label>One-time implementation cost<input id="groi-setup" type="number" min="0" step="100" value="7500" inputmode="decimal"></label>
+
+        <label>Monthly software cost<input id="groi-software" type="number" min="0" step="10" value="250" inputmode="decimal"></label>
+
+      </div>
+
+    </form>
+
+
+
+    <section class="groi-results" aria-live="polite">
+
+      <div class="groi-panel-head"><div><b>02</b><div><strong>Estimated value</strong><small>Based on your assumptions</small></div></div><span class="groi-estimate">ESTIMATE</span></div>
+
+      <div class="groi-result-main"><span>Estimated net annual savings</span><strong id="groi-net">€0</strong><small id="groi-summary">Adjust the inputs to model your workflow.</small></div>
+
+      <div class="groi-metrics">
+
+        <article><span>Hours saved/year</span><strong id="groi-hours">0</strong></article>
+
+        <article><span>First-year ROI</span><strong id="groi-roi">0%</strong></article>
+
+        <article><span>Payback period</span><strong id="groi-payback">—</strong></article>
+
+        <article><span>3-year net benefit</span><strong id="groi-three-year">€0</strong></article>
+
+      </div>
+
+      <div class="groi-comparison">
+
+        <div class="groi-comparison-head"><strong>Annual task cost</strong><span>Before vs. after automation</span></div>
+
+        <div class="groi-bar-row"><span>Before</span><div><i id="groi-before-bar"></i></div><b id="groi-before">€0</b></div>
+
+        <div class="groi-bar-row"><span>After</span><div><i id="groi-after-bar"></i></div><b id="groi-after">€0</b></div>
+
+      </div>
+
+      <div class="groi-assumptions"><button type="button" id="groi-toggle" aria-expanded="false">View calculation details <b>+</b></button><div id="groi-details" hidden><p><span>Current annual task cost</span><b id="groi-current">€0</b></p><p><span>Gross annual time saving</span><b id="groi-gross">€0</b></p><p><span>Annual software cost</span><b id="groi-annual-software">€0</b></p><p><span>First-year net benefit</span><b id="groi-year-one">€0</b></p></div></div>
+
+      <a class="groi-cta" href="https://gptify.uz/contact-us/"><span><b>Want to validate this opportunity?</b><small>Ask GPTify about workflow assessment and implementation.</small></span><strong>Talk to GPTify →</strong></a>
+
+    </section>
+
+  </section>
+
+
+
+  <section class="groi-notes">
+
+    <div><span>01</span><p><b>Use fully loaded cost</b>Include salary, benefits and reasonable overhead in the hourly cost.</p></div>
+
+    <div><span>02</span><p><b>Stay conservative</b>Automation rarely removes 100% of a task; human review and exceptions remain.</p></div>
+
+    <div><span>03</span><p><b>Validate before investing</b>Test the process, data, risks and adoption assumptions with a small pilot.</p></div>
+
+  </section>
+
+
+
+  <section class="groi-disclaimer"><strong>Important</strong><p>This calculator provides an indicative business estimate, not a financial guarantee. Results depend on the accuracy of your inputs and do not include every possible cost, risk, tax or operational factor.</p><a href="https://gptify.uz/services/">Explore GPTify services →</a></section>
+
+</main>
+
+
+
+<style>
+
+.groi{--ink:#172b2a;--green:#087f6a;--soft:#f3f8f7;--muted:#526460;--line:#dce7e5;font-family:Arial,Helvetica,sans-serif;background:#fff;color:var(--ink);overflow:hidden}.groi,.groi *{box-sizing:border-box}.groi a{text-decoration:none;color:inherit}.groi h1,.groi h2,.groi h3,.groi p{opacity:1}.groi-kicker{margin:0 0 12px;color:var(--green);font-size:10px;font-weight:900;letter-spacing:1.4px}.groi-hero{margin-top:28px;padding:54px 5vw;display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:center;border:1px solid #d8e7e4;border-radius:20px 20px 0 0;background:radial-gradient(circle at 8% 10%,rgba(8,127,106,.12),transparent 28%),linear-gradient(135deg,#fbfdfd,#f1f8f6)}.groi-hero-icon{width:66px;height:66px;display:grid;place-items:center;border-radius:18px;background:var(--green);color:#fff;box-shadow:0 14px 30px rgba(8,127,106,.2)}.groi-hero-icon svg{width:34px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}.groi-hero h1{margin:0;font-size:clamp(40px,5vw,60px);line-height:1.05;letter-spacing:-2.5px;font-weight:400}.groi-hero div>p:last-child{max-width:760px;margin:13px 0 0;color:var(--muted);font-size:16px;line-height:1.6}.groi-trust{display:flex;gap:7px;justify-content:flex-end;flex-wrap:wrap;max-width:330px}.groi-trust span{padding:8px 10px;border:1px solid #c9ded9;border-radius:22px;background:#fff;color:#405652;font-size:10px;font-weight:700}.groi-trust b{color:var(--green)}
+
+.groi-tool{padding:28px 5vw 82px;display:grid;grid-template-columns:.96fr 1.04fr;gap:18px;background:var(--soft)}.groi-toolbar{grid-column:1/-1;min-height:66px;padding:13px 17px;display:flex;align-items:center;justify-content:space-between;gap:20px;border-radius:15px;background:var(--ink);color:#fff}.groi-toolbar>div{display:flex;align-items:center;gap:11px}.groi-toolbar>span{padding:8px 11px;border:1px solid rgba(255,255,255,.16);border-radius:20px;color:#c5d3d0;font-size:10px}.groi-toolbar>span i{display:inline-block;width:7px;height:7px;margin-right:6px;border-radius:50%;background:#55d49e}.groi-spark{width:37px;height:37px;display:grid;place-items:center;border-radius:10px;background:var(--green)}.groi-inputs,.groi-results{margin:0;padding:28px;border:1px solid #cedfdb;border-radius:17px;background:#fff;box-shadow:0 18px 45px rgba(23,43,42,.06)}.groi-panel-head{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:26px;padding-bottom:18px;border-bottom:1px solid var(--line)}.groi-panel-head>div{display:flex;align-items:center;gap:11px}.groi-panel-head>div>b{width:34px;height:34px;display:grid;place-items:center;border-radius:9px;background:#e5f2ef;color:var(--green);font-size:10px}.groi-panel-head strong,.groi-panel-head small{display:block}.groi-panel-head strong{font-size:15px}.groi-panel-head small{margin-top:3px;color:var(--muted);font-size:10px}.groi-panel-head button{border:0;background:none;color:var(--green);font:800 10px Arial;cursor:pointer}.groi-estimate{padding:7px 9px;border-radius:18px;background:#e5f2ef;color:var(--green);font-size:8px;font-weight:900;letter-spacing:1px}.groi-presets{margin-bottom:24px}.groi-presets>span{display:block;margin-bottom:9px;color:#71807c;font-size:9px;font-weight:900;letter-spacing:1px;text-transform:uppercase}.groi-presets>div{display:flex;gap:7px;overflow-x:auto}.groi-presets button{flex:0 0 auto;padding:9px 11px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--ink);font:700 10px Arial;cursor:pointer}.groi-presets button:hover,.groi-presets button.is-active{border-color:var(--green);background:#e8f4f1;color:var(--green)}.groi-field-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.groi-inputs label{display:block;color:var(--ink);font-size:11px;font-weight:800}.groi-inputs label>span{display:block;margin:4px 0 7px;color:#71807c;font-size:9px;font-weight:400}.groi-inputs input,.groi-inputs select{width:100%;height:45px;margin-top:7px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:#fbfdfd;color:var(--ink);font:13px Arial}.groi-inputs input:focus,.groi-inputs select:focus{outline:3px solid rgba(8,127,106,.12);border-color:var(--green);background:#fff}.groi-divider{display:flex;align-items:center;gap:12px;margin:27px 0 19px;color:#71807c;font-size:9px;font-weight:900;letter-spacing:1px;text-transform:uppercase}.groi-divider:after{content:"";height:1px;flex:1;background:var(--line)}.groi-range-label>span{display:flex!important;align-items:center;justify-content:space-between;margin:0 0 5px!important}.groi-range-label output{padding:6px 9px;border-radius:7px;background:var(--green);color:#fff;font-size:11px}.groi-range-label input{height:auto;padding:0;accent-color:var(--green)}.groi-costs{margin-top:19px}
+
+.groi-results{display:flex;flex-direction:column}.groi-result-main{padding:24px;border-radius:13px;background:var(--ink);color:#fff}.groi-result-main>span{display:block;color:#a9c5bf;font-size:10px;font-weight:800}.groi-result-main>strong{display:block;margin:9px 0 6px;color:#fff;font-size:clamp(36px,4vw,50px);letter-spacing:-2px}.groi-result-main>small{color:#c2d0cd;font-size:10px}.groi-metrics{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.groi-metrics article{padding:17px;border:1px solid var(--line);border-radius:11px;background:#fbfdfd}.groi-metrics span{display:block;color:var(--muted);font-size:9px}.groi-metrics strong{display:block;margin-top:9px;font-size:20px;font-weight:400}.groi-comparison{margin-top:20px;padding:19px;border:1px solid var(--line);border-radius:12px}.groi-comparison-head{display:flex;justify-content:space-between;gap:15px;margin-bottom:16px}.groi-comparison-head strong{font-size:12px}.groi-comparison-head span{color:var(--muted);font-size:9px}.groi-bar-row{display:grid;grid-template-columns:42px 1fr 80px;gap:10px;align-items:center;margin:11px 0;font-size:9px}.groi-bar-row>div{height:9px;overflow:hidden;border-radius:8px;background:#edf3f2}.groi-bar-row i{display:block;height:100%;width:0;border-radius:8px;background:var(--green);transition:width .3s}.groi-bar-row:nth-child(3) i{background:#86b9ae}.groi-bar-row b{text-align:right;font-size:10px}.groi-assumptions{margin-top:15px;border-top:1px solid var(--line)}.groi-assumptions>button{width:100%;padding:16px 0;display:flex;justify-content:space-between;border:0;background:none;color:var(--green);font:800 10px Arial;cursor:pointer}.groi-assumptions>div{padding:5px 0 12px}.groi-assumptions p{display:flex;justify-content:space-between;gap:20px;margin:0;padding:8px 0;border-bottom:1px solid var(--line);color:var(--muted);font-size:10px}.groi-assumptions p b{color:var(--ink)}.groi-cta{margin-top:auto;padding:18px;display:flex;align-items:center;justify-content:space-between;gap:20px;border-radius:11px;background:#e6f3f0;color:var(--green)}.groi-cta span b,.groi-cta span small{display:block}.groi-cta span b{font-size:12px}.groi-cta span small{margin-top:4px;color:var(--muted);font-size:9px}.groi-cta>strong{font-size:10px;white-space:nowrap}
+
+.groi-notes{padding:65px 5vw;display:grid;grid-template-columns:repeat(3,1fr);gap:25px;background:#fff}.groi-notes>div{display:grid;grid-template-columns:34px 1fr;gap:14px}.groi-notes span{width:34px;height:34px;display:grid;place-items:center;border-radius:50%;background:#e6f3f0;color:var(--green);font-size:9px;font-weight:900}.groi-notes p{margin:0;color:var(--muted);font-size:12px;line-height:1.55}.groi-notes p b{display:block;margin-bottom:6px;color:var(--ink);font-size:14px}.groi-disclaimer{padding:28px 5vw;display:grid;grid-template-columns:auto 1fr auto;gap:20px;align-items:center;border-top:1px solid var(--line);background:#fbfdfd}.groi-disclaimer strong{color:var(--green);font-size:11px}.groi-disclaimer p{margin:0;color:var(--muted);font-size:10px;line-height:1.55}.groi-disclaimer a{color:var(--green);font-size:10px;font-weight:800;white-space:nowrap}
+
+@media(max-width:1050px){.groi-hero{grid-template-columns:auto 1fr}.groi-trust{grid-column:1/-1;justify-content:flex-start;max-width:none}.groi-tool{grid-template-columns:1fr}.groi-toolbar{grid-column:auto}.groi-results{min-height:650px}.groi-notes{grid-template-columns:1fr}}
+
+@media(max-width:700px){.groi-hero{margin-top:18px;padding:48px 6vw;grid-template-columns:1fr;border-radius:14px 14px 0 0}.groi-hero-icon{width:56px;height:56px}.groi-hero h1{font-size:43px}.groi-tool{padding:20px 6vw 60px}.groi-toolbar>span{display:none}.groi-inputs,.groi-results{padding:21px}.groi-field-grid{grid-template-columns:1fr}.groi-metrics{grid-template-columns:1fr 1fr}.groi-comparison-head{align-items:flex-start;flex-direction:column}.groi-cta{align-items:flex-start;flex-direction:column}.groi-notes{padding:55px 6vw}.groi-disclaimer{padding:28px 6vw;grid-template-columns:1fr}.groi-disclaimer a{white-space:normal}}
+
+@media(max-width:430px){.groi-metrics{grid-template-columns:1fr}.groi-bar-row{grid-template-columns:40px 1fr 66px}}
+
+@media(prefers-reduced-motion:reduce){.groi *{transition:none!important}}
+
+</style>
+
+
+
+<script>
+
+(function(){
+
+const root=document.querySelector('.groi');if(!root)return;
+
+const ids=['currency','hourly','people','minutes','frequency','weeks','rate','setup','software'];
+
+const el=Object.fromEntries(ids.map(x=>[x,root.querySelector('#groi-'+x)]));
+
+const out=id=>root.querySelector('#groi-'+id),num=x=>Math.max(0,Number(x.value)||0);
+
+const presets={admin:{hourly:38,people:4,minutes:20,frequency:35,weeks:48,rate:65,setup:5000,software:180},research:{hourly:52,people:6,minutes:35,frequency:25,weeks:48,rate:60,setup:9000,software:450},content:{hourly:45,people:3,minutes:90,frequency:8,weeks:48,rate:50,setup:6500,software:220},reporting:{hourly:58,people:5,minutes:120,frequency:3,weeks:48,rate:70,setup:12000,software:500}};
+
+function money(v){return new Intl.NumberFormat(undefined,{style:'currency',currency:el.currency.value,maximumFractionDigits:0}).format(Number.isFinite(v)?v:0)}
+
+function calculate(){const hourly=num(el.hourly),people=Math.max(1,num(el.people)),hours=num(el.minutes)/60,frequency=num(el.frequency),weeks=Math.min(52,Math.max(1,num(el.weeks))),rate=num(el.rate)/100,setup=num(el.setup),monthly=num(el.software);const annualHours=hours*frequency*weeks*people,current=annualHours*hourly,savedHours=annualHours*rate,gross=current*rate,annualSoftware=monthly*12,net=gross-annualSoftware,investment=setup+annualSoftware,yearOne=gross-investment,roi=investment>0?yearOne/investment*100:(gross>0?Infinity:0),monthlyNet=gross/12-monthly,payback=monthlyNet>0?setup/monthlyNet:Infinity,three=gross*3-annualSoftware*3-setup,after=Math.max(0,current-gross+annualSoftware);out('rate-output').value=Math.round(rate*100)+'%';out('net').textContent=money(net);out('hours').textContent=Math.round(savedHours).toLocaleString();out('roi').textContent=Number.isFinite(roi)?Math.round(roi).toLocaleString()+'%':'Immediate';out('payback').textContent=Number.isFinite(payback)?(payback<1?'< 1 month':payback.toFixed(1)+' months'):'Not reached';out('three-year').textContent=money(three);out('before').textContent=money(current);out('after').textContent=money(after);out('current').textContent=money(current);out('gross').textContent=money(gross);out('annual-software').textContent=money(annualSoftware);out('year-one').textContent=money(yearOne);out('before-bar').style.width='100%';out('after-bar').style.width=(current>0?Math.min(100,after/current*100):0)+'%';out('summary').textContent=net>0?'Potential recurring value after annual software cost.':'Your current assumptions do not produce positive annual savings.'}
+
+root.querySelector('#groi-form').addEventListener('input',calculate);root.querySelector('#groi-form').addEventListener('change',calculate);
+
+root.querySelectorAll('[data-preset]').forEach(button=>button.addEventListener('click',()=>{const p=presets[button.dataset.preset];Object.entries(p).forEach(([k,v])=>el[k].value=v);root.querySelectorAll('[data-preset]').forEach(x=>x.classList.toggle('is-active',x===button));calculate()}));
+
+root.querySelector('#groi-reset').addEventListener('click',()=>{root.querySelector('#groi-form').reset();root.querySelectorAll('[data-preset]').forEach(x=>x.classList.remove('is-active'));calculate()});
+
+root.querySelector('#groi-toggle').addEventListener('click',e=>{const details=out('details'),open=details.hidden;details.hidden=!open;e.currentTarget.setAttribute('aria-expanded',String(open));e.currentTarget.querySelector('b').textContent=open?'−':'+'});
+
+calculate();
+
+})();
+
+</script>				</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				</div>
+		
+  </main>
+  <footer class="gptify-standalone-footer" role="contentinfo">
+    <div class="gptify-footer-container">
+      <div style="display:flex; align-items:center; gap:8px;">
+        <strong style="color:#0f172a; font-family:'Plus Jakarta Sans',sans-serif; font-size:15px;">GPTify Uzbekistan</strong>
+        <span>•</span>
+        <span>Amaliy Sun’iy Intellekt Tizimlari & Konsalting</span>
+      </div>
+      <div class="gptify-footer-links">
+        <a href="../#gptify-services">Xizmatlar</a>
+        <a href="../#gptify-tools">Instrumentlar</a>
+        <a href="../#gptify-team">Jamoa</a>
+        <a href="https://t.me/gptifyuz" target="_blank" rel="noopener">Kanal</a>
+        <a href="https://t.me/GPTify_uz_bot" target="_blank" rel="noopener">Bot</a>
+        <a href="../#maxfiylik" onclick="openUzModalWidget(); return false;">Maxfiylik Siyosati</a>
+      </div>
+    </div>
+    <div style="max-width:1200px; margin:20px auto 0 auto; padding-top:16px; border-top:1px solid #edf2f7; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; font-size:12px;">
+      <span>© 2026 GPTify (gptify.uz). Barcha huquqlar himoyalangan.</span>
+      <span>Berlin, Germaniya • Toshkent, O‘zbekiston</span>
+    </div>
+  </footer>
+</body>
+</html>

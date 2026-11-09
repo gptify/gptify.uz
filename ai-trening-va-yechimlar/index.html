@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Trening va Yechimlar — GPTify Uzbekistan</title>
+  <meta name="description" content="Korporativ jamoalar va mutaxassislar uchun chuqurlashtirilgan amaliy sun’iy intellekt kurslari.">
+  <link rel="icon" href="../assets/images/gptify-avatar.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #ffffff;
+      color: #0f172a;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+    .gptify-nav-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 76px;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid #e2e8f0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+    }
+    .gptify-nav-container {
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .gptify-nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: #0f172a;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: 21px;
+      letter-spacing: -0.02em;
+    }
+    .gptify-nav-logo .badge-uz {
+      background: #e6f6f3;
+      color: #087f6a;
+      border: 1px solid #b7f34a;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 6px;
+      text-transform: uppercase;
+    }
+    .gptify-nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+    .gptify-nav-links a {
+      text-decoration: none;
+      color: #334155;
+      font-weight: 600;
+      font-size: 14.5px;
+      transition: color 0.15s ease;
+    }
+    .gptify-nav-links a:hover { color: #087f6a; }
+    .gptify-nav-right { display: flex; align-items: center; gap: 16px; }
+    .gptify-lang-pill {
+      display: inline-flex;
+      background: #f1f5f9;
+      padding: 3px;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .gptify-lang-pill span {
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: #ffffff;
+      color: #087f6a;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+    }
+    .gptify-lang-pill a {
+      padding: 4px 10px;
+      border-radius: 6px;
+      text-decoration: none;
+      color: #64748b;
+    }
+    .gptify-lang-pill a:hover { color: #0f172a; }
+    .gptify-nav-cta {
+      background: #087f6a;
+      color: #ffffff !important;
+      font-weight: 700;
+      font-size: 13.5px;
+      padding: 9px 18px;
+      border-radius: 9px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      transition: background 0.15s ease;
+      box-shadow: 0 4px 12px rgba(8, 127, 106, 0.18);
+    }
+    .gptify-nav-cta:hover { background: #055e4e; }
+    .gptify-standalone-footer {
+      background: #f8fafc;
+      border-top: 1px solid #e2e8f0;
+      padding: 40px 24px 30px 24px;
+      font-size: 13px;
+      color: #64748b;
+      margin-top: 60px;
+    }
+    .gptify-footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    .gptify-footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+    .gptify-footer-links a { color: #475569; text-decoration: none; font-weight: 500; }
+    .gptify-footer-links a:hover { color: #087f6a; }
+    .subpage-container {
+      padding-top: 96px;
+      min-height: 80vh;
+    }
+
+  </style>
+</head>
+<body>
+  <header class="gptify-nav-header" role="banner">
+    <div class="gptify-nav-container">
+      <a href="../" class="gptify-nav-logo" aria-label="GPTify Uzbekistan">
+        <span>GPTify</span>
+        <span class="badge-uz">UZ</span>
+      </a>
+
+      <nav class="gptify-nav-links" aria-label="Asosiy menyu">
+        <a href="../#gptify-services">Xizmatlar</a>
+        <a href="../#gptify-tools">Bepul Vositalar</a>
+        <a href="../#gptify-team">Jamoa</a>
+        <a href="https://t.me/GPTify_uz_bot?start=ai_asoslari" target="_blank" rel="noopener">AI Asoslari Kursi</a>
+        <a href="../#gptify-contact">Bog‘lanish</a>
+      </nav>
+
+      <div class="gptify-nav-right">
+        <!-- Language Switcher -->
+        
+
+        <!-- Telegram CTA -->
+        <a href="https://t.me/GPTify_uz_bot" target="_blank" rel="noopener" class="gptify-nav-cta">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.534-.199 1.002.122.828.928z"/>
+          </svg>
+          <span>Telegram</span>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="gptify-nav-mobile-btn" onclick="toggleMobileNav()" aria-label="Menyu">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+  <main class="subpage-container">
+    
+
+		<div data-elementor-type="wp-page" data-elementor-id="5141" class="elementor elementor-5141">
+						<section class="elementor-section elementor-top-section elementor-element elementor-element-b6450e8 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="b6450e8" data-element_type="section" data-e-type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-641ae12" data-id="641ae12" data-element_type="column" data-e-type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-2a67d94 elementor-widget elementor-widget-html" data-id="2a67d94" data-element_type="widget" data-e-type="widget" data-widget_type="html.default">
+				<div class="elementor-widget-container">
+					<!-- ================================================================= -->
+
+<!-- GPTIFY UZBEKISTAN: AI TRENING VA YECHIMLAR (SOLUTIONS PAGE)       -->
+
+<!-- PRACTICAL AI COURSES · 100% PROFESSIONAL UZBEK COPY               -->
+
+<!-- CLEAN TELEGRAM BOT ROUTING · DATA PRIVACY & BUSINESS SECURITY     -->
+
+<!-- ================================================================= -->
+
+
+
+<style>
+
+  /* Reset & Theme Overrides */
+
+  html { scroll-behavior: smooth; }
+
+  .kenta-page-header,
+
+  header.kenta-article-header,
+
+  .kenta-article-header .entry-title { display: none !important; }
+
+
+
+  :root {
+
+    --g-teal: #087f6a;
+
+    --g-teal-dark: #064e43;
+
+    --g-teal-deep: #043830;
+
+    --g-teal-light: #e6f6f3;
+
+    --g-teal-subtle: #f0fdf9;
+
+    --g-ink: #0f172a;
+
+    --g-ink-light: #334155;
+
+    --g-lime: #b7f34a;
+
+    --g-tg-blue: #24A1DE;
+
+    --g-tg-blue-hover: #1b8ec5;
+
+    --g-ig-pink: #E1306C;
+
+    --g-li-blue: #0A66C2;
+
+    --g-li-blue-hover: #084e96;
+
+    --g-muted: #64748b;
+
+    --g-line: #e2e8f0;
+
+    --g-soft: #f8fafc;
+
+    --g-white: #ffffff;
+
+    --g-card-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+
+    --g-card-shadow-hover: 0 16px 32px rgba(8, 127, 106, 0.12);
+
+  }
+
+
+
+  .gptify-wrap {
+
+    color: var(--g-ink);
+
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+    line-height: 1.6;
+
+    margin-left: calc(50% - 50vw);
+
+    max-width: 100vw;
+
+    overflow-x: hidden;
+
+    width: 100vw;
+
+    background: #ffffff;
+
+    opacity: 1 !important;
+
+    visibility: visible !important;
+
+    display: block !important;
+
+  }
+
+
+
+  .gptify-wrap * { box-sizing: border-box; }
+
+  .gptify-wrap h1, .gptify-wrap h2, .gptify-wrap h3, .gptify-wrap h4, .gptify-wrap p { margin-top: 0; }
+
+  .gptify-wrap h1, .gptify-wrap h2, .gptify-wrap h3 { color: var(--g-ink); font-weight: 800; line-height: 1.25; letter-spacing: -0.02em; }
+
+  .gptify-wrap p { color: var(--g-muted); font-size: 1rem; }
+
+  .gptify-wrap a { text-decoration: none; transition: all 0.25s ease; }
+
+
+
+  .gptify-container { width: min(1180px, calc(100% - 48px)); margin: 0 auto; }
+
+  .gptify-section { padding: 80px 0; position: relative; }
+
+  .gptify-section--soft { background: var(--g-soft); }
+
+  .gptify-section--green { background: var(--g-teal-dark); color: #ffffff; }
+
+
+
+  /* Badges */
+
+  .gptify-badge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    background: var(--g-teal-light);
+
+    color: var(--g-teal);
+
+    border: 1px solid rgba(8,127,106,0.25);
+
+    border-radius: 999px;
+
+    padding: 6px 14px;
+
+    font-size: 0.8rem;
+
+    font-weight: 750;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.05em;
+
+    margin-bottom: 16px;
+
+  }
+
+  .gptify-badge--mint {
+
+    background: rgba(255,255,255,0.12);
+
+    color: #a7f3d0;
+
+    border-color: rgba(255,255,255,0.2);
+
+  }
+
+
+
+  /* Universal SVG Icons */
+
+  .gptify-icon {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+  }
+
+  .gptify-icon svg {
+
+    width: 100%;
+
+    height: 100%;
+
+    fill: currentColor;
+
+  }
+
+
+
+  /* Buttons */
+
+  .gptify-btn-group { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+
+  .gptify-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    border-radius: 10px;
+
+    font-weight: 750;
+
+    font-size: 0.95rem;
+
+    padding: 12px 24px;
+
+    cursor: pointer;
+
+    border: 2px solid transparent;
+
+    transition: all 0.25s ease;
+
+  }
+
+  .gptify-btn .gptify-icon { width: 18px; height: 18px; }
+
+  .gptify-btn--primary {
+
+    background: var(--g-teal);
+
+    color: #ffffff !important;
+
+    border-color: var(--g-teal);
+
+    box-shadow: 0 4px 14px rgba(8,127,106,0.25);
+
+  }
+
+  .gptify-btn--primary:hover {
+
+    background: var(--g-teal-dark);
+
+    border-color: var(--g-teal-dark);
+
+    transform: translateY(-2px);
+
+  }
+
+  .gptify-btn--secondary-green {
+
+    background: #ffffff;
+
+    color: var(--g-teal-dark) !important;
+
+    border: 2px solid var(--g-teal);
+
+  }
+
+  .gptify-btn--secondary-green:hover {
+
+    background: var(--g-teal-light);
+
+    border-color: var(--g-teal-dark);
+
+    color: var(--g-teal-dark) !important;
+
+    transform: translateY(-2px);
+
+  }
+
+  .gptify-btn--mint {
+
+    background: #a7f3d0;
+
+    color: var(--g-teal-deep) !important;
+
+    border-color: #a7f3d0;
+
+    font-weight: 800;
+
+  }
+
+  .gptify-btn--mint:hover {
+
+    background: #6ee7b7;
+
+    transform: translateY(-2px);
+
+  }
+
+  .gptify-btn--telegram {
+
+    background: var(--g-tg-blue);
+
+    color: #ffffff !important;
+
+    border-color: var(--g-tg-blue);
+
+    box-shadow: 0 4px 16px rgba(36,161,222,0.25);
+
+  }
+
+  .gptify-btn--telegram:hover {
+
+    background: var(--g-tg-blue-hover);
+
+    transform: translateY(-2px);
+
+  }
+
+  .gptify-btn--instagram {
+
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+
+    color: #ffffff !important;
+
+  }
+
+  .gptify-btn--linkedin {
+
+    background: var(--g-li-blue);
+
+    color: #ffffff !important;
+
+  }
+
+
+
+  /* 
+  </main>
+  <footer class="gptify-standalone-footer" role="contentinfo">
+    <div class="gptify-footer-container">
+      <div style="display:flex; align-items:center; gap:8px;">
+        <strong style="color:#0f172a; font-family:'Plus Jakarta Sans',sans-serif; font-size:15px;">GPTify Uzbekistan</strong>
+        <span>•</span>
+        <span>Amaliy Sun’iy Intellekt Tizimlari & Konsalting</span>
+      </div>
+      <div class="gptify-footer-links">
+        <a href="../#gptify-services">Xizmatlar</a>
+        <a href="../#gptify-tools">Instrumentlar</a>
+        <a href="../#gptify-team">Jamoa</a>
+        <a href="https://t.me/gptifyuz" target="_blank" rel="noopener">Kanal</a>
+        <a href="https://t.me/GPTify_uz_bot" target="_blank" rel="noopener">Bot</a>
+        <a href="../#maxfiylik" onclick="openUzModalWidget(); return false;">Maxfiylik Siyosati</a>
+      </div>
+    </div>
+    <div style="max-width:1200px; margin:20px auto 0 auto; padding-top:16px; border-top:1px solid #edf2f7; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; font-size:12px;">
+      <span>© 2026 GPTify (gptify.uz). Barcha huquqlar himoyalangan.</span>
+      <span>Berlin, Germaniya • Toshkent, O‘zbekiston</span>
+    </div>
+  </footer>
+</body>
+</html>
