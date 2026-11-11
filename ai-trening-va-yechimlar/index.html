@@ -3835,79 +3835,87 @@
 
   // 4. Dedicated Course Signup Form Handler
 
-  function handleCourseSignup(e) {
-
+    function handleCourseSignup(e) {
     e.preventDefault();
-
-    var name = document.getElementById('course-lead-name').value;
-
-    var contact = document.getElementById('course-lead-contact').value;
-
+    var name = document.getElementById('course-lead-name').value.trim();
+    var contact = document.getElementById('course-lead-contact').value.trim();
     var course = document.getElementById('course-lead-select').value;
-
     var successMsg = document.getElementById('course-signup-success');
-
-
 
     if (!name || !contact) return;
 
-
-
     if (successMsg) {
-
       successMsg.style.display = 'block';
-
+      successMsg.textContent = "✓ Rahmat! Arizangiz qabul qilindi. Tez orada siz bilan bog‘lanamiz.";
     }
 
+    var payload = {
+      full_name: name,
+      phone: contact,
+      category: "Akademiya Kursi",
+      course_name: course,
+      created_at: new Date().toISOString()
+    };
 
+    try {
+      fetch('https://script.google.com/macros/s/AKfycbzM3GZEDsWDc-3SUI4sySAWnJFn6ZolQaYkwo7W4VWG-79J3WVLYeQL7qs5jgAtkK_C_g/exec', {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+    } catch(err) {
+      console.warn('Webhook error:', err);
+    }
 
     setTimeout(function() {
-
-      window.open('https://t.me/GPTify_uz_bot?start=' + encodeURIComponent('kurs_' + (course || 'akademiya').replace(/\s+/g, '_').toLowerCase()), '_blank');
-
-    }, 400);
-
+      var param = 'kurs_' + (course || 'akademiya').replace(/[^a-zA-Z0-9]/g, '_').toLowerCase();
+      window.open('https://t.me/GPTify_uz_bot?start=' + encodeURIComponent(param), '_blank');
+    }, 600);
   }
 
 
 
   // 5. General Services & Inquiries Form Handler
 
-  function handleGeneralInquiry(e) {
-
+    function handleGeneralInquiry(e) {
     e.preventDefault();
-
-    var name = document.getElementById('gen-name').value;
-
-    var contact = document.getElementById('gen-contact').value;
-
+    var name = document.getElementById('gen-name').value.trim();
+    var contact = document.getElementById('gen-contact').value.trim();
     var service = document.getElementById('gen-service').value;
-
-    var message = document.getElementById('gen-message').value;
-
+    var message = document.getElementById('gen-message') ? document.getElementById('gen-message').value.trim() : '';
     var successMsg = document.getElementById('gen-success-msg');
-
-
 
     if (!name || !contact) return;
 
-
-
     if (successMsg) {
-
       successMsg.style.display = 'block';
-
+      successMsg.textContent = "✓ Rahmat! Murojaatingiz qabul qilindi. Tez orada siz bilan bog‘lanamiz.";
     }
 
+    var payload = {
+      full_name: name,
+      phone: contact,
+      category: "B2B Konsalting",
+      course_name: service + (message ? " | Izoh: " + message : ""),
+      created_at: new Date().toISOString()
+    };
 
+    try {
+      fetch('https://script.google.com/macros/s/AKfycbzM3GZEDsWDc-3SUI4sySAWnJFn6ZolQaYkwo7W4VWG-79J3WVLYeQL7qs5jgAtkK_C_g/exec', {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+    } catch(err) {
+      console.warn('Webhook error:', err);
+    }
 
     setTimeout(function() {
-
       var param = 'b2b_' + (service || 'konsalting').replace(/[^a-zA-Z0-9]/g, '_').toLowerCase();
       window.open('https://t.me/GPTify_uz_bot?start=' + encodeURIComponent(param), '_blank');
-
-    }, 400);
-
+    }, 600);
   }
 
 
