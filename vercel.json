@@ -1,0 +1,21 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/academy",
+      "destination": "/akademiya/",
+      "permanent": true
+    },
+    {
+      "source": "/academy/",
+      "destination": "/akademiya/",
+      "permanent": true
+    },
+    {
+      "source": "/academy/:match*",
+      "destination": "/akademiya/:match*",
+      "permanent": true
+    }
+  ]
+}
