@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404: Sahifa topilmadi — GPTify Uzbekistan</title>
+  <meta name="description" content="Kechirasiz, siz qidirayotgan sahifa topilmadi. Bosh sahifa, GPTify Akademiya yoki Prompt Ustaxonasiga o‘ting.">
+  <link rel="icon" href="/assets/images/gptify-avatar.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #f8fafc;
+      color: #0f172a;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      overflow-x: hidden;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* HEADER */
+    .gptify-nav-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 76px;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid #e2e8f0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+    }
+    .gptify-nav-container {
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .gptify-nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: #0f172a;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: 21px;
+      letter-spacing: -0.02em;
+    }
+    .gptify-nav-logo .badge-uz {
+      background: #e6f6f3;
+      color: #087f6a;
+      border: 1px solid #b7f34a;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 6px;
+      text-transform: uppercase;
+    }
+    .gptify-nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+    .gptify-nav-links a {
+      text-decoration: none;
+      color: #334155;
+      font-weight: 600;
+      font-size: 14.5px;
+      transition: color 0.15s ease;
+    }
+    .gptify-nav-links a:hover { color: #087f6a; }
+    .gptify-nav-right { display: flex; align-items: center; gap: 16px; }
+    .gptify-nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #087f6a;
+      color: #ffffff;
+      padding: 9px 18px;
+      border-radius: 8px;
+      font-size: 13.5px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .gptify-nav-cta:hover {
+      background: #066353;
+      transform: translateY(-1px);
+    }
+    .gptify-nav-mobile-btn {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #0f172a;
+    }
+    @media (max-width: 900px) {
+      .gptify-nav-links { display: none; }
+      .gptify-nav-mobile-btn { display: block; }
+    }
+
+    /* 404 CONTENT HERO */
+    .gptify-404-hero {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 140px 24px 80px 24px;
+    }
+    .gptify-404-card {
+      max-width: 680px;
+      width: 100%;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 20px;
+      padding: 56px 40px;
+      text-align: center;
+      box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.07);
+    }
+    .gptify-404-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 14px;
+      border-radius: 100px;
+      background: #fef2f2;
+      color: #dc2626;
+      border: 1px solid #fecaca;
+      font-size: 12.5px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    .gptify-404-code {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: clamp(3.5rem, 8vw, 5.5rem);
+      font-weight: 800;
+      color: #0f172a;
+      line-height: 1;
+      margin-bottom: 16px;
+      letter-spacing: -0.04em;
+    }
+    .gptify-404-title {
+      font-size: clamp(1.4rem, 3vw, 1.8rem);
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 14px;
+      letter-spacing: -0.02em;
+    }
+    .gptify-404-desc {
+      color: #64748b;
+      font-size: 15.5px;
+      line-height: 1.65;
+      margin-bottom: 32px;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .gptify-404-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+    }
+    .gptify-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 22px;
+      border-radius: 10px;
+      font-size: 14.5px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+    .gptify-btn--primary {
+      background: #087f6a;
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(8, 127, 106, 0.2);
+    }
+    .gptify-btn--primary:hover {
+      background: #066353;
+      transform: translateY(-2px);
+    }
+    .gptify-btn--secondary {
+      background: #ffffff;
+      color: #0f172a;
+      border: 1px solid #cbd5e1;
+    }
+    .gptify-btn--secondary:hover {
+      background: #f1f5f9;
+      border-color: #94a3b8;
+      transform: translateY(-2px);
+    }
+    .gptify-btn--outline-green {
+      background: #e6f6f3;
+      color: #087f6a;
+      border: 1px solid #a3e6d8;
+    }
+    .gptify-btn--outline-green:hover {
+      background: #d1f0ea;
+      transform: translateY(-2px);
+    }
+
+    /* FOOTER */
+    .gptify-standalone-footer {
+      background: #ffffff;
+      border-top: 1px solid #e2e8f0;
+      padding: 36px 24px 28px 24px;
+      color: #64748b;
+      font-size: 13px;
+    }
+    .gptify-footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .gptify-footer-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .gptify-footer-links a {
+      color: #475569;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.15s ease;
+    }
+    .gptify-footer-links a:hover { color: #087f6a; }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER NAVBAR -->
+  <header class="gptify-nav-header" role="banner">
+    <div class="gptify-nav-container">
+      <a href="/" class="gptify-nav-logo" aria-label="GPTify Uzbekistan">
+        <span>GPTify</span>
+        <span class="badge-uz">UZ</span>
+      </a>
+
+      <nav class="gptify-nav-links" aria-label="Asosiy menyu">
+        <a href="/">Asosiy</a>
+        <a href="/#gptify-services">Xizmatlar</a>
+        <a href="/akademiya/">Akademiya</a>
+        <a href="/prompt-ustaxonasi/">Prompt Ustaxonasi</a>
+        <a href="/#gptify-team">Asoschilar</a>
+        <a href="/#gptify-contact">Bog‘lanish</a>
+      </nav>
+
+      <div class="gptify-nav-right">
+        <a href="https://t.me/GPTify_uz_bot" target="_blank" rel="noopener noreferrer" class="gptify-nav-cta">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.534-.199 1.002.122.828.928z"/>
+          </svg>
+          <span>Telegram</span>
+        </a>
+
+        <button class="gptify-nav-mobile-btn" onclick="toggleMobileNav()" aria-label="Menyu">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE MENU DROPDOWN -->
+  <div id="gptify-mobile-drawer" style="display:none; position:fixed; top:76px; left:0; right:0; background:#ffffff; border-bottom:1px solid #e2e8f0; padding:20px; z-index:999; box-shadow:0 12px 24px rgba(0,0,0,0.08);">
+    <div style="display:flex; flex-direction:column; gap:16px; font-size:16px; font-weight:600;">
+      <a href="/" style="color:#0f172a; text-decoration:none;">Asosiy</a>
+      <a href="/#gptify-services" onclick="toggleMobileNav()" style="color:#0f172a; text-decoration:none;">Xizmatlar</a>
+      <a href="/akademiya/" onclick="toggleMobileNav()" style="color:#0f172a; text-decoration:none;">Akademiya</a>
+      <a href="/prompt-ustaxonasi/" onclick="toggleMobileNav()" style="color:#0f172a; text-decoration:none;">Prompt Ustaxonasi</a>
+      <a href="/#gptify-team" onclick="toggleMobileNav()" style="color:#0f172a; text-decoration:none;">Asoschilar</a>
+      <a href="/#gptify-contact" onclick="toggleMobileNav()" style="color:#0f172a; text-decoration:none;">Bog‘lanish</a>
+      <hr style="border:none; border-top:1px solid #e2e8f0; margin:4px 0;">
+      <a href="https://t.me/GPTify_uz_bot" target="_blank" rel="noopener noreferrer" style="background:#087f6a; color:#fff; padding:10px; border-radius:8px; text-align:center; text-decoration:none;">Telegramda yozish</a>
+    </div>
+  </div>
+
+  <!-- 404 BODY -->
+  <main class="gptify-404-hero">
+    <div class="gptify-404-card">
+      <span class="gptify-404-badge">404 Xatosi</span>
+      <div class="gptify-404-code">404</div>
+      <h1 class="gptify-404-title">Kechirasiz, sahifa topilmadi</h1>
+      <p class="gptify-404-desc">
+        Siz qidirayotgan sahifa manzili o‘zgargan, o‘chirilgan yoki havolada xatolik bo‘lishi mumkin. Quyidagi asosiy bo‘limlardan foydalanishingiz mumkin:
+      </p>
+      <div class="gptify-404-actions">
+        <a class="gptify-btn gptify-btn--primary" href="/">
+          Bosh Sahifaga Qaytish →
+        </a>
+        <a class="gptify-btn gptify-btn--outline-green" href="/akademiya/">
+          🎓 GPTify Akademiya
+        </a>
+        <a class="gptify-btn gptify-btn--secondary" href="/prompt-ustaxonasi/">
+          🛠️ Prompt Ustaxonasi
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="gptify-standalone-footer" role="contentinfo">
+    <div class="gptify-footer-container">
+      <div style="display:flex; align-items:center; gap:8px;">
+        <strong style="color:#0f172a; font-family:'Plus Jakarta Sans',sans-serif; font-size:15px;">GPTify Uzbekistan</strong>
+        <span>•</span>
+        <span>Amaliy Sun’iy Intellekt Tizimlari & Akademiya</span>
+      </div>
+      <div class="gptify-footer-links">
+        <a href="/">Asosiy</a>
+        <a href="/#gptify-services">Xizmatlar</a>
+        <a href="/akademiya/">Akademiya</a>
+        <a href="/prompt-ustaxonasi/">Prompt Ustaxonasi</a>
+        <a href="https://t.me/gptifyuz" target="_blank" rel="noopener">Kanal</a>
+        <a href="https://t.me/GPTify_uz_bot" target="_blank" rel="noopener">Bot</a>
+        <a href="/#gptify-contact">Bog‘lanish</a>
+      </div>
+    </div>
+    <div style="max-width:1200px; margin:20px auto 0 auto; padding-top:16px; border-top:1px solid #edf2f7; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; font-size:12px;">
+      <span>© 2026 GPTify (gptify.uz). Barcha huquqlar himoyalangan.</span>
+      <span>Berlin, Germaniya • Toshkent, O‘zbekiston</span>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMobileNav() {
+      var d = document.getElementById('gptify-mobile-drawer');
+      if (d) {
+        d.style.display = (d.style.display === 'none' || d.style.display === '') ? 'block' : 'none';
+      }
+    }
+  </script>
+</body>
+</html>

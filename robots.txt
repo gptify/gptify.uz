@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gptify.uz/sitemap.xml

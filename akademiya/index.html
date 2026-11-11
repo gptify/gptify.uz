@@ -5,6 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GPTify Akademiya — Amaliy Sun’iy Intellekt Kurslari va Dasturlari</title>
   <meta name="description" content="Kompaniyalar, rahbarlar va mutaxassislar uchun amaliy AI kurslari, prompt muhandisligi, savdo, marketing va avtomatlashtirish dasturlari.">
+  <link rel="canonical" href="https://gptify.uz/akademiya/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="GPTify Akademiya — Amaliy Sun’iy Intellekt Kurslari va Dasturlari">
+  <meta property="og:description" content="Kompaniyalar va mutaxassislar uchun amaliy AI agentlar, B2B savdo, marketing va jarayonlarni avtomatlashtirish bo‘yicha 13 ta professional kurs.">
+  <meta property="og:url" content="https://gptify.uz/akademiya/">
+  <meta property="og:image" content="https://gptify.uz/assets/images/gptifyUZ-solutions-page-heroimage.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GPTify Akademiya — Amaliy Sun’iy Intellekt Kurslari va Dasturlari">
+  <meta name="twitter:description" content="Kompaniyalar va mutaxassislar uchun amaliy AI agentlar, B2B savdo, marketing va jarayonlarni avtomatlashtirish bo‘yicha 13 ta professional kurs.">
+  <meta name="twitter:image" content="https://gptify.uz/assets/images/gptifyUZ-solutions-page-heroimage.png">
   <link rel="icon" href="/assets/images/gptify-avatar.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -2178,6 +2188,7 @@
         <a href="/#gptify-services">Xizmatlar</a>
         <a href="/akademiya/" class="active" style="color:#087f6a; font-weight:750;">Akademiya</a>
         <a href="/#gptify-tools">Bepul Vositalar</a>
+        <a href="/#gptify-team">Asoschilar</a>
         <a href="#gptify-contact">Bog‘lanish</a>
       </nav>
 
@@ -2207,6 +2218,7 @@
       <a href="/#gptify-services" onclick="toggleMobileNav()" style="color:#0f172a; text-decoration:none;">Xizmatlar</a>
       <a href="/akademiya/" style="color:#087f6a; text-decoration:none; font-weight:750;">Akademiya</a>
       <a href="/#gptify-tools" onclick="toggleMobileNav()" style="color:#0f172a; text-decoration:none;">Bepul Vositalar</a>
+      <a href="/#gptify-team" onclick="toggleMobileNav()" style="color:#0f172a; text-decoration:none;">Asoschilar</a>
       <a href="#gptify-contact" onclick="toggleMobileNav()" style="color:#0f172a; text-decoration:none;">Bog‘lanish</a>
       <hr style="border:none; border-top:1px solid #e2e8f0; margin:4px 0;">
       <a href="https://t.me/GPTify_uz_bot" target="_blank" rel="noopener noreferrer" style="background:#087f6a; color:#fff; padding:10px; border-radius:8px; text-align:center; text-decoration:none;">Telegramda yozish</a>
@@ -3891,7 +3903,8 @@
 
     setTimeout(function() {
 
-      window.open('https://t.me/GPTify_uz_bot?start=' + encodeURIComponent('kurs_' + (course || 'akademiya').replace(/\s+/g, '_').toLowerCase()), '_blank');
+      var param = 'b2b_' + (service || 'konsalting').replace(/[^a-zA-Z0-9]/g, '_').toLowerCase();
+      window.open('https://t.me/GPTify_uz_bot?start=' + encodeURIComponent(param), '_blank');
 
     }, 400);
 
