@@ -1996,7 +1996,7 @@
     }
 
     // Floating Button Scroll Visibility (Item 4)
-    (function() {
+    function initFloatingContact() {
       var btn = document.getElementById('gptify-floating-btn');
       var hero = document.querySelector('.gptify-hero');
       var contact = document.getElementById('gptify-contact');
@@ -2023,13 +2023,15 @@
       window.addEventListener('scroll', updateVisibility, { passive: true });
       window.addEventListener('resize', updateVisibility, { passive: true });
       updateVisibility();
-    })();
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initFloatingContact);
+    } else {
+      initFloatingContact();
+    }
   </script>
 
-<!-- Floating Telegram Quick Contact (Item 4) -->
-  <!-- Floating Telegram Quick Contact (Item 4) -->
-  <!-- Floating Telegram Quick Contact (Item 4) -->
-  <!-- Floating Telegram Quick Contact (Item 4) -->
+
   <!-- Floating Telegram Quick Contact (Item 4) -->
   <a href="https://t.me/GPTify_uz_bot" target="_blank" rel="noopener" class="gptify-floating-contact" id="gptify-floating-btn" aria-label="Telegram orqali bog‘lanish">
     <svg width="26" height="26" viewBox="0 0 24 24" fill="#ffffff" aria-hidden="true">
