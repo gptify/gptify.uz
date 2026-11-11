@@ -614,6 +614,192 @@
   }
 
   /* ------------------------------------------------------------- */
+  /* LEADERSHIP & FOUNDERS CARDS                                   */
+  /* ------------------------------------------------------------- */
+  .gptify-team-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 26px;
+    max-width: 1100px;
+    margin: 0 auto 28px;
+  }
+  .gptify-team-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 18px;
+    padding: 30px 28px;
+    box-shadow: 0 10px 25px rgba(15,23,42,0.03);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: border-color 0.25s ease;
+  }
+  .gptify-team-card:hover { border-color: #cbd5e1; }
+  .gptify-founder-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 22px;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 18px;
+  }
+  .gptify-founder-photo-wrap {
+    width: 96px;
+    height: 96px;
+    min-width: 96px;
+    min-height: 96px;
+    border-radius: 50%;
+    border: 3.5px solid var(--g-teal);
+    box-shadow: 0 6px 18px rgba(8,127,106,0.18);
+    overflow: hidden;
+    background: #e2ecea;
+    flex-shrink: 0;
+  }
+  .gptify-founder-photo {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center 15%;
+    display: block;
+  }
+  .gptify-founder-name {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--g-ink);
+    margin: 0 0 4px 0;
+  }
+  .gptify-founder-role {
+    color: var(--g-teal);
+    font-weight: 700;
+    font-size: 0.9rem;
+    display: block;
+  }
+  .gptify-profile-section { margin-bottom: 18px; }
+  .gptify-profile-label {
+    font-size: 0.76rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #64748b;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .gptify-profile-label::after {
+    content: "";
+    flex-grow: 1;
+    height: 1px;
+    background: #f1f5f9;
+  }
+  .gptify-bullet-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .gptify-bullet-list li {
+    font-size: 0.88rem;
+    color: #334155;
+    line-height: 1.48;
+    padding-left: 16px;
+    position: relative;
+  }
+  .gptify-bullet-list li::before {
+    content: "";
+    width: 5px;
+    height: 5px;
+    background: var(--g-teal);
+    border-radius: 50%;
+    position: absolute;
+    left: 2px;
+    top: 8px;
+  }
+  .gptify-skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 4px;
+  }
+  .gptify-skill-tag {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 3px 9px;
+    font-size: 0.76rem;
+    font-weight: 600;
+    color: #334155;
+  }
+  .gptify-profile-links {
+    margin-top: auto;
+    padding-top: 16px;
+    border-top: 1px solid #f1f5f9;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    align-items: center;
+  }
+  .gptify-partners-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .gptify-partner-profile {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 16px 18px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 4px 12px rgba(15,23,42,0.02);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+  .gptify-partner-profile:hover {
+    border-color: var(--g-teal);
+    transform: translateY(-2px);
+  }
+  .gptify-partner-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--g-teal-light);
+    color: var(--g-teal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 0.95rem;
+    border: 2px solid rgba(8,127,106,0.25);
+    flex-shrink: 0;
+  }
+  .gptify-partner-info { flex-grow: 1; }
+  .gptify-partner-name {
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--g-ink);
+    margin: 0 0 2px 0;
+  }
+  .gptify-partner-title {
+    color: var(--g-teal);
+    font-weight: 700;
+    font-size: 0.8rem;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .gptify-partner-desc {
+    font-size: 0.84rem;
+    color: #475569;
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  /* ------------------------------------------------------------- */
   /* CONTACT SECTION & INQUIRY FORM                                */
   /* ------------------------------------------------------------- */
   .gptify-contact-container {
@@ -808,6 +994,8 @@
 
   @media (max-width: 990px) {
     .gptify-hero-grid,
+    .gptify-team-grid,
+    .gptify-partners-row,
     .gptify-contact-2col { grid-template-columns: 1fr; gap: 36px; }
     .gptify-cards-3,
     .gptify-tools-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1093,6 +1281,7 @@
         <a href="#gptify-services">Xizmatlar</a>
         <a href="/akademiya/">Akademiya</a>
         <a href="#gptify-tools">Bepul Vositalar</a>
+        <a href="#gptify-team">Asoschilar</a>
         <a href="https://t.me/GPTify_uz_bot?start=ai_asoslari" target="_blank" rel="noopener">AI Asoslari Kursi</a>
         <a href="#gptify-contact">Bog‘lanish</a>
       </nav>
@@ -1125,6 +1314,7 @@
       <a href="#gptify-services" onclick="toggleMobileNav()" style="color:#0f172a; text-decoration:none;">Xizmatlar</a>
       <a href="/akademiya/" style="color:#087f6a; text-decoration:none; font-weight:750;">Akademiya</a>
       <a href="#gptify-tools" onclick="toggleMobileNav()" style="color:#0f172a; text-decoration:none;">Bepul Vositalar</a>
+      <a href="#gptify-team" onclick="toggleMobileNav()" style="color:#0f172a; text-decoration:none;">Asoschilar</a>
       <a href="https://t.me/GPTify_uz_bot?start=ai_asoslari" target="_blank" style="color:#087f6a; text-decoration:none;">AI Asoslari Kursi</a>
       <a href="#gptify-contact" onclick="toggleMobileNav()" style="color:#0f172a; text-decoration:none;">Bog‘lanish</a>
       <hr style="border:none; border-top:1px solid #e2e8f0; margin:4px 0;">
@@ -1308,6 +1498,167 @@
           <a class="gptify-card-link" href="/ai-policy-generator/">Siyosat ishlab chiqish <span>→</span></a>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- 5. LEADERSHIP & FOUNDERS PROFILES -->
+  <section class="gptify-section" id="gptify-team">
+    <div class="gptify-container">
+      <div class="gptify-head-center">
+        <span class="gptify-badge">Asoschilar va Ekspertlar</span>
+        <h2>Xalqaro Bilim. Mahalliy Amaliyot.</h2>
+        <p>Global sun’iy intellekt tajribasini O‘zbekiston kompaniyalari, oliy ta’lim tizimi va mutaxassislar ehtiyojlariga moslaymiz.</p>
+      </div>
+
+      <!-- Core Leadership (Shukhrat & Davlatbek) -->
+      <div class="gptify-team-grid">
+        
+        <!-- Shukhrat Iskandarov -->
+        <div class="gptify-team-card">
+          <div class="gptify-founder-header">
+            <div class="gptify-founder-photo-wrap">
+              <img decoding="async" class="gptify-founder-photo" src="./assets/images/shukhrat.jpg" alt="Shukhrat Iskandarov">
+            </div>
+            <div>
+              <h3 class="gptify-founder-name">Shukhrat Iskandarov</h3>
+              <span class="gptify-founder-role">Asoschi & Bosh AI Strateg (Berlin)</span>
+            </div>
+          </div>
+
+          <!-- Section 1: Faoliyat & Tajriba -->
+          <div class="gptify-profile-section">
+            <div class="gptify-profile-label">Faoliyat & Tajriba</div>
+            <ul class="gptify-bullet-list">
+              <li><strong>GPTify (Berlin)</strong> — Asoschi (Founder)</li>
+              <li><strong>Cubeo AI (Yevropa)</strong> — Hammuassis (Co-founder)</li>
+              <li><strong>CCI (AQSh)</strong> — Yevropa rahbari & AI eksperti</li>
+              <li><strong>Korn Ferry & Vencon</strong> — 12+ yillik B2B savdo va AI boshqaruvi</li>
+            </ul>
+          </div>
+
+          <!-- Section 2: Ta’lim & Daraja -->
+          <div class="gptify-profile-section">
+            <div class="gptify-profile-label">Ta’lim & Xalqaro Tajriba</div>
+            <ul class="gptify-bullet-list">
+              <li><strong>Magistr (Master of Arts)</strong> — Berlin Iqtisodiyot va Huquq maktabi (2010–2012)</li>
+              <li><strong>AQShda o‘qish</strong> — Xalqaro almashinuv dasturi (Exchange Student)</li>
+            </ul>
+          </div>
+
+          <!-- Section 3: Mutaxassislik Yo‘nalishlari -->
+          <div class="gptify-profile-section" style="margin-bottom:0;">
+            <div class="gptify-profile-label">Mutaxassislik Yo‘nalishlari</div>
+            <div class="gptify-skill-tags">
+              <span class="gptify-skill-tag">Generativ AI</span>
+              <span class="gptify-skill-tag">AI Agentlar</span>
+              <span class="gptify-skill-tag">Avtomatlashtirish</span>
+              <span class="gptify-skill-tag">AI Treninglar</span>
+              <span class="gptify-skill-tag">B2B Savdo & GTM</span>
+              <span class="gptify-skill-tag">Biznes Konsalting</span>
+              <span class="gptify-skill-tag">Prompt Engineering</span>
+            </div>
+          </div>
+
+          <div class="gptify-profile-links">
+            <a class="gptify-card-link" href="https://linkedin.com/in/shukhrat-iskandarov" target="_blank" rel="noopener">
+              LinkedIn <span>→</span>
+            </a>
+            <a class="gptify-card-link" href="https://instagram.com/GPTifyUZ" target="_blank" rel="noopener" style="color:var(--g-ig-pink);">
+              Instagram <span>→</span>
+            </a>
+            <a class="gptify-card-link" href="https://t.me/GPTify_uz_bot" target="_blank" rel="noopener" style="color:var(--g-tg-blue);">
+              Bog‘lanish <span>→</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Davlatbek Iskandarov -->
+        <div class="gptify-team-card">
+          <div class="gptify-founder-header">
+            <div class="gptify-founder-photo-wrap">
+              <img decoding="async" class="gptify-founder-photo" src="./assets/images/davlat-1.jpg" alt="Davlatbek Iskandarov">
+            </div>
+            <div>
+              <h3 class="gptify-founder-name">Davlatbek Iskandarov</h3>
+              <span class="gptify-founder-role">Bosh Ilmiy & AI Eksperti (O‘zbekiston)</span>
+            </div>
+          </div>
+
+          <!-- Section 1: Faoliyat & Tajriba -->
+          <div class="gptify-profile-section">
+            <div class="gptify-profile-label">Faoliyat & Tajriba</div>
+            <ul class="gptify-bullet-list">
+              <li><strong>GPTify Uzbekistan</strong> — Bosh Ilmiy & AI Eksperti</li>
+              <li><strong>AI Konsalting & Avtomatlashtirish</strong> — Amaliy AI mutaxassisi</li>
+              <li><strong>TDIU</strong> — Katta o‘qituvchi (2012–2026, 10+ yillik ilmiy va pedagogik tajriba)</li>
+              <li><strong>O‘zMU</strong> — PhD tadqiqotchisi va sun’iy intellekt ilmiy izlanuvchisi</li>
+            </ul>
+          </div>
+
+          <!-- Section 2: Ta’lim & Daraja -->
+          <div class="gptify-profile-section">
+            <div class="gptify-profile-label">Ta’lim & Ilmiy Yo‘nalish</div>
+            <ul class="gptify-bullet-list">
+              <li><strong>Magistr (2010–2012)</strong> — Andijon Davlat Universiteti (Matematik mantiq va algebra)</li>
+              <li><strong>O‘zbekiston Milliy Universiteti</strong> — PhD ilmiy tadqiqot yo‘nalishi</li>
+            </ul>
+          </div>
+
+          <!-- Section 3: Mutaxassislik Yo‘nalishlari -->
+          <div class="gptify-profile-section" style="margin-bottom:0;">
+            <div class="gptify-profile-label">Mutaxassislik Yo‘nalishlari</div>
+            <div class="gptify-skill-tags">
+              <span class="gptify-skill-tag">Generative AI</span>
+              <span class="gptify-skill-tag">AI Agentlar</span>
+              <span class="gptify-skill-tag">Avtomatlashtirish</span>
+              <span class="gptify-skill-tag">LLMs</span>
+              <span class="gptify-skill-tag">Prompt Engineering</span>
+              <span class="gptify-skill-tag">Ekonometrika</span>
+              <span class="gptify-skill-tag">Data Analysis</span>
+            </div>
+          </div>
+
+          <div class="gptify-profile-links">
+            <a class="gptify-card-link" href="https://t.me/GPTify_uz_bot" target="_blank" rel="noopener" style="color:var(--g-tg-blue);">
+              Bog‘lanish <span>→</span>
+            </a>
+            <a class="gptify-card-link" href="https://instagram.com/GPTifyUZ" target="_blank" rel="noopener" style="color:var(--g-ig-pink);">
+              Instagram <span>→</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Compact International Advisory Partners -->
+      <div class="gptify-partners-row">
+        
+        <!-- George Calceo -->
+        <div class="gptify-partner-profile">
+          <div class="gptify-partner-avatar">GC</div>
+          <div class="gptify-partner-info">
+            <h4 class="gptify-partner-name">George Calceo</h4>
+            <span class="gptify-partner-title">Cubeo AI Asoschisi (Ruminiya) · Xalqaro Hamkor</span>
+            <p class="gptify-partner-desc">
+              10+ yillik SaaS va AI tajribasi. No-code AI arxitekturasi va agentlar tizimlari eksperti.
+            </p>
+          </div>
+        </div>
+
+        <!-- Chris Briest -->
+        <div class="gptify-partner-profile">
+          <div class="gptify-partner-avatar">CB</div>
+          <div class="gptify-partner-info">
+            <h4 class="gptify-partner-name">Chris Briest</h4>
+            <span class="gptify-partner-title">Apollo (AQSh) · GTM Enablement Manager</span>
+            <p class="gptify-partner-desc">
+              15+ yillik AQSh va Yevropa bozorlarida GTM va korporativ boshqaruv tajribasi. Biznes AI transformatsiyasi maslahatchisi.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
     </div>
   </section>
 
@@ -1504,6 +1855,7 @@
         <a href="#gptify-services">Xizmatlar</a>
         <a href="/akademiya/">Akademiya</a>
         <a href="#gptify-tools">Instrumentlar</a>
+        <a href="#gptify-team">Asoschilar</a>
         <a href="https://t.me/gptifyuz" target="_blank" rel="noopener">Kanal</a>
         <a href="https://t.me/GPTify_uz_bot" target="_blank" rel="noopener">Bot</a>
         <a href="#gptify-contact">Bog‘lanish</a>
