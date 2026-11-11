@@ -3,22 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Prompt Ustaxonasi — GPTify Uzbekistan</title>
-  <meta name="description" content="O‘zbekistondagi mutaxassislar va tadbirkorlar uchun amaliy AI promptlar to‘plami.">
+  <title>Prompt Ustaxonasi — Professional AI Prompt Generator | GPTify Uzbekistan</title>
+  <meta name="description" content="ChatGPT, Claude, Midjourney, Kling va ElevenLabs uchun o‘zbek tilidagi bepul professional AI prompt generatori. G‘oyangizni aniq natija beruvchi promptga aylantiring.">
   <link rel="icon" href="../assets/images/gptify-avatar.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
-    
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      background: #ffffff;
+      background: #f8fafc;
       color: #0f172a;
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       overflow-x: hidden;
       line-height: 1.6;
+      padding-top: 76px;
     }
+
+    /* NAVIGATION BAR & MOBILE DRAWER */
     .gptify-nav-header {
       position: fixed;
       top: 0;
@@ -78,133 +80,67 @@
     }
     .gptify-nav-links a:hover { color: #087f6a; }
     .gptify-nav-right { display: flex; align-items: center; gap: 16px; }
-    .gptify-lang-pill {
-      display: inline-flex;
-      background: #f1f5f9;
-      padding: 3px;
-      border-radius: 8px;
-      border: 1px solid #e2e8f0;
-      font-size: 12px;
-      font-weight: 700;
-    }
-    .gptify-lang-pill span {
-      padding: 4px 10px;
-      border-radius: 6px;
-      background: #ffffff;
-      color: #087f6a;
-      box-shadow: 0 1px 2px rgba(0,0,0,0.06);
-    }
-    .gptify-lang-pill a {
-      padding: 4px 10px;
-      border-radius: 6px;
-      text-decoration: none;
-      color: #64748b;
-    }
-    .gptify-lang-pill a:hover { color: #0f172a; }
     .gptify-nav-cta {
-      background: #087f6a;
-      color: #ffffff !important;
-      font-weight: 700;
-      font-size: 13.5px;
-      padding: 9px 18px;
-      border-radius: 9px;
-      text-decoration: none;
       display: inline-flex;
       align-items: center;
-      gap: 7px;
-      transition: background 0.15s ease;
-      box-shadow: 0 4px 12px rgba(8, 127, 106, 0.18);
+      gap: 8px;
+      background: #087f6a;
+      color: #ffffff;
+      padding: 9px 18px;
+      border-radius: 8px;
+      font-size: 13.5px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.2s ease;
     }
-    .gptify-nav-cta:hover { background: #055e4e; }
+    .gptify-nav-cta:hover {
+      background: #066353;
+      transform: translateY(-1px);
+    }
+    .gptify-nav-mobile-btn {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #0f172a;
+    }
+    @media (max-width: 900px) {
+      .gptify-nav-links { display: none; }
+      .gptify-nav-mobile-btn { display: block; }
+    }
+
+    /* FOOTER */
     .gptify-standalone-footer {
-      background: #f8fafc;
+      background: #ffffff;
       border-top: 1px solid #e2e8f0;
       padding: 40px 24px 30px 24px;
-      font-size: 13px;
       color: #64748b;
-      margin-top: 60px;
+      font-size: 13px;
     }
     .gptify-footer-container {
       max-width: 1200px;
       margin: 0 auto;
       display: flex;
-      flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
       gap: 20px;
     }
-    .gptify-footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
-    .gptify-footer-links a { color: #475569; text-decoration: none; font-weight: 500; }
-    .gptify-footer-links a:hover { color: #087f6a; }
-    .subpage-container {
-      padding-top: 96px;
-      min-height: 80vh;
+    .gptify-footer-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
     }
+    .gptify-footer-links a {
+      color: #475569;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.15s ease;
+    }
+    .gptify-footer-links a:hover { color: #087f6a; }
 
-  </style>
-</head>
-<body>
-  <header class="gptify-nav-header" role="banner">
-    <div class="gptify-nav-container">
-      <a href="../" class="gptify-nav-logo" aria-label="GPTify Uzbekistan">
-        <span>GPTify</span>
-        <span class="badge-uz">UZ</span>
-      </a>
+    /* WORKSHOP STYLES */
 
-      <nav class="gptify-nav-links" aria-label="Asosiy menyu">
-        <a href="../#gptify-services">Xizmatlar</a>
-        <a href="../#gptify-tools">Bepul Vositalar</a>
-        <a href="../#gptify-team">Jamoa</a>
-        <a href="https://t.me/GPTify_uz_bot?start=ai_asoslari" target="_blank" rel="noopener">AI Asoslari Kursi</a>
-        <a href="../#gptify-contact">Bog‘lanish</a>
-      </nav>
-
-      <div class="gptify-nav-right">
-        <!-- Language Switcher -->
-        
-
-        <!-- Telegram CTA -->
-        <a href="https://t.me/GPTify_uz_bot" target="_blank" rel="noopener" class="gptify-nav-cta">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.534-.199 1.002.122.828.928z"/>
-          </svg>
-          <span>Telegram</span>
-        </a>
-
-        <!-- Mobile Menu Toggle Button -->
-        <button class="gptify-nav-mobile-btn" onclick="toggleMobileNav()" aria-label="Menyu">
-          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/>
-          </svg>
-        </button>
-      </div>
-    </div>
-  </header>
-  <main class="subpage-container">
-    
-
-		<div data-elementor-type="wp-page" data-elementor-id="5085" class="elementor elementor-5085">
-						<section class="elementor-section elementor-top-section elementor-element elementor-element-404d613 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="404d613" data-element_type="section" data-e-type="section">
-						<div class="elementor-container elementor-column-gap-default">
-					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-a0ea561" data-id="a0ea561" data-element_type="column" data-e-type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-d1059e8 elementor-widget elementor-widget-html" data-id="d1059e8" data-element_type="widget" data-e-type="widget" data-widget_type="html.default">
-				<div class="elementor-widget-container">
-					<!-- ================================================================= -->
-
-<!-- GPTIFY UZBEKISTAN: PROMPT USTAXONASI (PROMPT WORKSHOP PAGE)       -->
-
-<!-- URL: gptify.co/prompt-ustaxonasi/                                 -->
-
-<!-- INTERACTIVE AI PROMPT GENERATOR + "AI ASOSLARI" BEPUL KURSI & PDF -->
-
-<!-- ELEMENTOR HTML WIDGET TAYYOR KODI                                 -->
-
-<!-- ================================================================= -->
-
-
-
-<style>
 
   /* Reset & Elementor Overrides */
 
@@ -490,22 +426,1998 @@
 
 
 
-  /* 
-  </main>
+  /* ------------------------------------------------------------- */
+
+  /* 1. HERO & GENERATOR SECTION                                   */
+
+  /* ------------------------------------------------------------- */
+
+  .gptify-workshop-hero {
+
+    padding: 65px 0 35px;
+
+    background: linear-gradient(180deg, #eef5f2 0%, #ffffff 100%);
+
+    text-align: center;
+
+  }
+
+  .gptify-workshop-header {
+
+    max-width: 840px;
+
+    margin: 0 auto 30px;
+
+  }
+
+  .gptify-workshop-header h1 {
+
+    font-size: clamp(2.2rem, 4vw, 3.4rem);
+
+    margin-bottom: 14px;
+
+    line-height: 1.2;
+
+  }
+
+  .gptify-workshop-highlight { color: var(--g-teal); }
+
+  .gptify-workshop-header p {
+
+    font-size: 1.05rem;
+
+    color: #334155;
+
+    line-height: 1.6;
+
+    margin: 0;
+
+  }
+
+
+
+  /* Interactive Generator Card */
+
+  .gptify-generator-card {
+
+    background: #ffffff;
+
+    border: 2px solid var(--g-line);
+
+    border-radius: 22px;
+
+    padding: 34px 30px;
+
+    max-width: 960px;
+
+    margin: 0 auto;
+
+    box-shadow: 0 16px 40px rgba(15,23,42,0.06);
+
+    text-align: left;
+
+  }
+
+
+
+  /* AI Target Model Tabs */
+
+  .gptify-model-tabs {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-bottom: 22px;
+
+  }
+
+  .gptify-model-tab {
+
+    background: var(--g-soft);
+
+    border: 1.5px solid #cbd5e1;
+
+    border-radius: 12px;
+
+    padding: 10px 18px;
+
+    font-size: 0.92rem;
+
+    font-weight: 750;
+
+    color: var(--g-ink);
+
+    cursor: pointer;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    transition: all 0.2s ease;
+
+    font-family: inherit;
+
+  }
+
+  .gptify-model-tab:hover {
+
+    border-color: var(--g-teal);
+
+    color: var(--g-teal);
+
+  }
+
+  .gptify-model-tab.is-active {
+
+    background: var(--g-teal);
+
+    border-color: var(--g-teal);
+
+    color: #ffffff;
+
+    box-shadow: 0 4px 14px rgba(8,127,106,0.25);
+
+  }
+
+
+
+  /* Input Field & Action */
+
+  .gptify-prompt-input-wrap {
+
+    position: relative;
+
+    margin-bottom: 16px;
+
+  }
+
+  .gptify-prompt-textarea {
+
+    width: 100%;
+
+    min-height: 110px;
+
+    background: var(--g-soft) !important;
+
+    border: 2px solid #cbd5e1 !important;
+
+    border-radius: 14px;
+
+    padding: 16px 18px;
+
+    font-size: 1rem;
+
+    color: var(--g-ink) !important;
+
+    font-family: inherit;
+
+    line-height: 1.5;
+
+    outline: none !important;
+
+    resize: vertical;
+
+    transition: all 0.2s ease;
+
+  }
+
+  .gptify-prompt-textarea:focus {
+
+    border-color: var(--g-teal) !important;
+
+    background: #ffffff !important;
+
+    box-shadow: 0 0 0 4px rgba(8,127,106,0.15) !important;
+
+  }
+
+
+
+  /* Preset Chips */
+
+  .gptify-preset-chips {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-bottom: 20px;
+
+    align-items: center;
+
+  }
+
+  .gptify-chips-label {
+
+    font-size: 0.78rem;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    color: var(--g-muted);
+
+    letter-spacing: 0.05em;
+
+  }
+
+  .gptify-chip {
+
+    background: #f1f5f9;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 999px;
+
+    padding: 5px 12px;
+
+    font-size: 0.82rem;
+
+    font-weight: 650;
+
+    color: #334155;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+
+    font-family: inherit;
+
+  }
+
+  .gptify-chip:hover {
+
+    background: var(--g-teal-light);
+
+    color: var(--g-teal);
+
+    border-color: #a7f3d0;
+
+  }
+
+
+
+  .gptify-generate-btn {
+
+    width: 100%;
+
+    background: var(--g-teal);
+
+    color: #ffffff;
+
+    border: none;
+
+    border-radius: 12px;
+
+    padding: 15px 24px;
+
+    font-size: 1.05rem;
+
+    font-weight: 850;
+
+    cursor: pointer;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    box-shadow: 0 4px 16px rgba(8,127,106,0.3);
+
+    transition: all 0.2s ease;
+
+    font-family: inherit;
+
+  }
+
+  .gptify-generate-btn:hover {
+
+    background: var(--g-teal-dark);
+
+    transform: translateY(-2px);
+
+  }
+
+
+
+  /* ------------------------------------------------------------- */
+
+  /* PROMPT OUTPUT & TELEGRAM CONVERSION STRIP                     */
+
+  /* ------------------------------------------------------------- */
+
+  .gptify-output-box {
+
+    display: none;
+
+    margin-top: 26px;
+
+    padding-top: 24px;
+
+    border-top: 2px dashed var(--g-line);
+
+    animation: fadeIn 0.3s ease;
+
+  }
+
+  @keyframes fadeIn {
+
+    from { opacity: 0; transform: translateY(8px); }
+
+    to { opacity: 1; transform: translateY(0); }
+
+  }
+
+  .gptify-output-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 12px;
+
+  }
+
+  .gptify-output-header h4 {
+
+    font-size: 1.1rem;
+
+    color: var(--g-teal-dark);
+
+    margin: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+  }
+
+  .gptify-output-content {
+
+    background: #0f172a;
+
+    color: #f8fafc;
+
+    border-radius: 14px;
+
+    padding: 18px 20px;
+
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+    font-size: 0.92rem;
+
+    line-height: 1.6;
+
+    white-space: pre-wrap;
+
+    word-break: break-word;
+
+    border: 1px solid #334155;
+
+    margin-bottom: 16px;
+
+  }
+
+  .gptify-output-actions {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    align-items: center;
+
+    margin-bottom: 22px;
+
+  }
+
+  .gptify-copy-btn {
+
+    background: var(--g-teal);
+
+    color: #ffffff;
+
+    border: none;
+
+    border-radius: 10px;
+
+    padding: 11px 20px;
+
+    font-size: 0.92rem;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    transition: all 0.2s ease;
+
+    font-family: inherit;
+
+  }
+
+  .gptify-copy-btn:hover { background: var(--g-teal-dark); }
+
+  
+
+  .gptify-btn--pdf {
+
+    background: var(--g-pdf-red);
+
+    color: #ffffff !important;
+
+    border: none;
+
+    border-radius: 10px;
+
+    padding: 11px 20px;
+
+    font-size: 0.92rem;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    transition: all 0.2s ease;
+
+    box-shadow: 0 4px 14px rgba(225,29,72,0.25);
+
+    font-family: inherit;
+
+  }
+
+  .gptify-btn--pdf:hover {
+
+    background: var(--g-pdf-red-hover);
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 6px 18px rgba(225,29,72,0.35);
+
+  }
+
+
+
+  .gptify-share-tg-btn {
+
+    background: var(--g-tg-blue);
+
+    color: #ffffff !important;
+
+    border: none;
+
+    border-radius: 10px;
+
+    padding: 11px 20px;
+
+    font-size: 0.92rem;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    transition: all 0.2s ease;
+
+    font-family: inherit;
+
+  }
+
+  .gptify-share-tg-btn:hover { background: var(--g-tg-blue-hover); transform: translateY(-2px); }
+
+
+
+  /* Direct Telegram Conversion Strip inside Output Box */
+
+  .gptify-output-tg-banner {
+
+    background: linear-gradient(135deg, #f0fdf9 0%, #e6f6f3 100%);
+
+    border: 1.5px solid #a7f3d0;
+
+    border-radius: 14px;
+
+    padding: 18px 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 18px;
+
+  }
+
+  .gptify-output-tg-text {
+
+    font-size: 0.94rem;
+
+    color: #334155;
+
+    line-height: 1.45;
+
+  }
+
+  .gptify-output-tg-text strong {
+
+    color: var(--g-teal-dark);
+
+    display: block;
+
+    margin-bottom: 4px;
+
+  }
+
+
+
+  /* ------------------------------------------------------------- */
+
+  /* HIGH-CONVERTING FREE COURSE CTA BANNER                        */
+
+  /* ------------------------------------------------------------- */
+
+  .gptify-course-cta-banner {
+
+    background: linear-gradient(135deg, #0b151e 0%, #063d33 60%, #087f6a 100%);
+
+    border: 1.5px solid rgba(183,243,74,0.4);
+
+    border-radius: 20px;
+
+    padding: 38px 34px;
+
+    margin: 36px auto 0;
+
+    max-width: 960px;
+
+    box-shadow: 0 16px 36px rgba(8,127,106,0.18);
+
+    position: relative;
+
+    overflow: hidden;
+
+    text-align: left;
+
+  }
+
+  .gptify-course-cta-banner::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: -50%;
+
+    right: -20%;
+
+    width: 320px;
+
+    height: 320px;
+
+    background: radial-gradient(circle, rgba(183,243,74,0.15) 0%, rgba(8,127,106,0) 70%);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+  }
+
+  .gptify-course-cta-top {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-bottom: 14px;
+
+  }
+
+  .gptify-seat-badge {
+
+    background: rgba(183,243,74,0.18);
+
+    border: 1px solid rgba(183,243,74,0.4);
+
+    color: var(--g-lime);
+
+    font-size: 0.8rem;
+
+    font-weight: 850;
+
+    padding: 4px 12px;
+
+    border-radius: 999px;
+
+    letter-spacing: 0.03em;
+
+  }
+
+  .gptify-course-cta-banner h3 {
+
+    color: #ffffff;
+
+    font-size: clamp(1.35rem, 2.4vw, 1.85rem);
+
+    line-height: 1.25;
+
+    margin-bottom: 10px;
+
+  }
+
+  .gptify-course-cta-banner p {
+
+    color: #d1eae5;
+
+    font-size: 0.98rem;
+
+    line-height: 1.6;
+
+    margin-bottom: 22px;
+
+    max-width: 820px;
+
+  }
+
+  .gptify-course-cta-actions {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 14px;
+
+    align-items: center;
+
+  }
+
+
+
+  /* Compact B2B Training Strip */
+
+  .gptify-b2b-compact-strip {
+
+    background: var(--g-soft);
+
+    border: 1.5px solid #e2e8f0;
+
+    border-radius: 14px;
+
+    padding: 18px 24px;
+
+    max-width: 960px;
+
+    margin: 18px auto 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 18px;
+
+    text-align: left;
+
+  }
+
+  .gptify-b2b-compact-copy h4 {
+
+    font-size: 1.05rem;
+
+    margin: 0 0 3px;
+
+    color: var(--g-ink);
+
+  }
+
+  .gptify-b2b-compact-copy p {
+
+    font-size: 0.88rem;
+
+    color: var(--g-muted);
+
+    margin: 0;
+
+  }
+
+  .gptify-b2b-compact-btn {
+
+    background: #ffffff;
+
+    border: 1.5px solid var(--g-teal);
+
+    color: var(--g-teal-dark) !important;
+
+    font-weight: 750;
+
+    font-size: 0.9rem;
+
+    padding: 10px 20px;
+
+    border-radius: 9px;
+
+    white-space: nowrap;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    transition: all 0.2s ease;
+
+  }
+
+  .gptify-b2b-compact-btn:hover {
+
+    background: var(--g-teal);
+
+    color: #ffffff !important;
+
+  }
+
+
+
+  /* ------------------------------------------------------------- */
+
+  /* MODAL: PDF DELIVERY TO TELEGRAM                               */
+
+  /* ------------------------------------------------------------- */
+
+  .gptify-modal-backdrop {
+
+    display: none;
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100vw;
+
+    height: 100vh;
+
+    background: rgba(15, 23, 42, 0.7);
+
+    backdrop-filter: blur(6px);
+
+    z-index: 9999999;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+  }
+
+  .gptify-modal-backdrop.is-open {
+
+    display: flex;
+
+    animation: fadeIn 0.2s ease;
+
+  }
+
+  .gptify-modal-card {
+
+    background: #ffffff;
+
+    border-radius: 20px;
+
+    max-width: 520px;
+
+    width: 100%;
+
+    padding: 34px 28px;
+
+    position: relative;
+
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+
+    border: 1px solid var(--g-line);
+
+    text-align: center;
+
+  }
+
+  .gptify-modal-close {
+
+    position: absolute;
+
+    top: 16px;
+
+    right: 16px;
+
+    background: #f1f5f9;
+
+    border: none;
+
+    width: 32px;
+
+    height: 32px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    cursor: pointer;
+
+    color: #64748b;
+
+    transition: all 0.2s ease;
+
+  }
+
+  .gptify-modal-close:hover {
+
+    background: #e2e8f0;
+
+    color: #0f172a;
+
+  }
+
+  .gptify-modal-icon-badge {
+
+    width: 60px;
+
+    height: 60px;
+
+    border-radius: 16px;
+
+    background: #fee2e2;
+
+    color: var(--g-pdf-red);
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 16px;
+
+  }
+
+  .gptify-modal-icon-badge svg {
+
+    width: 30px;
+
+    height: 30px;
+
+    fill: currentColor;
+
+  }
+
+  .gptify-modal-card h3 {
+
+    font-size: 1.35rem;
+
+    color: var(--g-ink);
+
+    margin-bottom: 8px;
+
+  }
+
+  .gptify-modal-card p {
+
+    font-size: 0.94rem;
+
+    color: #475569;
+
+    line-height: 1.55;
+
+    margin-bottom: 20px;
+
+  }
+
+  .gptify-modal-bonus-box {
+
+    background: #f0fdf9;
+
+    border: 1.5px dashed var(--g-teal);
+
+    border-radius: 12px;
+
+    padding: 14px 16px;
+
+    margin-bottom: 22px;
+
+    text-align: left;
+
+    font-size: 0.88rem;
+
+    color: var(--g-teal-dark);
+
+  }
+
+  .gptify-modal-bonus-box ul {
+
+    margin: 6px 0 0 18px;
+
+    padding: 0;
+
+    line-height: 1.5;
+
+  }
+
+  .gptify-modal-actions {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+  }
+
+  .gptify-modal-actions .gptify-btn {
+
+    width: 100%;
+
+    padding: 13px 20px;
+
+    font-size: 0.96rem;
+
+  }
+
+
+
+  /* ------------------------------------------------------------- */
+
+  /* 2. CURATED 6 POPULAR PROMPT CARDS                             */
+
+  /* ------------------------------------------------------------- */
+
+  .gptify-library-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 22px;
+
+    margin-top: 36px;
+
+  }
+
+  .gptify-library-card {
+
+    background: #ffffff;
+
+    border: 1.5px solid var(--g-line);
+
+    border-radius: 16px;
+
+    padding: 24px 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    transition: all 0.25s ease;
+
+    box-shadow: var(--g-card-shadow);
+
+  }
+
+  .gptify-library-card:hover {
+
+    border-color: var(--g-teal);
+
+    transform: translateY(-4px);
+
+    box-shadow: var(--g-card-shadow-hover);
+
+  }
+
+  .gptify-lib-badge {
+
+    align-self: flex-start;
+
+    font-size: 0.72rem;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    padding: 3px 8px;
+
+    border-radius: 6px;
+
+    margin-bottom: 12px;
+
+  }
+
+  .gptify-lib-badge--chatgpt { background: #e0f2fe; color: #0284c7; }
+
+  .gptify-lib-badge--image { background: #fdf2f8; color: #db2777; }
+
+  .gptify-lib-badge--video { background: #fef3c7; color: #d97706; }
+
+  .gptify-library-card h3 {
+
+    font-size: 1.15rem;
+
+    margin-bottom: 8px;
+
+    color: var(--g-ink);
+
+  }
+
+  .gptify-library-card p {
+
+    font-size: 0.88rem;
+
+    color: #475569;
+
+    line-height: 1.55;
+
+    margin-bottom: 18px;
+
+    flex-grow: 1;
+
+  }
+
+  .gptify-lib-use-btn {
+
+    background: var(--g-soft);
+
+    border: 1px solid var(--g-line);
+
+    color: var(--g-teal-dark);
+
+    font-weight: 750;
+
+    font-size: 0.88rem;
+
+    padding: 8px 14px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    transition: all 0.2s ease;
+
+    font-family: inherit;
+
+  }
+
+  .gptify-library-card:hover .gptify-lib-use-btn {
+
+    background: var(--g-teal);
+
+    color: #ffffff;
+
+    border-color: var(--g-teal);
+
+  }
+
+
+
+  /* ------------------------------------------------------------- */
+
+  /* 3. LIVE MASTERCLASSES & COMMUNITY BANNER                      */
+
+  /* ------------------------------------------------------------- */
+
+  .gptify-live-events-banner {
+
+    background: linear-gradient(135deg, #0b151e 0%, #0c3e37 100%);
+
+    border: 1.5px solid #087f6a;
+
+    border-radius: 20px;
+
+    padding: 38px 36px;
+
+    color: #ffffff;
+
+    display: grid;
+
+    grid-template-columns: 1fr auto;
+
+    gap: 32px;
+
+    align-items: center;
+
+    box-shadow: 0 16px 36px rgba(8,127,106,0.15);
+
+  }
+
+  .gptify-live-events-copy h3 {
+
+    color: #ffffff;
+
+    font-size: 1.45rem;
+
+    margin-bottom: 10px;
+
+    letter-spacing: -0.01em;
+
+  }
+
+  .gptify-live-events-copy p {
+
+    color: #d1eae5;
+
+    font-size: 0.95rem;
+
+    line-height: 1.6;
+
+    margin-bottom: 14px;
+
+    max-width: 700px;
+
+  }
+
+  .gptify-live-stats {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 16px;
+
+    font-size: 0.85rem;
+
+    color: #a7f3d0;
+
+    font-weight: 700;
+
+  }
+
+
+
+  /* ------------------------------------------------------------- */
+
+  /* FLOATING TELEGRAM BOT BUTTON ("BOG'LANISH")                   */
+
+  /* ------------------------------------------------------------- */
+
+  .gptify-float-tg {
+
+    position: fixed;
+
+    bottom: 26px;
+
+    left: 26px;
+
+    background: linear-gradient(135deg, #24A1DE 0%, #1588be 100%);
+
+    color: #ffffff !important;
+
+    padding: 11px 20px;
+
+    border-radius: 50px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    font-weight: 800;
+
+    font-size: 0.92rem;
+
+    box-shadow: 0 10px 25px rgba(36,161,222,0.4);
+
+    border: 2px solid rgba(255, 255, 255, 0.45);
+
+    z-index: 99999;
+
+    text-decoration: none;
+
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease, background 0.2s ease;
+
+  }
+
+  .gptify-float-tg svg { 
+
+    width: 20px; 
+
+    height: 20px; 
+
+    fill: #ffffff; 
+
+    flex-shrink: 0;
+
+  }
+
+  .gptify-float-tg:hover {
+
+    transform: translateY(-3px) scale(1.04);
+
+    box-shadow: 0 14px 30px rgba(36,161,222,0.55);
+
+    background: linear-gradient(135deg, #2cb0f0 0%, #1793ce 100%);
+
+  }
+
+
+
+  /* ------------------------------------------------------------- */
+
+  /* MOBILE STICKY BOTTOM CONVERSION BAR                           */
+
+  /* ------------------------------------------------------------- */
+
+  .gptify-mobile-sticky-bar {
+
+    display: none;
+
+    position: fixed;
+
+    bottom: 0;
+
+    left: 0;
+
+    width: 100vw;
+
+    background: rgba(11, 21, 30, 0.96);
+
+    backdrop-filter: blur(12px);
+
+    border-top: 1px solid rgba(8,127,106,0.4);
+
+    padding: 10px 14px;
+
+    z-index: 999999;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    box-shadow: 0 -8px 24px rgba(0,0,0,0.3);
+
+  }
+
+  .gptify-mobile-sticky-btn {
+
+    flex: 1;
+
+    background: var(--g-tg-blue);
+
+    color: #ffffff !important;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 11px 14px;
+
+    border-radius: 10px;
+
+    font-weight: 800;
+
+    font-size: 0.88rem;
+
+    text-decoration: none;
+
+  }
+
+  .gptify-mobile-sticky-btn svg { width: 18px; height: 18px; fill: currentColor; }
+
+  .gptify-mobile-sticky-tag {
+
+    background: var(--g-lime);
+
+    color: #0b151e;
+
+    font-size: 0.68rem;
+
+    font-weight: 900;
+
+    padding: 2px 6px;
+
+    border-radius: 6px;
+
+  }
+
+
+
+  /* ------------------------------------------------------------- */
+
+  /* RESPONSIVE BREAKPOINTS                                        */
+
+  /* ------------------------------------------------------------- */
+
+  @media (max-width: 990px) {
+
+    .gptify-library-grid { grid-template-columns: repeat(2, 1fr); }
+
+    .gptify-output-tg-banner { flex-direction: column; text-align: center; }
+
+    .gptify-b2b-compact-strip { flex-direction: column; text-align: center; gap: 12px; }
+
+    .gptify-b2b-compact-copy { text-align: center; }
+
+  }
+
+
+
+  @media (max-width: 640px) {
+
+    .gptify-container { width: calc(100% - 32px); }
+
+    .gptify-section { padding: 40px 0; }
+
+    .gptify-generator-card { padding: 22px 18px; }
+
+    .gptify-library-grid { grid-template-columns: 1fr; }
+
+    .gptify-course-cta-banner { padding: 26px 20px; }
+
+    .gptify-b2b-compact-btn { width: 100%; justify-content: center; }
+
+    
+
+    .gptify-live-events-banner {
+
+      grid-template-columns: 1fr;
+
+      text-align: center;
+
+      padding: 26px 20px;
+
+      gap: 20px;
+
+    }
+
+    .gptify-live-events-copy p { margin: 0 auto 16px; }
+
+    .gptify-live-stats { justify-content: center; }
+
+    .gptify-live-events-action .gptify-btn { width: 100%; }
+
+
+
+    /* Hide Desktop Floating Button, Show Sticky Mobile Bar */
+
+    .gptify-float-tg { display: none !important; }
+
+    .gptify-mobile-sticky-bar { display: flex !important; }
+
+    .gptify-wrap { padding-bottom: 60px; }
+
+  }
+
+
+  </style>
+</head>
+<body>
+
+  <!-- HEADER NAVBAR -->
+  <header class="gptify-nav-header" role="banner">
+    <div class="gptify-nav-container">
+      <a href="/" class="gptify-nav-logo" aria-label="GPTify Uzbekistan">
+        <span>GPTify</span>
+        <span class="badge-uz">UZ</span>
+      </a>
+
+      <nav class="gptify-nav-links" aria-label="Asosiy menyu">
+        <a href="/">Asosiy</a>
+        <a href="/#gptify-services">Xizmatlar</a>
+        <a href="/akademiya/">Akademiya</a>
+        <a href="/#gptify-tools" class="active" style="color:#087f6a; font-weight:750;">Bepul Vositalar</a>
+        <a href="#gptify-contact">Bog‘lanish</a>
+      </nav>
+
+      <div class="gptify-nav-right">
+        <!-- Telegram CTA -->
+        <a href="https://t.me/GPTify_uz_bot" target="_blank" rel="noopener noreferrer" class="gptify-nav-cta">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.534-.199 1.002.122.828.928z"/>
+          </svg>
+          <span>Telegram</span>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="gptify-nav-mobile-btn" onclick="toggleMobileNav()" aria-label="Menyu">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE MENU DROPDOWN -->
+  <div id="gptify-mobile-drawer" style="display:none; position:fixed; top:76px; left:0; right:0; background:#ffffff; border-bottom:1px solid #e2e8f0; padding:20px; z-index:999; box-shadow:0 12px 24px rgba(0,0,0,0.08);">
+    <div style="display:flex; flex-direction:column; gap:16px; font-size:16px; font-weight:600;">
+      <a href="/" style="color:#0f172a; text-decoration:none;">Asosiy</a>
+      <a href="/#gptify-services" onclick="toggleMobileNav()" style="color:#0f172a; text-decoration:none;">Xizmatlar</a>
+      <a href="/akademiya/" style="color:#087f6a; text-decoration:none; font-weight:750;">Akademiya</a>
+      <a href="/#gptify-tools" class="active" style="color:#087f6a; font-weight:750;" onclick="toggleMobileNav()" style="color:#0f172a; text-decoration:none;">Bepul Vositalar</a>
+      <a href="#gptify-contact" onclick="toggleMobileNav()" style="color:#0f172a; text-decoration:none;">Bog‘lanish</a>
+      <hr style="border:none; border-top:1px solid #e2e8f0; margin:4px 0;">
+      <a href="https://t.me/GPTify_uz_bot" target="_blank" rel="noopener noreferrer" style="background:#087f6a; color:#fff; padding:10px; border-radius:8px; text-align:center; text-decoration:none;">Telegramda yozish</a>
+    </div>
+  </div>
+
+  <main class="gptify-wrap">
+
+
+
+  <!-- 1. HERO & GENERATOR SECTION -->
+
+  <section class="gptify-workshop-hero">
+
+    <div class="gptify-container">
+
+      
+
+      <div class="gptify-workshop-header">
+
+        <span class="gptify-badge">GPTify AI Tools · Bepul Prompt Ustaxonasi</span>
+
+        <h1>G‘oyangizni <span class="gptify-workshop-highlight">Professional AI Promptga</span> Aylantiring</h1>
+
+        <p>Vazifangizni o‘zbekcha yoki ruscha yozing — ChatGPT, Claude, Midjourney, Kling va ElevenLabs uchun xatosiz, aniq natija beruvchi tayyor prompt oling.</p>
+
+      </div>
+
+
+
+      <!-- Generator Component (THE TOOL) -->
+
+      <div class="gptify-generator-card">
+
+        
+
+        <!-- Target AI Tabs -->
+
+        <div class="gptify-model-tabs" role="tablist">
+
+          <button class="gptify-model-tab is-active" data-model="chatgpt" onclick="selectModel('chatgpt', this)">
+
+            <span>💬 ChatGPT & Claude</span>
+
+          </button>
+
+          <button class="gptify-model-tab" data-model="midjourney" onclick="selectModel('midjourney', this)">
+
+            <span>🎨 Midjourney & Flux (Tasvir)</span>
+
+          </button>
+
+          <button class="gptify-model-tab" data-model="kling" onclick="selectModel('kling', this)">
+
+            <span>🎬 Kling & Runway (Video)</span>
+
+          </button>
+
+          <button class="gptify-model-tab" data-model="elevenlabs" onclick="selectModel('elevenlabs', this)">
+
+            <span>🎙️ ElevenLabs (Audio)</span>
+
+          </button>
+
+        </div>
+
+
+
+        <!-- Input Area -->
+
+        <div class="gptify-prompt-input-wrap">
+
+          <textarea id="gptify-user-idea" class="gptify-prompt-textarea" placeholder="Masalan: Yangi ochilgan IT o‘quv markazi uchun Instagramda reklama posti va qiziqtiruvchi sarlavha yozish..."></textarea>
+
+        </div>
+
+
+
+        <!-- Quick Idea Preset Chips -->
+
+        <div class="gptify-preset-chips">
+
+          <span class="gptify-chips-label">Tezkor namunalar:</span>
+
+          <button class="gptify-chip" onclick="applyPreset('Mijozga yuboriladigan B2B tijorat taklifi (KP) ssenariysi')">📄 B2B Tijorat Taklifi</button>
+
+          <button class="gptify-chip" onclick="applyPreset('Instagram va Telegram uchun 1 haftalik kontent rejasi')">📅 Kontent Rejasi</button>
+
+          <button class="gptify-chip" onclick="applyPreset('E-tijorat kiyimlari uchun fotorealistik studiya fotosessiyasi vizuali')">📸 Mahsulot Fotosessiyasi</button>
+
+          <button class="gptify-chip" onclick="applyPreset('30 soniyalik dinamik Reels reklama videosi ssenariysi')">🎬 30s Reels Rolik</button>
+
+          <button class="gptify-chip" onclick="applyPreset('Excelda ikki jadvalni solishtirib, farqlarni aniqlovchi murakkab formula')">📊 Excel Formulalari</button>
+
+        </div>
+
+
+
+        <!-- Generate Button -->
+
+        <button class="gptify-generate-btn" onclick="generatePrompt()">
+
+          <span class="gptify-icon" style="width:20px;height:20px;">
+
+            <svg viewBox="0 0 24 24"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg>
+
+          </span>
+
+          Professional Promptni Ishlab Chiqish
+
+        </button>
+
+
+
+        <!-- Dynamic Output Box -->
+
+        <div class="gptify-output-box" id="gptify-output-area">
+
+          <div class="gptify-output-header">
+
+            <h4>
+
+              <span class="gptify-icon" style="width:18px;height:18px;color:var(--g-teal);">
+
+                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+
+              </span>
+
+              Tayyor Professional Prompt:
+
+            </h4>
+
+          </div>
+
+
+
+          <div class="gptify-output-content" id="gptify-result-text"></div>
+
+
+
+          <!-- Action Buttons with PDF Telegram Trigger -->
+
+          <div class="gptify-output-actions">
+
+            <button class="gptify-copy-btn" onclick="copyGeneratedPrompt()">
+
+              <span class="gptify-icon" style="width:16px;height:16px;">
+
+                <svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+
+              </span>
+
+              <span id="gptify-copy-label">Promptdan Nusxa Olish</span>
+
+            </button>
+
+
+
+            <!-- PDF Delivery Action Button -->
+
+            <button class="gptify-btn--pdf" onclick="openPdfModal()">
+
+              <span class="gptify-icon" style="width:16px;height:16px;">
+
+                <svg viewBox="0 0 24 24"><path d="M20 2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8.5 7.5c0 .83-.67 1.5-1.5 1.5H9v2H7.5V7H10c.83 0 1.5.67 1.5 1.5v1zm5 2c0 .83-.67 1.5-1.5 1.5h-2.5V7H15c.83 0 1.5.67 1.5 1.5v3zm4-3H19v1h1.5V11H19v2h-1.5V7h3v1.5zM9 9.5h1v-1H9v1zm4 2h1v-3h-1v3zM4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6z"/></svg>
+
+              </span>
+
+              <span>PDF To‘plamni Olish</span>
+
+            </button>
+
+
+
+            <a class="gptify-share-tg-btn" id="gptify-tg-share-link" href="https://t.me/gptifyuz" target="_blank" rel="noopener noreferrer">
+
+              <span class="gptify-icon" style="width:16px;height:16px;">
+
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.19-.08-.05-.19-.02-.27 0-.12.03-1.99 1.27-5.62 3.72-.53.36-1.01.54-1.44.53-.47-.01-1.38-.27-2.05-.49-.83-.27-1.49-.42-1.43-.88.03-.24.37-.49 1.02-.75 3.99-1.74 6.66-2.88 7.99-3.44 3.82-1.58 4.61-1.85 5.13-1.86.11 0 .37.03.54.17.14.12.18.28.2.45-.02.07-.02.21-.04.37z"/></svg>
+
+              </span>
+
+              Telegramda Saqlash
+
+            </a>
+
+          </div>
+
+
+
+          <!-- Direct Telegram Channel Funnel Trigger -->
+
+          <div class="gptify-output-tg-banner">
+
+            <div class="gptify-output-tg-text">
+
+              <strong>🎁 Bepul "AI’ni Noldan Boshlash" va 100+ Promptlar PDF To‘plami!</strong>
+
+              Ushbu qo‘llanmalar rasmiy Telegram kanalimizda mahkamlangan (*pinned message*) holda bepul turibdi. Kanalga ulaning va darhol yuklab oling!
+
+            </div>
+
+            <a class="gptify-btn gptify-btn--telegram gptify-btn--pulse" href="https://t.me/gptifyuz" target="_blank" rel="noopener noreferrer" style="white-space:nowrap;">
+
+              Kanalga Ulanish →
+
+            </a>
+
+          </div>
+
+
+
+        </div>
+
+
+
+      </div>
+
+
+
+      <!-- HIGH-CONVERTING FEATURED COURSE BANNER -->
+
+      <div class="gptify-course-cta-banner">
+
+        <div class="gptify-course-cta-top">
+
+          <span class="gptify-badge gptify-badge--lime" style="margin-bottom:0;">🔴 Jonli Amaliy Masterklass · Qabul Ochiq</span>
+
+          <span class="gptify-seat-badge">⚡ Joylar Chegaralangan</span>
+
+        </div>
+
+        <h3>"AI Asoslari" Bepul Kursi & 100+ PDF Promptlar To‘plami</h3>
+
+        <p>
+
+          Yangi boshlovchilar va mutaxassislar uchun amaliy jonli darslar, ChatGPT, Claude va Midjourney bilan ishlash formulalari hamda biznesda vaqtni tejovchi 100+ professional AI PDF qo‘llanmalar to‘plami.
+
+        </p>
+
+        <div class="gptify-course-cta-actions">
+
+          <a class="gptify-btn gptify-btn--lime" href="https://t.me/GPTify_uz_bot?start=ai_asoslari" target="_blank" rel="noopener noreferrer" style="font-weight:850;">
+
+            <span class="gptify-icon" style="width:18px;height:18px;">
+
+              <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.19-.08-.05-.19-.02-.27 0-.12.03-1.99 1.27-5.62 3.72-.53.36-1.01.54-1.44.53-.47-.01-1.38-.27-2.05-.49-.83-.27-1.49-.42-1.43-.88.03-.24.37-.49 1.02-.75 3.99-1.74 6.66-2.88 7.99-3.44 3.82-1.58 4.61-1.85 5.13-1.86.11 0 .37.03.54.17.14.12.18.28.2.45-.02.07-.02.21-.04.37z"/></svg>
+
+            </span>
+
+            Joyni Band Qilish →
+
+          </a>
+
+          <a class="gptify-btn gptify-btn--telegram" href="https://t.me/gptifyuz" target="_blank" rel="noopener noreferrer">
+
+            📢 Telegram Kanal
+
+          </a>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- COMPACT B2B TRAINING STRIP -->
+
+      <div class="gptify-b2b-compact-strip">
+
+        <div class="gptify-b2b-compact-copy">
+
+          <h4>Jamoangiz Uchun Maxsus AI Kurslari & Avtomatlashtirish</h4>
+
+          <p>Xodimlaringizni ChatGPT, Claude, Midjourney va AI agentlariga o‘rgatuvchi amaliy korporativ dasturlar.</p>
+
+        </div>
+
+        <div>
+
+          <a class="gptify-b2b-compact-btn" href="/ai-trening-va-yechimlar/">
+
+            AI Kurslar va Yechimlar →
+
+          </a>
+
+        </div>
+
+      </div>
+
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- 2. POPULAR PROMPT TEMPLATES LIBRARY -->
+
+  <section class="gptify-section gptify-section--soft">
+
+    <div class="gptify-container">
+
+      
+
+      <div style="text-align:center; max-width:740px; margin:0 auto 32px;">
+
+        <span class="gptify-badge">Tayyor Kutubxona</span>
+
+        <h2 style="font-size:clamp(1.8rem, 3vw, 2.5rem); margin-bottom:10px;">Eng Ko‘p Ishlatiladigan Biznes Promptlar</h2>
+
+        <p>Quyidagi shablonlardan birini tanlang va o‘z biznesingizga moslab tezkor foydalaning:</p>
+
+      </div>
+
+
+
+      <div class="gptify-library-grid">
+
+        
+
+        <!-- Prompt 1: Savdo Taklifi -->
+
+        <article class="gptify-library-card">
+
+          <span class="gptify-lib-badge gptify-lib-badge--chatgpt">ChatGPT · Savdo</span>
+
+          <h3>B2B Mijozga Tijorat Taklifi (KP)</h3>
+
+          <p>Mijoz kompaniyasi muammolarini hal qiluvchi, ishonch uyg‘otuvchi va rad etib bo‘lmas tijorat taklifi tuzish.</p>
+
+          <button class="gptify-lib-use-btn" onclick="applyAndGenerate('B2B mijozga xizmatlarimiz bo‘yicha individual tijorat taklifi (KP) yozish', 'chatgpt')">
+
+            <span>Shablonni Ishlatish</span>
+
+            <span>→</span>
+
+          </button>
+
+        </article>
+
+
+
+        <!-- Prompt 2: Reklama Kopiraytingi -->
+
+        <article class="gptify-library-card">
+
+          <span class="gptify-lib-badge gptify-lib-badge--chatgpt">ChatGPT · Marketing</span>
+
+          <h3>AIDA/PAS Reklama Kopiraytingi</h3>
+
+          <p>E’tibor tortuvchi sarlavha, og‘riqli nuqtalar va to‘g‘ridan-to‘g‘ri harakatga chorlovchi sotuvchi post matni.</p>
+
+          <button class="gptify-lib-use-btn" onclick="applyAndGenerate('Instagram va Telegram reklama kampaniyasi uchun yuqori konversiyali AIDA matni', 'chatgpt')">
+
+            <span>Shablonni Ishlatish</span>
+
+            <span>→</span>
+
+          </button>
+
+        </article>
+
+
+
+        <!-- Prompt 3: Fotorealistik Tasvir -->
+
+        <article class="gptify-library-card">
+
+          <span class="gptify-lib-badge gptify-lib-badge--image">Midjourney · Dizayn</span>
+
+          <h3>Mahsulot Uchun Studiya Fotosessiyasi</h3>
+
+          <p>Minimalistik fon, tabiiy yorug‘lik va 8K fotorealistik sifatdagi reklama renderlari uchun prompt.</p>
+
+          <button class="gptify-lib-use-btn" onclick="applyAndGenerate('Mahsulot uchun fotorealistik studiya fotosessiyasi, yumshoq yorug‘lik, 8K, minimalizm', 'midjourney')">
+
+            <span>Shablonni Ishlatish</span>
+
+            <span>→</span>
+
+          </button>
+
+        </article>
+
+
+
+        <!-- Prompt 4: Video Ssenariy -->
+
+        <article class="gptify-library-card">
+
+          <span class="gptify-lib-badge gptify-lib-badge--video">Kling · Video</span>
+
+          <h3>30 Sekundlik Reels/Shorts Ssenariysi</h3>
+
+          <p>Birinchi 3 soniyadagi ilgak (Hook), vizual kadrlar tasviri va harakatlar ketma-ketligi bilan to‘liq rolik.</p>
+
+          <button class="gptify-lib-use-btn" onclick="applyAndGenerate('30 soniyalik qiziqarli Reels ssenariysi, vizual kadrlar ketma-ketligi va audio matn', 'kling')">
+
+            <span>Shablonni Ishlatish</span>
+
+            <span>→</span>
+
+          </button>
+
+        </article>
+
+
+
+        <!-- Prompt 5: Excel Formulalar -->
+
+        <article class="gptify-library-card">
+
+          <span class="gptify-lib-badge gptify-lib-badge--chatgpt">ChatGPT · Moliya</span>
+
+          <h3>Murakkab Excel / Google Sheets Formulalari</h3>
+
+          <p>XLOOKUP, SUMIFS va shartli hisob-kitoblarni avtomatik tuzuvchi va tushuntirib beruvchi yordamchi.</p>
+
+          <button class="gptify-lib-use-btn" onclick="applyAndGenerate('Excelda ikkita jadvaldan ma’lumotlarni qidirib, solishtiruvchi XLOOKUP formulasi', 'chatgpt')">
+
+            <span>Shablonni Ishlatish</span>
+
+            <span>→</span>
+
+          </button>
+
+        </article>
+
+
+
+        <!-- Prompt 6: Ovozlashtirish -->
+
+        <article class="gptify-library-card">
+
+          <span class="gptify-lib-badge gptify-lib-badge--chatgpt">ElevenLabs · Ovoz</span>
+
+          <h3>Professional Diktor Ovozlashtirishi</h3>
+
+          <p>Pauzalar, hissiyot va intonatsiyani to‘g‘ri boshqaruvchi ovoz prompti va audio ssenariy.</p>
+
+          <button class="gptify-lib-use-btn" onclick="applyAndGenerate('Korporativ taqdimot videosi uchun ishonchli va samimiy diktor ovozi prompti', 'elevenlabs')">
+
+            <span>Shablonni Ishlatish</span>
+
+            <span>→</span>
+
+          </button>
+
+        </article>
+
+
+
+      </div>
+
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- 3. LIVE MASTERCLASSES & COMMUNITY BANNER -->
+
+  <section class="gptify-section">
+
+    <div class="gptify-container">
+
+      <div class="gptify-live-events-banner">
+
+        <div class="gptify-live-events-copy">
+
+          <span class="gptify-badge gptify-badge--lime">🎙️ Yopiq Jonli Masterklasslar</span>
+
+          <h3>Har Hafta Yangi AI Vositalari va Amaliy Promptlar — Jonli Efirda</h3>
+
+          <p>
+
+            Shukhrat Iskandarov (Berlin) va Davlatbek Iskandarov (10+ yillik ilmiy va pedagogik tajriba) bilan amaliy savol-javob efirlari, haftalik AI tahlillari va bepul qo‘llanmalar faqat bizning rasmiy Telegram kanalimizda berib boriladi.
+
+          </p>
+
+          <div class="gptify-live-stats">
+
+            <span>✓ 30 000+ Faol Hamjamiyat</span>
+
+            <span>✓ Bepul Video Darsliklar</span>
+
+            <span>✓ Bepul PDF Qo‘llanmalar</span>
+
+          </div>
+
+        </div>
+
+        <div class="gptify-live-events-action">
+
+          <a class="gptify-btn gptify-btn--telegram gptify-btn--pulse" href="https://t.me/gptifyuz" target="_blank" rel="noopener noreferrer">
+
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.19-.08-.05-.19-.02-.27 0-.12.03-1.99 1.27-5.62 3.72-.53.36-1.01.54-1.44.53-.47-.01-1.38-.27-2.05-.49-.83-.27-1.49-.42-1.43-.88.03-.24.37-.49 1.02-.75 3.99-1.74 6.66-2.88 7.99-3.44 3.82-1.58 4.61-1.85 5.13-1.86.11 0 .37.03.54.17.14.12.18.28.2.45-.02.07-.02.21-.04.37z"/></svg>
+
+            Telegram Kanalga A’zo Bo‘lish
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+</main>
+
   <footer class="gptify-standalone-footer" role="contentinfo">
     <div class="gptify-footer-container">
       <div style="display:flex; align-items:center; gap:8px;">
         <strong style="color:#0f172a; font-family:'Plus Jakarta Sans',sans-serif; font-size:15px;">GPTify Uzbekistan</strong>
         <span>•</span>
-        <span>Amaliy Sun’iy Intellekt Tizimlari & Konsalting</span>
+        <span>Amaliy Sun’iy Intellekt Tizimlari & Akademiya</span>
       </div>
       <div class="gptify-footer-links">
-        <a href="../#gptify-services">Xizmatlar</a>
-        <a href="../#gptify-tools">Instrumentlar</a>
-        <a href="../#gptify-team">Jamoa</a>
+        <a href="/">Asosiy</a>
+        <a href="/#gptify-services">Xizmatlar</a>
+        <a href="/akademiya/">Akademiya</a>
+        <a href="/#gptify-tools">Instrumentlar</a>
         <a href="https://t.me/gptifyuz" target="_blank" rel="noopener">Kanal</a>
         <a href="https://t.me/GPTify_uz_bot" target="_blank" rel="noopener">Bot</a>
-        <a href="../#maxfiylik" onclick="openUzModalWidget(); return false;">Maxfiylik Siyosati</a>
+        <a href="#gptify-contact">Bog‘lanish</a>
       </div>
     </div>
     <div style="max-width:1200px; margin:20px auto 0 auto; padding-top:16px; border-top:1px solid #edf2f7; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; font-size:12px;">
@@ -513,5 +2425,334 @@
       <span>Berlin, Germaniya • Toshkent, O‘zbekiston</span>
     </div>
   </footer>
+
+  <script>
+    function toggleMobileNav() {
+      var drawer = document.getElementById('gptify-mobile-drawer');
+      if (drawer) {
+        drawer.style.display = (drawer.style.display === 'none' || drawer.style.display === '') ? 'block' : 'none';
+      }
+    }
+
+
+
+  var currentModel = 'chatgpt';
+
+
+
+  function selectModel(model, el) {
+
+    currentModel = model;
+
+    var tabs = document.querySelectorAll('.gptify-model-tab');
+
+    tabs.forEach(function(t) { t.classList.remove('is-active'); });
+
+    el.classList.add('is-active');
+
+
+
+    var textarea = document.getElementById('gptify-user-idea');
+
+    if (textarea) {
+
+      if (model === 'chatgpt') {
+
+        textarea.placeholder = "Masalan: Yangi ochilgan IT o‘quv markazi uchun Instagramda reklama posti va qiziqtiruvchi sarlavha yozish...";
+
+      } else if (model === 'midjourney') {
+
+        textarea.placeholder = "Masalan: Zamonaviy qahvaxona interyeri, quyosh nurlari, minimalistik dizayn, 8K fotorealistik...";
+
+      } else if (model === 'kling') {
+
+        textarea.placeholder = "Masalan: Toshkent ko‘chalari bo‘ylab harakatlanayotgan elektromobil, kinemotografik dron tasviri, 4K...";
+
+      } else if (model === 'elevenlabs') {
+
+        textarea.placeholder = "Masalan: Yangi ilova taqdimoti uchun ishonchli, samimiy va energiyaga to‘la diktor ovozi...";
+
+      }
+
+    }
+
+  }
+
+
+
+  function applyPreset(text) {
+
+    var textarea = document.getElementById('gptify-user-idea');
+
+    if (textarea) {
+
+      textarea.value = text;
+
+      textarea.focus();
+
+    }
+
+  }
+
+
+
+  function applyAndGenerate(text, model) {
+
+    var tab = document.querySelector('.gptify-model-tab[data-model="' + model + '"]');
+
+    if (tab) {
+
+      selectModel(model, tab);
+
+    }
+
+    applyPreset(text);
+
+    generatePrompt();
+
+    var outputArea = document.getElementById('gptify-output-area');
+
+    if (outputArea) {
+
+      outputArea.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+    }
+
+  }
+
+
+
+  function generatePrompt() {
+
+    var input = document.getElementById('gptify-user-idea').value.trim();
+
+    var outputArea = document.getElementById('gptify-output-area');
+
+    var resultText = document.getElementById('gptify-result-text');
+
+    var shareLink = document.getElementById('gptify-tg-share-link');
+
+
+
+    if (!input) {
+
+      alert("Iltimos, avval o‘z g‘oyangiz yoki vazifangizni yozing!");
+
+      return;
+
+    }
+
+
+
+    var engineeredPrompt = "";
+
+
+
+    if (currentModel === 'chatgpt') {
+
+      engineeredPrompt = "SEN: 12+ yillik tajribaga ega yetakchi AI va biznes maslahatchisisan.\n\n" +
+
+        "VAZIFA: " + input + "\n\n" +
+
+        "QAT’IY TALABLAR:\n" +
+
+        "1. Natijani aniq, lo‘nda va amaliy tuzilma asosida taqdim et.\n" +
+
+        "2. Auditoriya e’tiborini birinchi 3 soniyada tortadigan kuchli sarlavhalar va hook'lar qo‘sh.\n" +
+
+        "3. Amaliy misollar va to‘g‘ridan-to‘g‘ri ishlatish mumkin bo‘lgan tayyor bloklar shaklida tuz.\n" +
+
+        "4. Ohang (Tone): Professional, ishonchli, amaliy va samimiy.\n\n" +
+
+        "Javobni darhol tayyor formatda taqdim et.";
+
+    } else if (currentModel === 'midjourney') {
+
+      engineeredPrompt = "/imagine prompt: " + input + ", ultra-realistic photography, shot on 85mm lens, f/1.8, soft cinematic studio lighting, highly detailed textures, vibrant color grading, Unreal Engine 5 render style, 8k resolution, photorealistic, cinematic atmosphere --ar 16:9 --v 6.0 --style raw";
+
+    } else if (currentModel === 'kling') {
+
+      engineeredPrompt = "Cinematic video generation prompt:\n\n" +
+
+        "Scene Description: " + input + "\n" +
+
+        "Camera Movement: Smooth dynamic drone orbit, seamless dolly forward.\n" +
+
+        "Lighting & Mood: Golden hour cinematic backlight, ultra-sharp focus, 4k 60fps photorealistic motion blur, high dynamic range.";
+
+    } else if (currentModel === 'elevenlabs') {
+
+      engineeredPrompt = "[Voice Style: Professional, warm, authoritative and engaging male/female voice with natural breathing pauses]\n\n" +
+
+        "Voiceover Script: \"" + input + "\"";
+
+    }
+
+
+
+    if (resultText && outputArea) {
+
+      resultText.textContent = engineeredPrompt;
+
+      outputArea.style.display = 'block';
+
+
+
+      if (shareLink) {
+
+        var encoded = encodeURIComponent("GPTify Prompt Ustaxonasidan tayyor prompt:\n\n" + engineeredPrompt + "\n\nManba: https://t.me/gptifyuz");
+
+        shareLink.href = "https://t.me/share/url?url=" + encoded;
+
+      }
+
+    }
+
+  }
+
+
+
+  function copyGeneratedPrompt() {
+
+    var text = document.getElementById('gptify-result-text').textContent;
+
+    var copyLabel = document.getElementById('gptify-copy-label');
+
+
+
+    if (!text) return;
+
+
+
+    navigator.clipboard.writeText(text).then(function() {
+
+      if (copyLabel) {
+
+        copyLabel.textContent = "✓ Nusxa Olindi!";
+
+        setTimeout(function() {
+
+          copyLabel.textContent = "Promptdan Nusxa Olish";
+
+        }, 2500);
+
+      }
+
+    }).catch(function() {
+
+      var textarea = document.createElement('textarea');
+
+      textarea.value = text;
+
+      document.body.appendChild(textarea);
+
+      textarea.select();
+
+      document.execCommand('copy');
+
+      document.body.removeChild(textarea);
+
+      if (copyLabel) {
+
+        copyLabel.textContent = "✓ Nusxa Olindi!";
+
+        setTimeout(function() {
+
+          copyLabel.textContent = "Promptdan Nusxa Olish";
+
+        }, 2500);
+
+      }
+
+    });
+
+  }
+
+
+
+  /* PDF Modal Controls */
+
+  function openPdfModal() {
+
+    var modal = document.getElementById('gptify-pdf-modal');
+
+    if (modal) {
+
+      modal.classList.add('is-open');
+
+    }
+
+  }
+
+
+
+  function closePdfModal() {
+
+    var modal = document.getElementById('gptify-pdf-modal');
+
+    if (modal) {
+
+      modal.classList.remove('is-open');
+
+    }
+
+  }
+
+
+
+  function handleModalBackdropClick(e) {
+
+    if (e.target && e.target.id === 'gptify-pdf-modal') {
+
+      closePdfModal();
+
+    }
+
+  }
+
+
+
+  function downloadPromptAsTxt() {
+
+    var text = document.getElementById('gptify-result-text').textContent;
+
+    if (!text) return;
+
+    var fileContent = "GPTIFY UZBEKISTAN - PROFESSIONAL AI PROMPT\n" +
+
+      "=========================================\n\n" +
+
+      text + "\n\n" +
+
+      "-----------------------------------------\n" +
+
+      "Rasmiy Telegram Hamjamiyat: https://t.me/gptifyuz\n" +
+
+      "Rasmiy Sayt: https://gptify.co/uz/\n";
+
+
+
+    var blob = new Blob([fileContent], { type: "text/plain;charset=utf-8" });
+
+    var url = URL.createObjectURL(blob);
+
+    var a = document.createElement('a');
+
+    a.href = url;
+
+    a.download = "gptify-ai-prompt.txt";
+
+    document.body.appendChild(a);
+
+    a.click();
+
+    document.body.removeChild(a);
+
+    URL.revokeObjectURL(url);
+
+  }
+
+
+  </script>
 </body>
 </html>
