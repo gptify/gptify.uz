@@ -4997,7 +4997,7 @@
       const certId = (typeof activeCourseId !== 'undefined' && activeCourseId === 'content_creator') ? "GPT-UZ-2026-CC77A" : "GPT-UZ-2026-9812A";
       const courseTitle = (cfg && cfg.title) ? cfg.title : "Amaliy Sun'iy Intellekt va B2B Avtomatlashtirish";
       const name = currentStudentName || "Shukhrat Iskandarov";
-      const verifyUrl = `https://gptify.uz/verify/${certId}`;
+      const verifyUrl = `https://gptify.uz/verify/?id=${certId}`;
       const message = `🏆 Men GPTify Academy'da "${courseTitle}" professional kursini yakunlab, rasmiy malaka sertifikatini oldim! 🌟\n\n🎓 Sertifikat egasi: ${name}\n🔑 Verifikatsiya ID: ${certId}\n🔗 Tasdiqlash: ${verifyUrl}`;
       const shareUrl = `https://t.me/share/url?url=${encodeURIComponent('https://t.me/GPTify_Academy_bot')}&text=${encodeURIComponent(message)}`;
       
@@ -5016,7 +5016,7 @@
     function shareCertificateLinkedIn() {
       triggerHaptic('success');
       const certId = "GPT-UZ-2026-9812A";
-      const verifyUrl = `https://gptify.uz/verify/${certId}`;
+      const verifyUrl = `https://gptify.uz/verify/?id=${certId}`;
       const linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(verifyUrl)}`;
       window.open(linkedinUrl, '_blank');
       toast("💼 LinkedIn ulashish oynasi ochildi!");

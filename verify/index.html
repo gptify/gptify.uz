@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QMP23XS8RQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-QMP23XS8RQ');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sertifikatlar Reyestri va Verifikatsiya | GPTify Academy Uzbekistan</title>
+  <meta name="description" content="GPTify Academy bitiruvchilarining rasmiy sertifikatlari va malaka hujjatlarini unikal seriya raqami orqali onlayn tekshirish xizmati.">
+  <link rel="canonical" href="https://gptify.uz/verify/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Sertifikatlar Reyestri | GPTify Academy">
+  <meta property="og:description" content="GPTify Academy bitiruvchilarining rasmiy sertifikatlarini unikal seriya raqami orqali onlayn tekshirish.">
+  <meta property="og:image" content="https://gptify.uz/assets/images/gptify-og-1200x630.jpg">
+  <meta property="og:url" content="https://gptify.uz/verify/">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --font-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-heading: 'Plus Jakarta Sans', var(--font-base);
+      --font-mono: 'JetBrains Mono', monospace;
+      --color-bg: #f8fafc;
+      --color-surface: #ffffff;
+      --color-text-main: #0f172a;
+      --color-text-muted: #475569;
+      --color-brand: #087f6a;
+      --color-brand-hover: #065e4e;
+      --color-border: #e2e8f0;
+      --color-emerald-light: #ecfdf5;
+      --color-emerald: #059669;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font-base);
+      background-color: var(--color-bg);
+      color: var(--color-text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* HEADER */
+    .gptify-nav-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 72px;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--color-border);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+    }
+    .gptify-nav-container {
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .gptify-nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+    }
+    .badge-uz {
+      font-size: 11px;
+      font-weight: 800;
+      background: var(--color-brand);
+      color: #fff;
+      padding: 2px 6px;
+      border-radius: 4px;
+      letter-spacing: 0.05em;
+    }
+    .gptify-nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+    .gptify-nav-links a {
+      color: var(--color-text-muted);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14.5px;
+      transition: color 0.15s ease;
+    }
+    .gptify-nav-links a:hover {
+      color: var(--color-brand);
+    }
+    .gptify-nav-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .gptify-nav-cta {
+      background: var(--color-brand);
+      color: #ffffff !important;
+      font-weight: 700;
+      font-size: 13.5px;
+      padding: 9px 18px;
+      border-radius: 9px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      transition: background 0.15s ease, transform 0.1s ease;
+      box-shadow: 0 4px 12px rgba(8, 127, 106, 0.18);
+    }
+    .gptify-nav-cta:hover {
+      background: var(--color-brand-hover);
+      transform: translateY(-1px);
+    }
+    .gptify-nav-mobile-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--color-text-main);
+      cursor: pointer;
+      padding: 6px;
+    }
+
+    /* MAIN CONTAINER */
+    .verify-page-wrap {
+      margin-top: 72px;
+      padding: 56px 20px 80px 20px;
+      max-width: 980px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* HERO */
+    .verify-hero {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .verify-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--color-emerald-light);
+      color: #065f46;
+      font-size: 12px;
+      font-weight: 800;
+      padding: 5px 14px;
+      border-radius: 99px;
+      border: 1px solid #a7f3d0;
+      margin-bottom: 16px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .verify-hero h1 {
+      font-family: var(--font-heading);
+      font-size: 36px;
+      font-weight: 800;
+      color: var(--color-text-main);
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+    }
+    .verify-hero p {
+      font-size: 16px;
+      color: var(--color-text-muted);
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    /* SEARCH CARD */
+    .verify-search-box {
+      background: #ffffff;
+      border: 1px solid var(--color-border);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.06);
+      margin-bottom: 36px;
+    }
+    .verify-input-group {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .verify-input {
+      flex: 1;
+      min-width: 260px;
+      padding: 14px 18px;
+      font-size: 15px;
+      font-family: var(--font-mono);
+      font-weight: 600;
+      border: 1.5px solid var(--color-border);
+      border-radius: 10px;
+      background: #fdfdfd;
+      color: var(--color-text-main);
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+    .verify-input:focus {
+      outline: none;
+      border-color: var(--color-brand);
+      box-shadow: 0 0 0 3px rgba(8, 127, 106, 0.12);
+    }
+    .verify-btn {
+      background: var(--color-brand);
+      color: #ffffff;
+      border: none;
+      padding: 14px 28px;
+      font-size: 15px;
+      font-weight: 750;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.15s ease;
+      white-space: nowrap;
+    }
+    .verify-btn:hover {
+      background: var(--color-brand-hover);
+    }
+    .sample-ids-row {
+      margin-top: 14px;
+      font-size: 13px;
+      color: #64748b;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .sample-pill {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 600;
+      background: #f1f5f9;
+      color: #0f172a;
+      padding: 3px 9px;
+      border-radius: 6px;
+      cursor: pointer;
+      border: 1px solid #cbd5e1;
+      transition: all 0.15s ease;
+    }
+    .sample-pill:hover {
+      background: #e2e8f0;
+      border-color: var(--color-brand);
+      color: var(--color-brand);
+    }
+
+    /* VERIFIED CARD RESULT */
+    .verify-result-card {
+      background: #ffffff;
+      border: 2px solid #10b981;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 16px 40px -12px rgba(16, 185, 129, 0.15);
+      animation: fadeIn 0.25s ease-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .cert-card-header {
+      background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 100%);
+      border-bottom: 1px solid #d1fae5;
+      padding: 24px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .cert-status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #059669;
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 99px;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+    }
+    .cert-id-tag {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-weight: 700;
+      color: #065f46;
+      background: #d1fae5;
+      padding: 4px 10px;
+      border-radius: 6px;
+      display: inline-block;
+    }
+    .cert-card-body {
+      padding: 32px 28px;
+    }
+    .cert-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 28px;
+      margin-bottom: 28px;
+    }
+    .cert-field-title {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #64748b;
+      margin-bottom: 4px;
+    }
+    .cert-field-value {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--color-text-main);
+    }
+    .cert-field-value--large {
+      font-size: 24px;
+      color: #064e3b;
+      font-family: var(--font-heading);
+    }
+    .cert-meta-list {
+      background: #f8fafc;
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 13.5px;
+    }
+    .cert-meta-row {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px dashed #e2e8f0;
+      padding-bottom: 6px;
+    }
+    .cert-meta-row:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    .cert-meta-row span:first-child {
+      color: #64748b;
+      font-weight: 500;
+    }
+    .cert-meta-row span:last-child {
+      color: #0f172a;
+      font-weight: 700;
+    }
+    .cert-competencies {
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 1px solid var(--color-border);
+    }
+    .cert-competencies h4 {
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--color-text-main);
+      margin-bottom: 12px;
+    }
+    .competency-tag {
+      display: inline-block;
+      background: #f1f5f9;
+      color: #1e293b;
+      border: 1px solid #e2e8f0;
+      font-size: 12.5px;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 8px;
+      margin: 0 6px 6px 0;
+    }
+    .cert-hash-box {
+      margin-top: 24px;
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      padding: 14px 16px;
+      font-size: 12px;
+      color: #475569;
+    }
+    .cert-hash-val {
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      word-break: break-all;
+      color: #0f172a;
+      font-weight: 600;
+      margin-top: 4px;
+      display: block;
+    }
+    .cert-card-footer {
+      background: #f8fafc;
+      border-top: 1px solid var(--color-border);
+      padding: 18px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12.5px;
+      color: #64748b;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    /* ERROR STATE */
+    .verify-error-card {
+      background: #fff;
+      border: 1.5px solid #fca5a5;
+      border-radius: 16px;
+      padding: 32px 24px;
+      text-align: center;
+      box-shadow: 0 10px 25px -10px rgba(239, 68, 68, 0.1);
+    }
+    .verify-error-card h3 {
+      color: #b91c1c;
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+    .verify-error-card p {
+      color: #64748b;
+      font-size: 14px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    /* FOOTER */
+    .gptify-standalone-footer {
+      background: #f8fafc;
+      border-top: 1px solid var(--color-border);
+      padding: 40px 24px 30px 24px;
+      font-size: 13px;
+      color: #64748b;
+      margin-top: 60px;
+    }
+    .gptify-footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .gptify-footer-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .gptify-footer-links a {
+      color: #64748b;
+      text-decoration: none;
+      font-size: 13px;
+      transition: color 0.15s ease;
+    }
+    .gptify-footer-links a:hover {
+      color: var(--color-brand);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .gptify-nav-links { display: none; }
+      .gptify-nav-mobile-btn { display: block; }
+      .cert-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .verify-hero h1 { font-size: 28px; }
+      .cert-field-value--large { font-size: 20px; }
+      .cert-card-header, .cert-card-body, .cert-card-footer { padding: 20px 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="gptify-nav-header" role="banner">
+    <div class="gptify-nav-container">
+      <a href="/" class="gptify-nav-logo" aria-label="GPTify Uzbekistan">
+        <img src="/assets/images/B-integrated-light.svg" alt="GPTify" style="height:34px; width:auto; display:block;">
+        <span class="badge-uz">UZ</span>
+      </a>
+
+      <nav class="gptify-nav-links" aria-label="Asosiy menyu">
+        <a href="/">Asosiy</a>
+        <a href="/#gptify-services">Xizmatlar</a>
+        <a href="/akademiya/">Akademiya</a>
+        <a href="https://ainoma.uz" target="_blank" rel="noopener noreferrer">AI Yangiliklar ↗</a>
+        <a href="/#gptify-tools">Bepul Vositalar</a>
+        <a href="/verify/" style="color:#087f6a; font-weight:750;">Verifikatsiya</a>
+        <a href="/#gptify-contact">Bog‘lanish</a>
+      </nav>
+
+      <div class="gptify-nav-right">
+        <!-- Telegram CTA -->
+        <a href="https://t.me/GPTify_uz_bot" target="_blank" rel="noopener noreferrer" class="gptify-nav-cta">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0-.003 0-.005 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.534-.199 1.002.122.828.928z"/>
+          </svg>
+          <span>Telegramda yozish</span>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="gptify-nav-mobile-btn" onclick="toggleMobileNav()" aria-label="Menyu">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE MENU DROPDOWN -->
+  <div id="gptify-mobile-drawer" aria-hidden="true" hidden style="display:none; position:fixed; top:72px; left:0; right:0; background:#ffffff; border-bottom:1px solid #e2e8f0; padding:20px; z-index:999; box-shadow:0 12px 24px rgba(0,0,0,0.08);">
+    <div style="display:flex; flex-direction:column; gap:16px; font-size:16px; font-weight:600;">
+      <a href="/" style="color:#0f172a; text-decoration:none;">Asosiy</a>
+      <a href="/#gptify-services" onclick="toggleMobileNav()" style="color:#0f172a; text-decoration:none;">Xizmatlar</a>
+      <a href="/akademiya/" style="color:#0f172a; text-decoration:none;">Akademiya</a>
+      <a href="https://ainoma.uz" target="_blank" rel="noopener noreferrer" style="color:#0f172a; text-decoration:none;">AI Yangiliklar ↗</a>
+      <a href="/#gptify-tools" onclick="toggleMobileNav()" style="color:#0f172a; text-decoration:none;">Bepul Vositalar</a>
+      <a href="/verify/" style="color:#087f6a; text-decoration:none; font-weight:750;">Verifikatsiya</a>
+      <a href="/#gptify-contact" onclick="toggleMobileNav()" style="color:#0f172a; text-decoration:none;">Bog‘lanish</a>
+      <hr style="border:none; border-top:1px solid #e2e8f0; margin:4px 0;">
+      <a href="https://t.me/GPTify_uz_bot" target="_blank" rel="noopener noreferrer" style="background:#087f6a; color:#fff; padding:10px; border-radius:8px; text-align:center; text-decoration:none;">Telegramda yozish</a>
+    </div>
+  </div>
+
+  <!-- MAIN PAGE WRAP -->
+  <main class="verify-page-wrap">
+    <div class="verify-hero">
+      <span class="verify-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+        Rasmiy Sertifikatlar Reyestri
+      </span>
+      <h1>Sertifikat Haqiqiyligini Tekshirish</h1>
+      <p>
+        GPTify Academy bitiruvchilariga berilgan rasmiy amaliy malaka sertifikatlari va kriptografik QR-kodlarni real vaqt rejimida tekshiring.
+      </p>
+    </div>
+
+    <!-- SEARCH BOX -->
+    <div class="verify-search-box">
+      <form id="verifyForm" onsubmit="event.preventDefault(); handleSearch();">
+        <div class="verify-input-group">
+          <input 
+            type="text" 
+            id="certIdInput" 
+            class="verify-input" 
+            placeholder="Seriya raqamini kiriting (masalan: GPT-UZ-2026-9812A)"
+            autocomplete="off"
+            required
+          >
+          <button type="submit" class="verify-btn">
+            🔍 Tekshirish
+          </button>
+        </div>
+      </form>
+      <div class="sample-ids-row">
+        <span>Namuna sifatida tekshirish:</span>
+        <button type="button" class="sample-pill" onclick="searchSample('GPT-UZ-2026-9812A')">GPT-UZ-2026-9812A</button>
+        <button type="button" class="sample-pill" onclick="searchSample('GPT-UZ-2026-CC77A')">GPT-UZ-2026-CC77A</button>
+      </div>
+    </div>
+
+    <!-- RESULT CONTAINER -->
+    <div id="verifyResultContainer">
+      <!-- Dynamic render here -->
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="gptify-standalone-footer" role="contentinfo">
+    <div class="gptify-footer-container">
+      <div>
+        <p>© 2026 GPTify Uzbekistan. Barcha huquqlar himoyalangan.</p>
+        <p style="font-size:12px; margin-top:4px;">📍 Toshkent — Berlin | Rasmiy Amaliy AI Markazi</p>
+      </div>
+      <div class="gptify-footer-links">
+        <a href="/">Asosiy</a>
+        <a href="/#gptify-services">Xizmatlar</a>
+        <a href="/akademiya/">Akademiya</a>
+        <a href="/#gptify-tools">Bepul Vositalar</a>
+        <a href="https://ainoma.uz" target="_blank" rel="noopener noreferrer">AINoma (Yangiliklar) ↗</a>
+        <a href="https://t.me/gptifyuz" target="_blank" rel="noopener">Kanal</a>
+        <a href="https://t.me/GPTify_uz_bot" target="_blank" rel="noopener">Bot</a>
+        <a href="https://gptify.co" target="_blank" rel="noopener noreferrer">Global: gptify.co ↗</a>
+        <a href="/#gptify-contact">Bog‘lanish</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const GPTIFY_CREDENTIAL_REGISTRY = {
+      'GPT-UZ-2026-9812A': {
+        valid: true,
+        id: 'GPT-UZ-2026-9812A',
+        studentName: 'Shukhrat Iskandarov',
+        course: "Amaliy Sun'iy Intellekt va B2B Avtomatlashtirish",
+        status: "TASDIQLANGAN (OFFICIALLY VERIFIED)",
+        modulesPassed: "14 / 14 Amaliy Modul",
+        grade: "98% (A'lo / Distinction)",
+        date: "2026-03-09",
+        instructor: "Shukhrat Iskandarov (Bosh AI Strateg, Berlin)",
+        scientificLead: "Davlatbek Iskandarov, PhD (TDIU Dotsenti)",
+        issuer: "GPTify Academy (Toshkent — Berlin)",
+        sha256: "8f4a19c3b8e72d159a60e42f3b9c7d1e2a5f803b91a74d25c8e9b6a13f02e5d7",
+        legalNote: "Ommaviy Oferta talablari asosidagi xususiy amaliy malaka hujjati.",
+        competencies: [
+          "B2B Prompt Engineering & LLM Context Architecture",
+          "Avtonom AI Agentlar va Ish Oqimlari (n8n, Make, Webhooks)",
+          "RAG (Retrieval-Augmented Generation) & Vektor Baza Integratsiyasi",
+          "OpenAI ChatGPT, Anthropic Claude & DeepSeek API Ulanishi",
+          "Maxfiy Lokal LLMlar (Ollama & Privacy-First On-Premises AI)"
+        ]
+      },
+      'GPT-UZ-2026-CC77A': {
+        valid: true,
+        id: 'GPT-UZ-2026-CC77A',
+        studentName: 'Shukhrat Iskandarov',
+        course: "AI Kontent Fabrikasi: Matn, Rasm, Video va Avtomatlashtirish",
+        status: "TASDIQLANGAN (OFFICIALLY VERIFIED)",
+        modulesPassed: "15 / 15 Amaliy Modul",
+        grade: "99% (A'lo / Distinction)",
+        date: "2026-03-09",
+        instructor: "Shukhrat Iskandarov (Bosh AI Strateg, Berlin)",
+        scientificLead: "Davlatbek Iskandarov, PhD (TDIU Dotsenti)",
+        issuer: "GPTify Academy (Toshkent — Berlin)",
+        sha256: "9c5b20d4e9f83e260b71f53a4c0d8e2f3b6a914c02b85e36d9f0c7b24e13f6e8",
+        legalNote: "Ommaviy Oferta talablari asosidagi xususiy amaliy malaka hujjati.",
+        competencies: [
+          "B2B & SMM AI Kontent Arxitekturasi (ChatGPT & Claude)",
+          "Professional AI Tasvir Generatsiyasi (Midjourney & Flux)",
+          "AI Video & Animatsiya Ishlab Chiqish (Runway & Kling)",
+          "AI Avatarlar & Ovoz Klonlash (HeyGen & ElevenLabs)",
+          "Avtomatlashtirilgan Ko'p Kanalli Kontent Quvurlari"
+        ]
+      }
+    };
+
+    function toggleMobileNav() {
+      const drawer = document.getElementById('gptify-mobile-drawer');
+      if (!drawer) return;
+      const isOpen = drawer.style.display === 'block';
+      drawer.style.display = isOpen ? 'none' : 'block';
+      drawer.hidden = isOpen;
+      drawer.setAttribute('aria-hidden', isOpen ? 'true' : 'false');
+    }
+
+    function searchSample(id) {
+      document.getElementById('certIdInput').value = id;
+      executeVerification(id);
+    }
+
+    function handleSearch() {
+      const input = document.getElementById('certIdInput');
+      if (!input) return;
+      const val = input.value.trim();
+      if (!val) return;
+      executeVerification(val);
+      // Update URL query param without reload
+      const newUrl = window.location.pathname + '?id=' + encodeURIComponent(val);
+      window.history.pushState({ id: val }, '', newUrl);
+    }
+
+    function executeVerification(rawId) {
+      const normId = (rawId || '').toUpperCase().trim();
+      const container = document.getElementById('verifyResultContainer');
+      if (!container) return;
+
+      const cert = GPTIFY_CREDENTIAL_REGISTRY[normId];
+
+      if (cert && cert.valid) {
+        container.innerHTML = `
+          <div class="verify-result-card">
+            <div class="cert-card-header">
+              <div>
+                <span class="cert-status-badge">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  ${cert.status}
+                </span>
+                <div style="font-size:22px; font-weight:900; color:#064e3b; margin-top:4px;">
+                  Rasmiy Malaka Sertifikati
+                </div>
+              </div>
+              <div style="text-align:right;">
+                <div style="font-size:11px; font-weight:700; color:#047857; text-transform:uppercase; margin-bottom:2px;">Seriya Raqami:</div>
+                <span class="cert-id-tag">${cert.id}</span>
+              </div>
+            </div>
+
+            <div class="cert-card-body">
+              <div class="cert-grid">
+                <div>
+                  <div class="cert-field-title">Sertifikat Egasi (Talaba):</div>
+                  <div class="cert-field-value cert-field-value--large">${cert.studentName}</div>
+                  
+                  <div style="margin-top:20px;">
+                    <div class="cert-field-title">Tugatilgan Kurs:</div>
+                    <div class="cert-field-value" style="color:#087f6a;">${cert.course}</div>
+                  </div>
+
+                  <div class="cert-competencies">
+                    <h4>Egallangan Amaliy Kompetensiyalar:</h4>
+                    <div>
+                      ${cert.competencies.map(c => `<span class="competency-tag">✓ ${c}</span>`).join('')}
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="cert-meta-list">
+                    <div class="cert-meta-row">
+                      <span>Natija (Baholash):</span>
+                      <span style="color:#059669;">${cert.grade}</span>
+                    </div>
+                    <div class="cert-meta-row">
+                      <span>Modullar:</span>
+                      <span>${cert.modulesPassed}</span>
+                    </div>
+                    <div class="cert-meta-row">
+                      <span>Berilgan Sana:</span>
+                      <span>${cert.date}</span>
+                    </div>
+                    <div class="cert-meta-row">
+                      <span>Beruvchi Markaz:</span>
+                      <span>${cert.issuer}</span>
+                    </div>
+                    <div class="cert-meta-row">
+                      <span>Bosh Instruktor:</span>
+                      <span style="text-align:right;">${cert.instructor}</span>
+                    </div>
+                    <div class="cert-meta-row">
+                      <span>Ilmiy Maslahatchi:</span>
+                      <span style="text-align:right;">${cert.scientificLead}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="cert-hash-box">
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                  <strong>Kriptografik SHA-256 Nazorat Summasi (Haqiqiylik Kafolati):</strong>
+                  <span style="color:#059669; font-weight:700;">✓ Mos Kirdi</span>
+                </div>
+                <span class="cert-hash-val">${cert.sha256}</span>
+              </div>
+            </div>
+
+            <div class="cert-card-footer">
+              <span>⚖️ ${cert.legalNote}</span>
+              <span style="font-weight:700; color:#0f172a;">GPTify Academy Onlayn Reyestri</span>
+            </div>
+          </div>
+        `;
+      } else {
+        container.innerHTML = `
+          <div class="verify-error-card">
+            <h3>⚠️ Sertifikat Topilmadi</h3>
+            <p style="margin-top:8px;">
+              <strong>"${normId || 'Nomaʼlum'}"</strong> seriya raqami reyestrimizda mavjud emas yoki noto‘g‘ri kiritildi.
+            </p>
+            <p style="margin-top:8px; font-size:13px; color:#94a3b8;">
+              Iltimos, seriya raqamini sertifikatdagi asl yozuv (masalan: <code>GPT-UZ-2026-9812A</code>) bilan solishtirib qaytadan urinib ko‘ring.
+            </p>
+          </div>
+        `;
+      }
+    }
+
+    // Auto load on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      let queryId = urlParams.get('id');
+      if (!queryId && window.location.hash) {
+        queryId = window.location.hash.replace('#', '');
+      }
+      if (queryId) {
+        const input = document.getElementById('certIdInput');
+        if (input) input.value = queryId;
+        executeVerification(queryId);
+      } else {
+        // Default preview with primary demo ID
+        const input = document.getElementById('certIdInput');
+        if (input) input.value = 'GPT-UZ-2026-9812A';
+        executeVerification('GPT-UZ-2026-9812A');
+      }
+    });
+  </script>
+</body>
+</html>
