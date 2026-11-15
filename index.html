@@ -1326,6 +1326,69 @@
       color: #cbd5e1;
     }
 
+  
+    /* PROJECTS SHOWCASE GRID */
+    .gptify-projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 22px;
+      margin-top: 36px;
+    }
+    .gptify-project-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 4px 16px -4px rgba(15, 23, 42, 0.05);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+    .gptify-project-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px -6px rgba(15, 23, 42, 0.09);
+      border-color: #cbd5e1;
+    }
+    .gptify-project-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 11.5px;
+      font-weight: 750;
+      padding: 3px 10px;
+      border-radius: 99px;
+      margin-bottom: 14px;
+      align-self: flex-start;
+    }
+    .gptify-project-title {
+      font-size: 19px;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 8px;
+      font-family: var(--font-heading, inherit);
+    }
+    .gptify-project-desc {
+      font-size: 13.5px;
+      color: #475569;
+      line-height: 1.55;
+      margin-bottom: 18px;
+      flex: 1;
+    }
+    .gptify-project-link {
+      font-size: 13.5px;
+      font-weight: 750;
+      color: #087f6a;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: color 0.15s ease;
+    }
+    .gptify-project-link:hover {
+      color: #065e4e;
+    }
+
   </style>
   <!-- Structured Data (JSON-LD) -->
   <script type="application/ld+json">
@@ -1368,6 +1431,7 @@
 
       <nav class="gptify-nav-links" aria-label="Asosiy menyu">
         <a href="#gptify-services">Xizmatlar</a>
+        <a href="#gptify-projects">Loyihalarimiz</a>
         <a href="/akademiya/">Akademiya</a>
         <a href="https://ainoma.uz" target="_blank" rel="noopener noreferrer">AI Yangiliklar ↗</a>
         <a href="#gptify-tools">Bepul Vositalar</a>
@@ -1402,6 +1466,7 @@
       </div>
 
       <a href="#gptify-services" onclick="toggleMobileNav()" style="color:#0f172a; text-decoration:none;">Xizmatlar</a>
+      <a href="#gptify-projects" onclick="toggleMobileNav()" style="color:#0f172a; text-decoration:none;">Loyihalarimiz</a>
       <a href="/akademiya/" style="color:#087f6a; text-decoration:none; font-weight:750;">Akademiya</a>
       <a href="https://ainoma.uz" target="_blank" rel="noopener noreferrer" style="color:#0f172a; text-decoration:none;">AI Yangiliklar ↗</a>
       <a href="#gptify-tools" onclick="toggleMobileNav()" style="color:#0f172a; text-decoration:none;">Bepul Vositalar</a>
@@ -1520,6 +1585,148 @@
   </section>
 
   <!-- 4. FREE TOOLS HUB & FEATURED COURSE BANNER -->
+  
+  <!-- PROJECTS SHOWCASE SECTION -->
+  <section class="gptify-section" id="gptify-projects" style="background:#f8fafc; border-top:1px solid #e2e8f0; border-bottom:1px solid #e2e8f0;">
+    <div class="gptify-container">
+      <div class="gptify-head-center">
+        <span class="gptify-badge" style="background:#ecfdf5; color:#047857;">LOYIHALARIMIZ VA EKOSISTEMA</span>
+        <h2>Biz Ishlab Chiqqan va Hamkorlikdagi AI Loyihalar</h2>
+        <p>Avtoservis, sog‘liqni saqlash, ta’lim, avtonom agentlar va media sohalarida biznes samaradorligini oshiruvchi amaliy mahsulotlarimiz.</p>
+      </div>
+
+      <div class="gptify-projects-grid">
+        <!-- 1. ServisBek -->
+        <div class="gptify-project-card">
+          <div>
+            <span class="gptify-project-badge" style="background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe;">
+              🚗 Avtoservis & Ustaxonalar
+            </span>
+            <h3 class="gptify-project-title">ServisBek</h3>
+            <p class="gptify-project-desc">
+              Avtoservislar, moy almashtirish va texnik xizmat ko‘rsatish markazlari uchun avtomatlashtirilgan CRM, Telegram Mini App va mijozlar hisobi platformasi.
+            </p>
+          </div>
+          <a class="gptify-project-link" href="https://servisbek.uz" target="_blank" rel="noopener noreferrer">
+            servisbek.uz saytiga o‘tish <span>↗</span>
+          </a>
+        </div>
+
+        <!-- 2. GPTify OS -->
+        <div class="gptify-project-card">
+          <div>
+            <span class="gptify-project-badge" style="background:#f5f3ff; color:#6d28d9; border:1px solid #ddd6fe;">
+              ⚡ AI Agentlar Operatsion Tizimi
+            </span>
+            <h3 class="gptify-project-title">GPTify OS</h3>
+            <p class="gptify-project-desc">
+              Kompaniyaning ichki ish oqimlarini (workflows), avtonom AI-agentlarni va ma’lumotlar bazalarini yagona markazdan boshqaruvchi operatsion tizim.
+            </p>
+          </div>
+          <a class="gptify-project-link" href="http://gptify.si/" target="_blank" rel="noopener noreferrer">
+            gptify.si portalini ko‘rish <span>↗</span>
+          </a>
+        </div>
+
+        <!-- 3. MedPro24 -->
+        <div class="gptify-project-card">
+          <div>
+            <span class="gptify-project-badge" style="background:#ecfdf5; color:#047857; border:1px solid #a7f3d0;">
+              🏥 Tibbiyot & Klinikalar
+            </span>
+            <h3 class="gptify-project-title">MedPro24</h3>
+            <p class="gptify-project-desc">
+              Klinikalar, stomatologiyalar va tibbiyot markazlari uchun 24/7 ishlovchi AI-administrator, navbat boshqaruvi va bemorlar muloqot tizimi.
+            </p>
+          </div>
+          <a class="gptify-project-link" href="#gptify-contact">
+            Klinikalar uchun konsultatsiya <span>→</span>
+          </a>
+        </div>
+
+        <!-- 4. EduPro24 -->
+        <div class="gptify-project-card">
+          <div>
+            <span class="gptify-project-badge" style="background:#fffbeb; color:#b45309; border:1px solid #fde68a;">
+              🎓 Ta’lim & EdTech
+            </span>
+            <h3 class="gptify-project-title">EduPro24 (BilimOS)</h3>
+            <p class="gptify-project-desc">
+              O‘quv markazlari va ta’lim muassasalari uchun avtomatlashtirilgan LMS, talabalar tahlili, to‘lovlar va davomatni boshqarish platformasi.
+            </p>
+          </div>
+          <a class="gptify-project-link" href="#gptify-contact">
+            O‘quv markazlari uchun demo <span>→</span>
+          </a>
+        </div>
+
+        <!-- 5. AINoma -->
+        <div class="gptify-project-card">
+          <div>
+            <span class="gptify-project-badge" style="background:#ecfdf5; color:#065f46; border:1px solid #a7f3d0;">
+              🗞️ AI Axborot Portali
+            </span>
+            <h3 class="gptify-project-title">AINoma</h3>
+            <p class="gptify-project-desc">
+              O‘zbekistondagi eng yirik kundalik sun’iy intellekt axborot portali: xalqaro yangiliklar, amaliy keyslar va tahliliy maqolalar.
+            </p>
+          </div>
+          <a class="gptify-project-link" href="https://ainoma.uz" target="_blank" rel="noopener noreferrer">
+            ainoma.uz portaliga o‘tish <span>↗</span>
+          </a>
+        </div>
+
+        <!-- 6. Cubeo.ai -->
+        <div class="gptify-project-card">
+          <div>
+            <span class="gptify-project-badge" style="background:#eff6ff; color:#1e40af; border:1px solid #bfdbfe;">
+              🌍 Xalqaro Enterprise AI
+            </span>
+            <h3 class="gptify-project-title">Cubeo AI</h3>
+            <p class="gptify-project-desc">
+              Yevropa va AQSh bozorlari uchun korporativ AI platformasi, RAG bilimlar bazasi va yirik biznes tizimlari bilan xavfsiz integratsiya.
+            </p>
+          </div>
+          <a class="gptify-project-link" href="https://cubeo.ai" target="_blank" rel="noopener noreferrer">
+            cubeo.ai xalqaro saytiga o‘tish <span>↗</span>
+          </a>
+        </div>
+
+        <!-- 7. KashfStart -->
+        <div class="gptify-project-card">
+          <div>
+            <span class="gptify-project-badge" style="background:#fef2f2; color:#b91c1c; border:1px solid #fecaca;">
+              🚀 Startaplar & Venchur
+            </span>
+            <h3 class="gptify-project-title">KashfStart</h3>
+            <p class="gptify-project-desc">
+              Sun’iy intellekt sohasidagi yangi g‘oyalarni tekshirish (validation), dastlabki MVP ishlab chiqish va startaplar akseleratsiya dasturi.
+            </p>
+          </div>
+          <a class="gptify-project-link" href="#gptify-contact">
+            Startap hamkorligi bo‘yicha bog‘lanish <span>→</span>
+          </a>
+        </div>
+
+        <!-- 8. Prompt Ustaxonasi -->
+        <div class="gptify-project-card">
+          <div>
+            <span class="gptify-project-badge" style="background:#f8fafc; color:#334155; border:1px solid #cbd5e1;">
+              🛠️ Bepul Interaktiv Vosita
+            </span>
+            <h3 class="gptify-project-title">Prompt Ustaxonasi</h3>
+            <p class="gptify-project-desc">
+              Kling, Midjourney, ChatGPT va ElevenLabs uchun o‘zbek tilida professional, xatosiz promptlar yaratuvchi bepul amaliy generator.
+            </p>
+          </div>
+          <a class="gptify-project-link" href="/prompt-ustaxonasi/">
+            Prompt Ustaxonasini ochish <span>→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="gptify-section gptify-section--soft" id="gptify-tools">
     <div class="gptify-container">
 
