@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/B-integrated-light.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <title>Biz Ishlab Chiqqan va Hamkorlikdagi AI Loyihalar — GPTify Uzbekistan</title>
+  <meta name="description" content="GPTify ekotizimidagi amaliy sun’iy intellekt mahsulotlari: ServisBek (avtoservis CRM), GPTify OS (avtonom agentlar), MedPro24, EduPro24, AINoma, Cubeo AI va Prompt Ustaxonasi.">
+  <link rel="canonical" href="https://gptify.uz/loyihalarimiz/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Biz Ishlab Chiqqan va Hamkorlikdagi AI Loyihalar — GPTify Uzbekistan">
+  <meta property="og:description" content="Avtoservis, tibbiyot, ta’lim, avtonom agentlar va media sohalarida biznes samaradorligini oshiruvchi amaliy sun’iy intellekt mahsulotlarimiz.">
+  <meta property="og:url" content="https://gptify.uz/loyihalarimiz/">
+  <meta property="og:image" content="https://gptify.uz/assets/images/og-image.png">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      background-color: #f8fafc;
+      color: #0f172a;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    .gptify-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    /* Top Header Navbar */
+    .gptify-nav-header {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid #e2e8f0;
+      z-index: 100;
+      height: 68px;
+    }
+    .gptify-nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .gptify-nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+    }
+    .badge-uz {
+      background: #087f6a;
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 6px;
+      letter-spacing: 0.5px;
+    }
+    .gptify-nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+    .gptify-nav-links a {
+      color: #334155;
+      text-decoration: none;
+      font-size: 14.5px;
+      font-weight: 600;
+      transition: color 0.15s ease;
+    }
+    .gptify-nav-links a:hover, .gptify-nav-links a.active {
+      color: #087f6a;
+    }
+    .gptify-nav-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .gptify-lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12.5px;
+      font-weight: 700;
+      background: #f1f5f9;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      border: 1px solid #e2e8f0;
+    }
+    .gptify-lang-switcher .active-lang {
+      color: #087f6a;
+    }
+    .gptify-lang-switcher .lang-divider {
+      color: #94a3b8;
+      font-weight: 400;
+    }
+    .gptify-lang-switcher a.lang-btn {
+      color: #64748b;
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+    .gptify-lang-switcher a.lang-btn:hover {
+      color: #087f6a;
+    }
+    .gptify-nav-mobile-btn {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #0f172a;
+      padding: 4px;
+    }
+
+    /* Mobile Drawer */
+    #gptify-mobile-drawer {
+      display: none;
+      position: fixed;
+      top: 68px;
+      left: 0;
+      right: 0;
+      background: #ffffff;
+      border-bottom: 1px solid #e2e8f0;
+      padding: 20px 24px;
+      z-index: 999;
+      box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+    }
+    #gptify-mobile-drawer.active {
+      display: block !important;
+    }
+
+    /* Hero Header */
+    .gptify-page-hero {
+      padding: 56px 0 36px 0;
+      text-align: center;
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .gptify-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #ecfdf5;
+      color: #047857;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      font-size: 12.5px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      border: 1px solid #a7f3d0;
+    }
+    .gptify-page-hero h1 {
+      font-family: 'Space Grotesk', system-ui, sans-serif;
+      font-size: 38px;
+      font-weight: 800;
+      color: #0f172a;
+      line-height: 1.25;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+    .gptify-page-hero p {
+      font-size: 18px;
+      color: #475569;
+      max-width: 760px;
+      margin: 0 auto 28px auto;
+      line-height: 1.6;
+    }
+
+    /* Filter Chips */
+    .gptify-filters {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin: 0 auto;
+      max-width: 860px;
+    }
+    .gptify-filter-btn {
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      padding: 8px 18px;
+      border-radius: 9999px;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: #475569;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .gptify-filter-btn:hover {
+      border-color: #087f6a;
+      color: #087f6a;
+    }
+    .gptify-filter-btn.active {
+      background: #087f6a;
+      border-color: #087f6a;
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(8, 127, 106, 0.25);
+    }
+
+    /* Projects Grid */
+    .gptify-projects-section {
+      padding: 48px 0 72px 0;
+    }
+    .gptify-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+    }
+    .gptify-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+      position: relative;
+    }
+    .gptify-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px rgba(15, 23, 42, 0.09);
+      border-color: #cbd5e1;
+    }
+    .gptify-card-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .gptify-cat-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+    .gptify-status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: 9999px;
+      background: #f1f5f9;
+      color: #475569;
+    }
+    .status-live {
+      background: #ecfdf5;
+      color: #059669;
+      border: 1px solid #a7f3d0;
+    }
+    .status-live::before {
+      content: '';
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #10b981;
+    }
+    .status-ready {
+      background: #eff6ff;
+      color: #2563eb;
+      border: 1px solid #bfdbfe;
+    }
+    .status-ready::before {
+      content: '';
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #3b82f6;
+    }
+    .gptify-card-title {
+      font-family: 'Space Grotesk', system-ui, sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 6px;
+      letter-spacing: -0.01em;
+    }
+    .gptify-card-subtitle {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: #087f6a;
+      margin-bottom: 12px;
+    }
+    .gptify-card-desc {
+      font-size: 14.5px;
+      color: #475569;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .gptify-tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 24px;
+      padding-top: 14px;
+      border-top: 1px solid #f1f5f9;
+    }
+    .gptify-tech-pill {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      color: #64748b;
+      font-size: 11.5px;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+    .gptify-card-action {
+      margin-top: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .gptify-card-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #087f6a;
+      color: #ffffff;
+      padding: 10px 18px;
+      border-radius: 10px;
+      font-size: 13.5px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .gptify-card-btn:hover {
+      background: #065f4f;
+      transform: translateX(2px);
+    }
+    .gptify-card-btn--outline {
+      background: #ffffff;
+      color: #0f172a;
+      border: 1px solid #cbd5e1;
+    }
+    .gptify-card-btn--outline:hover {
+      background: #f8fafc;
+      border-color: #087f6a;
+      color: #087f6a;
+    }
+
+    /* Bottom Consultation Callout */
+    .gptify-callout {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: #ffffff;
+      border-radius: 20px;
+      padding: 48px;
+      text-align: center;
+      margin: 40px 0 60px 0;
+      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.15);
+    }
+    .gptify-callout h2 {
+      font-family: 'Space Grotesk', system-ui, sans-serif;
+      font-size: 30px;
+      font-weight: 800;
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
+    }
+    .gptify-callout p {
+      font-size: 16.5px;
+      color: #cbd5e1;
+      max-width: 680px;
+      margin: 0 auto 28px auto;
+      line-height: 1.6;
+    }
+    .gptify-callout-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .gptify-btn-primary {
+      background: #087f6a;
+      color: #ffffff;
+      padding: 13px 26px;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 14px rgba(8, 127, 106, 0.35);
+    }
+    .gptify-btn-primary:hover {
+      background: #066b59;
+    }
+    .gptify-btn-secondary {
+      background: rgba(255, 255, 255, 0.1);
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 13px 26px;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .gptify-btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.18);
+    }
+
+    /* Standalone Footer */
+    .gptify-standalone-footer {
+      background: #ffffff;
+      border-top: 1px solid #e2e8f0;
+      padding: 36px 0;
+      font-size: 13.5px;
+      color: #64748b;
+    }
+    .gptify-footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .gptify-footer-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .gptify-footer-links a {
+      color: #475569;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.15s ease;
+    }
+    .gptify-footer-links a:hover {
+      color: #087f6a;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .gptify-grid {
+        grid-template-columns: 1fr;
+      }
+      .gptify-nav-links {
+        display: none;
+      }
+      .gptify-nav-mobile-btn {
+        display: block;
+      }
+      .gptify-page-hero h1 {
+        font-size: 30px;
+      }
+      .gptify-callout {
+        padding: 32px 20px;
+      }
+      .gptify-callout h2 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- FIXED HEADER NAVBAR -->
+  <header class="gptify-nav-header" role="banner">
+    <div class="gptify-nav-container">
+      <a href="/" class="gptify-nav-logo" aria-label="GPTify Uzbekistan">
+        <img src="/assets/images/B-integrated-light.svg" alt="GPTify" style="height:34px; width:auto; display:block;">
+        <span class="badge-uz">UZ</span>
+      </a>
+
+      <nav class="gptify-nav-links" aria-label="Asosiy menyu">
+        <a href="/#gptify-services">Xizmatlar</a>
+        <a href="/loyihalarimiz/" class="active">Loyihalarimiz</a>
+        <a href="/akademiya/">Akademiya</a>
+        <a href="https://ainoma.uz" target="_blank" rel="noopener noreferrer">AI Yangiliklar ↗</a>
+        <a href="/#gptify-tools">Bepul Vositalar</a>
+        <a href="/#gptify-contact">Bog‘lanish</a>
+      </nav>
+
+      <div class="gptify-nav-right">
+        <!-- Language Switcher -->
+        <div class="gptify-lang-switcher" aria-label="Tilni tanlash">
+          <span class="active-lang">UZ</span>
+          <span class="lang-divider">/</span>
+          <a href="/ru/proekty/" class="lang-btn">RU</a>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="gptify-nav-mobile-btn" onclick="toggleMobileNav()" aria-label="Menyu">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE MENU DROPDOWN -->
+  <div id="gptify-mobile-drawer" aria-hidden="true" hidden>
+    <div style="display:flex; flex-direction:column; gap:16px; font-size:16px; font-weight:600;">
+      <div style="display:flex; gap:12px; font-size:14px; margin-bottom:4px; padding-bottom:8px; border-bottom:1px solid #f1f5f9;">
+        <span style="color:#087f6a; font-weight:700;">O‘zbekcha (UZ)</span>
+        <span style="color:#cbd5e1;">/</span>
+        <a href="/ru/proekty/" style="color:#64748b; text-decoration:none; font-weight:600;">Русский (RU)</a>
+      </div>
+
+      <a href="/#gptify-services" onclick="toggleMobileNav()" style="color:#0f172a; text-decoration:none;">Xizmatlar</a>
+      <a href="/loyihalarimiz/" onclick="toggleMobileNav()" style="color:#087f6a; text-decoration:none; font-weight:750;">Loyihalarimiz</a>
+      <a href="/akademiya/" style="color:#0f172a; text-decoration:none;">Akademiya</a>
+      <a href="https://ainoma.uz" target="_blank" rel="noopener noreferrer" style="color:#0f172a; text-decoration:none;">AI Yangiliklar ↗</a>
+      <a href="/#gptify-tools" onclick="toggleMobileNav()" style="color:#0f172a; text-decoration:none;">Bepul Vositalar</a>
+      <a href="/#gptify-contact" onclick="toggleMobileNav()" style="color:#0f172a; text-decoration:none;">Bog‘lanish</a>
+    </div>
+  </div>
+
+  <!-- HERO SECTION -->
+  <section class="gptify-page-hero">
+    <div class="gptify-container">
+      <span class="gptify-badge">GPTIFY EKOSISTEMASI VA MAHSULOTLAR</span>
+      <h1>Biz Ishlab Chiqqan va Hamkorlikdagi AI Loyihalar</h1>
+      <p>
+        Avtoservis, tibbiyot, ta’lim, operatsion boshqaruv, avtonom agentlar va sun’iy intellekt media sohalarida biznes samaradorligini oshiruvchi amaliy raqamli platformalarimiz.
+      </p>
+
+      <!-- Category Filter Chips -->
+      <div class="gptify-filters" role="tablist">
+        <button type="button" class="gptify-filter-btn active" onclick="filterProjects('all', this)">Barcha Loyihalar (8)</button>
+        <button type="button" class="gptify-filter-btn" onclick="filterProjects('crm', this)">Biznes & CRM</button>
+        <button type="button" class="gptify-filter-btn" onclick="filterProjects('agents', this)">Avtonom AI & Platformalar</button>
+        <button type="button" class="gptify-filter-btn" onclick="filterProjects('industry', this)">Tibbiyot & Ta’lim</button>
+        <button type="button" class="gptify-filter-btn" onclick="filterProjects('media', this)">Media & Vositalar</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS GRID SECTION -->
+  <main class="gptify-projects-section">
+    <div class="gptify-container">
+      <div class="gptify-grid" id="projects-grid">
+
+        <!-- 1. ServisBek -->
+        <article class="gptify-card" data-category="crm">
+          <div>
+            <div class="gptify-card-header">
+              <span class="gptify-cat-badge" style="background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe;">
+                🚗 Avtoservis & Ustaxonalar
+              </span>
+              <span class="gptify-status-pill status-live">Live</span>
+            </div>
+            <h2 class="gptify-card-title">ServisBek</h2>
+            <div class="gptify-card-subtitle">Avtoservis va texnik xizmat markazlari uchun CRM & TMA</div>
+            <p class="gptify-card-desc">
+              Avtoservislar, moy almashtirish shoxobchalari va ehtiyot qismlar do‘konlari uchun to‘liq raqamlashtirish tizimi. Avtomobillar tarixi, mijozlar bazasi, Telegram Mini App orqali buyurtma qabul qilish, SMS/Telegram eslatmalar, xodimlar KPI va real vaqt kassa hisoboti.
+            </p>
+            <div class="gptify-tech-stack">
+              <span class="gptify-tech-pill">Telegram Mini App</span>
+              <span class="gptify-tech-pill">Cloud CRM</span>
+              <span class="gptify-tech-pill">SMS Gateway</span>
+              <span class="gptify-tech-pill">Moliya va Kassa</span>
+            </div>
+          </div>
+          <div class="gptify-card-action">
+            <a class="gptify-card-btn" href="https://servisbek.uz" target="_blank" rel="noopener noreferrer">
+              servisbek.uz saytiga o‘tish <span>↗</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- 2. GPTify OS -->
+        <article class="gptify-card" data-category="agents">
+          <div>
+            <div class="gptify-card-header">
+              <span class="gptify-cat-badge" style="background:#ecfdf5; color:#047857; border:1px solid #a7f3d0;">
+                🤖 Avtonom Agentlar
+              </span>
+              <span class="gptify-status-pill status-live">Live Platform</span>
+            </div>
+            <h2 class="gptify-card-title">GPTify OS</h2>
+            <div class="gptify-card-subtitle">B2B operatsiyalarni boshqaruvchi ko‘p agentli sun’iy intellekt tizimi</div>
+            <p class="gptify-card-desc">
+              Korxona ichidagi takrorlanuvchi operatsion jarayonlarni avtonom tarzda bajaruvchi sun’iy intellekt agentlar platformasi. Hujjatlar va shartnomalar tahlili, mijozlar bilan birlamchi muloqot, hisobotlar tuzish va ma’lumotlarni ichki CRM tizimlariga inson aralashuvisiz uzatish.
+            </p>
+            <div class="gptify-tech-stack">
+              <span class="gptify-tech-pill">Multi-Agent Systems</span>
+              <span class="gptify-tech-pill">Autonomous Workflows</span>
+              <span class="gptify-tech-pill">FastAPI</span>
+              <span class="gptify-tech-pill">B2B Integrations</span>
+            </div>
+          </div>
+          <div class="gptify-card-action">
+            <a class="gptify-card-btn" href="http://gptify.si/" target="_blank" rel="noopener noreferrer">
+              gptify.si platformasini ko‘rish <span>↗</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- 3. MedPro24 -->
+        <article class="gptify-card" data-category="industry">
+          <div>
+            <div class="gptify-card-header">
+              <span class="gptify-cat-badge" style="background:#fef2f2; color:#b91c1c; border:1px solid #fecaca;">
+                🏥 Tibbiyot & Klinikalar
+              </span>
+              <span class="gptify-status-pill status-ready">Joriy etishga tayyor</span>
+            </div>
+            <h2 class="gptify-card-title">MedPro24</h2>
+            <div class="gptify-card-subtitle">Klinika va tibbiyot markazlari uchun AI Administrator & CRM</div>
+            <p class="gptify-card-desc">
+              Bemorlarni tunu-kun 24/7 qabulga yozish, Telegram va WhatsApp orqali savollarga avtomatik javob berish, shifokorlar ish jadvalini muvofiqlashtirish va qabul eslatmalarini yuborish orqali bemorlarning kelmay qolish (no-show) ko‘rsatkichini 40% ga qisqartiradi.
+            </p>
+            <div class="gptify-tech-stack">
+              <span class="gptify-tech-pill">Tibbiy NLP</span>
+              <span class="gptify-tech-pill">24/7 Bemorlar Boti</span>
+              <span class="gptify-tech-pill">Shifokorlar Jadvali</span>
+              <span class="gptify-tech-pill">Klinik CRM</span>
+            </div>
+          </div>
+          <div class="gptify-card-action">
+            <a class="gptify-card-btn gptify-card-btn--outline" href="/#gptify-contact">
+              Klinika uchun demo so‘rash <span>→</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- 4. EduPro24 (BilimOS) -->
+        <article class="gptify-card" data-category="industry">
+          <div>
+            <div class="gptify-card-header">
+              <span class="gptify-cat-badge" style="background:#faf5ff; color:#7e22ce; border:1px solid #e9d5ff;">
+                🎓 Ta’lim & O‘quv Markazlari
+              </span>
+              <span class="gptify-status-pill status-ready">Joriy etishga tayyor</span>
+            </div>
+            <h2 class="gptify-card-title">EduPro24 (BilimOS)</h2>
+            <div class="gptify-card-subtitle">O‘quv markazlari va maktablar uchun LMS & Moliya CRM</div>
+            <p class="gptify-card-desc">
+              O‘quvchilar davomati, guruhlar jadvali, to‘lovlar nazorati, to‘lov muddati yaqinlashganda ota-onalarga avtomatik bildirishnoma yuborish, test topshirish va o‘qituvchilar dars samaradorligini monitoring qilish uchun yaxlit ta’lim platformasi.
+            </p>
+            <div class="gptify-tech-stack">
+              <span class="gptify-tech-pill">EdTech LMS</span>
+              <span class="gptify-tech-pill">Davomat Tizimi</span>
+              <span class="gptify-tech-pill">To‘lovlar Boshqaruvi</span>
+              <span class="gptify-tech-pill">Ota-onalar Kabineti</span>
+            </div>
+          </div>
+          <div class="gptify-card-action">
+            <a class="gptify-card-btn gptify-card-btn--outline" href="/#gptify-contact">
+              Markaz uchun joriy etish <span>→</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- 5. AINoma -->
+        <article class="gptify-card" data-category="media">
+          <div>
+            <div class="gptify-card-header">
+              <span class="gptify-cat-badge" style="background:#f0fdfa; color:#0f766e; border:1px solid #99f6e4;">
+                📰 AI Media Portali
+              </span>
+              <span class="gptify-status-pill status-live">Live</span>
+            </div>
+            <h2 class="gptify-card-title">AINoma</h2>
+            <div class="gptify-card-subtitle">Sun’iy intellekt sohasidagi yangiliklar va tahlillar mustaqil nashri</div>
+            <p class="gptify-card-desc">
+              O‘zbekiston va jahon texnologiya olamidagi eng dolzarb sun’iy intellekt yangiliklari, amaliy qo‘llanmalar, neyrotarmoqlar tahlili va biznes amaliyotlarini professional o‘zbek tilida muntazam yoritib boruvchi yetakchi media platforma.
+            </p>
+            <div class="gptify-tech-stack">
+              <span class="gptify-tech-pill">AI Yangiliklar</span>
+              <span class="gptify-tech-pill">Biznes Sharhlar</span>
+              <span class="gptify-tech-pill">Telegram Integratsiya</span>
+              <span class="gptify-tech-pill">Amaliy Qo‘llanmalar</span>
+            </div>
+          </div>
+          <div class="gptify-card-action">
+            <a class="gptify-card-btn" href="https://ainoma.uz" target="_blank" rel="noopener noreferrer">
+              ainoma.uz saytiga o‘tish <span>↗</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- 6. Cubeo AI -->
+        <article class="gptify-card" data-category="agents">
+          <div>
+            <div class="gptify-card-header">
+              <span class="gptify-cat-badge" style="background:#fff7ed; color:#c2410c; border:1px solid #fed7aa;">
+                🌐 Enterprise AI & RAG
+              </span>
+              <span class="gptify-status-pill status-live">Xalqaro Hamkorlik</span>
+            </div>
+            <h2 class="gptify-card-title">Cubeo AI</h2>
+            <div class="gptify-card-subtitle">Korporativ bilimlar bazasi va intellektual RAG platformasi</div>
+            <p class="gptify-card-desc">
+              Kompaniya ichki hujjatlari, texnik bazalari va qoidalari bilan xavfsiz ishlovchi xalqaro B2B AI platformasi. Xodimlar va mijozlarga 100% aniq kontekstli javob beruvchi korporativ assistentlar hamda analitika tizimi.
+            </p>
+            <div class="gptify-tech-stack">
+              <span class="gptify-tech-pill">Enterprise RAG</span>
+              <span class="gptify-tech-pill">Vector DB</span>
+              <span class="gptify-tech-pill">Data Privacy</span>
+              <span class="gptify-tech-pill">Xalqaro Platforma</span>
+            </div>
+          </div>
+          <div class="gptify-card-action">
+            <a class="gptify-card-btn" href="https://cubeo.ai" target="_blank" rel="noopener noreferrer">
+              cubeo.ai saytiga o‘tish <span>↗</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- 7. KashfStart -->
+        <article class="gptify-card" data-category="crm">
+          <div>
+            <div class="gptify-card-header">
+              <span class="gptify-cat-badge" style="background:#ecfeff; color:#0e7490; border:1px solid #a5f3fc;">
+                🚀 Startaplar & Akselerator
+              </span>
+              <span class="gptify-status-pill status-ready">Akseleratsiya</span>
+            </div>
+            <h2 class="gptify-card-title">KashfStart</h2>
+            <div class="gptify-card-subtitle">AI startaplar va mahsulotlarni tezkor MVP formatida ishga tushirish</div>
+            <p class="gptify-card-desc">
+              O‘zbekistondagi novatorlar va korxonalar uchun sun’iy intellekt g‘oyalarini 14-30 kun ichida ishlovchi MVP formatida ishlab chiqish, bozorga chiqarish (GTM) va B2B savdo kanallarini yo‘lga qo‘yish dasturi.
+            </p>
+            <div class="gptify-tech-stack">
+              <span class="gptify-tech-pill">Rapid MVP Prototyping</span>
+              <span class="gptify-tech-pill">GTM Funnels</span>
+              <span class="gptify-tech-pill">Venture Validation</span>
+              <span class="gptify-tech-pill">B2B Pilots</span>
+            </div>
+          </div>
+          <div class="gptify-card-action">
+            <a class="gptify-card-btn gptify-card-btn--outline" href="/#gptify-contact">
+              Loyihani taqdim etish <span>→</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- 8. Prompt Ustaxonasi -->
+        <article class="gptify-card" data-category="media">
+          <div>
+            <div class="gptify-card-header">
+              <span class="gptify-cat-badge" style="background:#fefce8; color:#a16207; border:1px solid #fef08a;">
+                🛠 Bepul AI Vositasi
+              </span>
+              <span class="gptify-status-pill status-live">100% Bepul</span>
+            </div>
+            <h2 class="gptify-card-title">Prompt Ustaxonasi</h2>
+            <div class="gptify-card-subtitle">O‘zbek tilidagi interaktiv, tizimli AI buyruqlari generatori</div>
+            <p class="gptify-card-desc">
+              ChatGPT, Claude va Gemini uchun professional darajadagi ko‘rsatmalarni bir necha soniyada shakllantirish imkonini beruvchi bepul amaliy vosita. Biznes, marketing, kopirayting, tahlil va kod yozish uchun tayyor tizimli parametrlar.
+            </p>
+            <div class="gptify-tech-stack">
+              <span class="gptify-tech-pill">Interactive Generator</span>
+              <span class="gptify-tech-pill">O‘zbek Tili</span>
+              <span class="gptify-tech-pill">Prompt Engineering</span>
+              <span class="gptify-tech-pill">100% Ochiq</span>
+            </div>
+          </div>
+          <div class="gptify-card-action">
+            <a class="gptify-card-btn" href="/prompt-ustaxonasi/">
+              Ustaxonani ochish <span>→</span>
+            </a>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Bottom Consultation Callout -->
+      <section class="gptify-callout">
+        <h2>O‘z Biznesingiz Uchun Maxsus AI Tizim Qurmoqchimisiz?</h2>
+        <p>
+          Kompaniyangizdagi takrorlanuvchi jarayonlar, savdo voronkasi yoki mijozlarga xizmat ko‘rsatish tizimini tahlil qilamiz va qisqa muddatda amaliy prototip ishlab chiqamiz.
+        </p>
+        <div class="gptify-callout-actions">
+          <a href="/#gptify-contact" class="gptify-btn-primary">Loyihani Muhokama Qilish →</a>
+          <a href="https://t.me/GPTifyUzbot" target="_blank" rel="noopener noreferrer" class="gptify-btn-secondary">Telegram orqali yozish ↗</a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- STANDALONE FOOTER -->
+  <footer class="gptify-standalone-footer" role="contentinfo">
+    <div class="gptify-container">
+      <div class="gptify-footer-inner">
+        <div>
+          © 2026 <strong>GPTify Uzbekistan</strong>. Barcha huquqlar himoyalangan.
+        </div>
+        <nav class="gptify-footer-links" aria-label="Pastki menyu">
+          <a href="/">Bosh sahifa</a>
+          <a href="/loyihalarimiz/">Loyihalarimiz</a>
+          <a href="/akademiya/">Akademiya</a>
+          <a href="https://ainoma.uz" target="_blank" rel="noopener noreferrer">AINoma ↗</a>
+          <a href="/maxfiylik/">Maxfiylik siyosati</a>
+          <a href="/verify/">Sertifikat tekshirish</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Filter & Drawer Script -->
+  <script>
+    function toggleMobileNav() {
+      var d = document.getElementById('gptify-mobile-drawer');
+      if (d) {
+        var isHidden = d.hasAttribute('hidden');
+        if (isHidden) {
+          d.removeAttribute('hidden');
+          d.classList.add('active');
+        } else {
+          d.setAttribute('hidden', '');
+          d.classList.remove('active');
+        }
+      }
+    }
+
+    function filterProjects(cat, btn) {
+      var buttons = document.querySelectorAll('.gptify-filter-btn');
+      buttons.forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+
+      var cards = document.querySelectorAll('#projects-grid .gptify-card');
+      cards.forEach(function(card) {
+        if (cat === 'all' || card.getAttribute('data-category') === cat) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
