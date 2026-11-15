@@ -265,6 +265,34 @@
       transition: color 0.15s ease;
     }
     .gptify-footer-links a:hover { color: #087f6a; }
+  
+    /* LANGUAGE SWITCHER */
+    .gptify-lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 4px 10px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .gptify-lang-switcher a {
+      color: #64748b;
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+    .gptify-lang-switcher a:hover {
+      color: #087f6a;
+    }
+    .gptify-lang-switcher .active-lang {
+      color: #087f6a;
+    }
+    .gptify-lang-switcher .lang-divider {
+      color: #cbd5e1;
+    }
+
   </style>
 </head>
 <body>
@@ -287,6 +315,12 @@
       </nav>
 
       <div class="gptify-nav-right">
+        <!-- Language Switcher -->
+        <div class="gptify-lang-switcher" aria-label="Tilni tanlash">
+          <span class="active-lang">UZ</span>
+          <span class="lang-divider">/</span>
+          <a href="/ru/" class="lang-btn">RU</a>
+        </div>
 
         <button class="gptify-nav-mobile-btn" onclick="toggleMobileNav()" aria-label="Menyu">
           <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -300,6 +334,12 @@
   <!-- MOBILE MENU DROPDOWN -->
   <div id="gptify-mobile-drawer" style="display:none; position:fixed; top:76px; left:0; right:0; background:#ffffff; border-bottom:1px solid #e2e8f0; padding:20px; z-index:999; box-shadow:0 12px 24px rgba(0,0,0,0.08);">
     <div style="display:flex; flex-direction:column; gap:16px; font-size:16px; font-weight:600;">
+      <div style="display:flex; gap:12px; font-size:14px; margin-bottom:4px; padding-bottom:8px; border-bottom:1px solid #f1f5f9;">
+        <span style="color:#087f6a; font-weight:700;">O‘zbekcha (UZ)</span>
+        <span style="color:#cbd5e1;">/</span>
+        <a href="/ru/" style="color:#64748b; text-decoration:none; font-weight:600;">Русский (RU)</a>
+      </div>
+
       <a href="/" style="color:#0f172a; text-decoration:none;">Asosiy</a>
       <a href="/#gptify-services" onclick="toggleMobileNav()" style="color:#0f172a; text-decoration:none;">Xizmatlar</a>
       <a href="/akademiya/" onclick="toggleMobileNav()" style="color:#0f172a; text-decoration:none;">Akademiya</a>

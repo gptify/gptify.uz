@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QMP23XS8RQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-QMP23XS8RQ');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Корпоративные AI-тренинги и внедрение искусственного интеллекта в Узбекистане | GPTify</title>
+  <meta name="description" content="Практические корпоративные тренинги, внедрение AI-агентов и автоматизация бизнес-процессов для компаний в Ташкенте и Узбекистане. Экспертиза Берлин — Ташкент.">
+  <link rel="canonical" href="https://gptify.uz/ru/">
+  <link rel="alternate" hreflang="uz" href="https://gptify.uz/ai-trening-va-yechimlar/">
+  <link rel="alternate" hreflang="ru" href="https://gptify.uz/ru/">
+  <link rel="alternate" hreflang="x-default" href="https://gptify.uz/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Корпоративные AI-тренинги и внедрение AI в Узбекистане | GPTify">
+  <meta property="og:description" content="Автоматизация бизнес-процессов, обучение сотрудников работе с ChatGPT, Claude и внедрение AI-агентов под ключ.">
+  <meta property="og:image" content="https://gptify.uz/assets/images/gptify-og-1200x630.jpg">
+  <meta property="og:url" content="https://gptify.uz/ru/">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --font-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-heading: 'Plus Jakarta Sans', var(--font-base);
+      --color-bg: #f8fafc;
+      --color-surface: #ffffff;
+      --color-text-main: #0f172a;
+      --color-text-muted: #475569;
+      --color-brand: #087f6a;
+      --color-brand-hover: #065e4e;
+      --color-brand-light: #ecfdf5;
+      --color-border: #e2e8f0;
+      --color-border-card: #e2e8f0;
+      --color-card-bg: #ffffff;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font-base);
+      background-color: var(--color-bg);
+      color: var(--color-text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* HEADER */
+    .gptify-nav-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 72px;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--color-border);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+    }
+    .gptify-nav-container {
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .gptify-nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+    }
+    .badge-uz {
+      font-size: 11px;
+      font-weight: 800;
+      background: var(--color-brand);
+      color: #fff;
+      padding: 2px 6px;
+      border-radius: 4px;
+      letter-spacing: 0.05em;
+    }
+    .gptify-nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    .gptify-nav-links a {
+      color: var(--color-text-muted);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14.5px;
+      transition: color 0.15s ease;
+    }
+    .gptify-nav-links a:hover {
+      color: var(--color-brand);
+    }
+    .gptify-nav-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    /* LANGUAGE SWITCHER */
+    .gptify-lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 4px 10px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .gptify-lang-switcher a {
+      color: #64748b;
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+    .gptify-lang-switcher a:hover {
+      color: var(--color-brand);
+    }
+    .gptify-lang-switcher .active-lang {
+      color: var(--color-brand);
+    }
+    .gptify-lang-switcher .lang-divider {
+      color: #cbd5e1;
+    }
+
+    .gptify-nav-mobile-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--color-text-main);
+      cursor: pointer;
+      padding: 6px;
+    }
+
+    /* HERO */
+    .ru-hero-section {
+      margin-top: 72px;
+      padding: 72px 24px 64px 24px;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+    .ru-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--color-brand-light);
+      color: #065f46;
+      border: 1px solid #a7f3d0;
+      font-size: 12px;
+      font-weight: 800;
+      padding: 6px 14px;
+      border-radius: 99px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .ru-hero-section h1 {
+      font-family: var(--font-heading);
+      font-size: 44px;
+      font-weight: 850;
+      line-height: 1.2;
+      color: var(--color-text-main);
+      max-width: 980px;
+      margin: 0 auto 20px auto;
+      letter-spacing: -0.02em;
+    }
+    .ru-hero-section p.hero-lead {
+      font-size: 18px;
+      color: var(--color-text-muted);
+      max-width: 760px;
+      margin: 0 auto 36px auto;
+      line-height: 1.6;
+    }
+    .ru-hero-actions {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .btn-brand-primary {
+      background: var(--color-brand);
+      color: #ffffff;
+      padding: 14px 32px;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 750;
+      text-decoration: none;
+      box-shadow: 0 4px 16px rgba(8, 127, 106, 0.25);
+      transition: all 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-brand-primary:hover {
+      background: var(--color-brand-hover);
+      transform: translateY(-1px);
+    }
+    .btn-brand-secondary {
+      background: #ffffff;
+      color: var(--color-text-main);
+      border: 1.5px solid var(--color-border);
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.15s ease;
+    }
+    .btn-brand-secondary:hover {
+      border-color: #cbd5e1;
+      background: #f8fafc;
+    }
+
+    /* CREDIBILITY STATS */
+    .stats-bar {
+      max-width: 1000px;
+      margin: 48px auto 0 auto;
+      background: #ffffff;
+      border: 1px solid var(--color-border);
+      border-radius: 16px;
+      padding: 24px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      text-align: center;
+      box-shadow: 0 4px 20px -6px rgba(15, 23, 42, 0.05);
+    }
+    .stat-item h3 {
+      font-family: var(--font-heading);
+      font-size: 28px;
+      font-weight: 850;
+      color: var(--color-brand);
+      margin-bottom: 4px;
+    }
+    .stat-item p {
+      font-size: 13.5px;
+      color: var(--color-text-muted);
+      font-weight: 600;
+    }
+
+    /* SECTIONS */
+    .section-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 24px;
+    }
+    .section-head-center {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 52px auto;
+    }
+    .section-badge {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--color-brand);
+      background: var(--color-brand-light);
+      padding: 4px 12px;
+      border-radius: 99px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      display: inline-block;
+      margin-bottom: 12px;
+    }
+    .section-head-center h2 {
+      font-family: var(--font-heading);
+      font-size: 34px;
+      font-weight: 800;
+      color: var(--color-text-main);
+      margin-bottom: 14px;
+      letter-spacing: -0.02em;
+    }
+    .section-head-center p {
+      font-size: 16px;
+      color: var(--color-text-muted);
+    }
+
+    /* 3 PILLARS GRID */
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .pillar-card {
+      background: #ffffff;
+      border: 1px solid var(--color-border);
+      border-radius: 18px;
+      padding: 32px 28px;
+      box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.05);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .pillar-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 36px -10px rgba(15, 23, 42, 0.09);
+    }
+    .pillar-icon-box {
+      width: 52px;
+      height: 52px;
+      background: var(--color-brand-light);
+      border: 1px solid #a7f3d0;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    .pillar-card h3 {
+      font-family: var(--font-heading);
+      font-size: 20px;
+      font-weight: 750;
+      color: var(--color-text-main);
+      margin-bottom: 12px;
+    }
+    .pillar-card p {
+      font-size: 14.5px;
+      color: var(--color-text-muted);
+      line-height: 1.6;
+      margin-bottom: 20px;
+      flex: 1;
+    }
+    .pillar-features {
+      list-style-type: none;
+      padding: 0;
+      margin: 0 0 24px 0;
+      border-top: 1px solid #f1f5f9;
+      padding-top: 16px;
+    }
+    .pillar-features li {
+      font-size: 13.5px;
+      color: #334155;
+      margin-bottom: 8px;
+      position: relative;
+      padding-left: 20px;
+    }
+    .pillar-features li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--color-brand);
+      font-weight: 800;
+    }
+    .pillar-cta {
+      color: var(--color-brand);
+      text-decoration: none;
+      font-weight: 750;
+      font-size: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* SECURITY & PRIVACY SECTION */
+    .security-box {
+      background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%);
+      border: 1.5px solid #a7f3d0;
+      border-radius: 20px;
+      padding: 44px 36px;
+      margin: 40px auto;
+      max-width: 1200px;
+      box-shadow: 0 12px 32px -8px rgba(16, 185, 129, 0.1);
+    }
+    .security-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 36px;
+      align-items: center;
+    }
+    .security-box h3 {
+      font-family: var(--font-heading);
+      font-size: 26px;
+      font-weight: 800;
+      color: #064e3b;
+      margin-bottom: 14px;
+    }
+    .security-box p {
+      font-size: 15px;
+      color: #334155;
+      line-height: 1.65;
+      margin-bottom: 16px;
+    }
+    .security-points {
+      background: #ffffff;
+      border: 1px solid #d1fae5;
+      border-radius: 14px;
+      padding: 20px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .security-point-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13.5px;
+      color: #064e3b;
+      font-weight: 600;
+    }
+
+    /* CONTACT SECTION */
+    .contact-section-wrap {
+      background: #ffffff;
+      border-top: 1px solid var(--color-border);
+      border-bottom: 1px solid var(--color-border);
+      padding: 80px 24px;
+    }
+    .contact-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .contact-form-card {
+      background: #f8fafc;
+      border: 1px solid var(--color-border);
+      border-radius: 20px;
+      padding: 40px 36px;
+      box-shadow: 0 12px 36px -12px rgba(15, 23, 42, 0.08);
+    }
+    .form-grid-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    .form-group {
+      margin-bottom: 16px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--color-text-main);
+      margin-bottom: 6px;
+    }
+    .form-control {
+      width: 100%;
+      padding: 12px 16px;
+      font-size: 14.5px;
+      font-family: inherit;
+      border: 1.5px solid var(--color-border);
+      border-radius: 10px;
+      background: #ffffff;
+      color: var(--color-text-main);
+      transition: border-color 0.15s ease;
+    }
+    .form-control:focus {
+      outline: none;
+      border-color: var(--color-brand);
+      box-shadow: 0 0 0 3px rgba(8, 127, 106, 0.1);
+    }
+    .btn-submit {
+      width: 100%;
+      background: var(--color-brand);
+      color: #ffffff;
+      border: none;
+      padding: 15px;
+      font-size: 15px;
+      font-weight: 800;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(8, 127, 106, 0.25);
+      transition: background 0.15s ease;
+    }
+    .btn-submit:hover {
+      background: var(--color-brand-hover);
+    }
+    .form-success-box {
+      display: none;
+      background: #ecfdf5;
+      border: 1px solid #a7f3d0;
+      color: #065f46;
+      font-weight: 700;
+      padding: 14px;
+      border-radius: 10px;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
+    /* FOOTER */
+    .gptify-standalone-footer {
+      background: #f8fafc;
+      padding: 40px 24px 30px 24px;
+      font-size: 13px;
+      color: #64748b;
+    }
+    .gptify-footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .gptify-footer-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .gptify-footer-links a {
+      color: #64748b;
+      text-decoration: none;
+      font-size: 13px;
+      transition: color 0.15s ease;
+    }
+    .gptify-footer-links a:hover {
+      color: var(--color-brand);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 960px) {
+      .pillars-grid { grid-template-columns: 1fr; }
+      .security-grid { grid-template-columns: 1fr; }
+      .stats-bar { grid-template-columns: 1fr; }
+      .gptify-nav-links { display: none; }
+      .gptify-nav-mobile-btn { display: block; }
+      .ru-hero-section h1 { font-size: 32px; }
+    }
+    @media (max-width: 600px) {
+      .form-grid-row { grid-template-columns: 1fr; }
+      .contact-form-card { padding: 24px 18px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="gptify-nav-header" role="banner">
+    <div class="gptify-nav-container">
+      <a href="/ru/" class="gptify-nav-logo" aria-label="GPTify Uzbekistan">
+        <img src="/assets/images/B-integrated-light.svg" alt="GPTify" style="height:34px; width:auto; display:block;">
+        <span class="badge-uz">UZ</span>
+      </a>
+
+      <nav class="gptify-nav-links" aria-label="Главное меню">
+        <a href="#services">Услуги</a>
+        <a href="#security">Безопасность</a>
+        <a href="/akademiya/">Академия</a>
+        <a href="https://ainoma.uz" target="_blank" rel="noopener noreferrer">Новости AI ↗</a>
+        <a href="/verify/">Верификация</a>
+        <a href="#contact">Контакты</a>
+      </nav>
+
+      <div class="gptify-nav-right">
+        <!-- Language Switcher -->
+        <div class="gptify-lang-switcher" aria-label="Выбор языка">
+          <a href="/ai-trening-va-yechimlar/">UZ</a>
+          <span class="lang-divider">/</span>
+          <span class="active-lang">RU</span>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="gptify-nav-mobile-btn" onclick="toggleMobileNav()" aria-label="Меню">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE MENU DROPDOWN -->
+  <div id="gptify-mobile-drawer" aria-hidden="true" hidden style="display:none; position:fixed; top:72px; left:0; right:0; background:#ffffff; border-bottom:1px solid #e2e8f0; padding:20px; z-index:999; box-shadow:0 12px 24px rgba(0,0,0,0.08);">
+    <div style="display:flex; flex-direction:column; gap:16px; font-size:16px; font-weight:600;">
+      <div style="display:flex; gap:12px; font-size:14px; margin-bottom:4px; padding-bottom:8px; border-bottom:1px solid #f1f5f9;">
+        <a href="/ai-trening-va-yechimlar/" style="color:#64748b; text-decoration:none; font-weight:600;">O‘zbekcha (UZ)</a>
+        <span style="color:#cbd5e1;">/</span>
+        <span style="color:#087f6a; font-weight:700;">Русский (RU)</span>
+      </div>
+      <a href="#services" onclick="toggleMobileNav()" style="color:#0f172a; text-decoration:none;">Услуги</a>
+      <a href="#security" onclick="toggleMobileNav()" style="color:#0f172a; text-decoration:none;">Безопасность</a>
+      <a href="/akademiya/" style="color:#0f172a; text-decoration:none;">Академия</a>
+      <a href="https://ainoma.uz" target="_blank" rel="noopener noreferrer" style="color:#0f172a; text-decoration:none;">Новости AI ↗</a>
+      <a href="/verify/" style="color:#0f172a; text-decoration:none;">Верификация</a>
+      <a href="#contact" onclick="toggleMobileNav()" style="color:#0f172a; text-decoration:none;">Контакты</a>
+    </div>
+  </div>
+
+  <!-- HERO SECTION -->
+  <main>
+    <section class="ru-hero-section">
+      <span class="ru-hero-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14h2v2h-2zm0-10h2v8h-2z"/></svg>
+        B2B AI-РЕШЕНИЯ В УЗБЕКИСТАНЕ · ЭКСПЕРТИЗА ТАШКЕНТ — БЕРЛИН
+      </span>
+      <h1>Корпоративные AI-тренинги и внедрение искусственного интеллекта для бизнеса</h1>
+      <p class="hero-lead">
+        Обучаем отделы продаж, маркетинга и менеджмента работе с нейросетями, создаем автономных AI-агентов и автоматизируем рутинные процессы компании с гарантией безопасности данных.
+      </p>
+      <div class="ru-hero-actions">
+        <a href="#contact" class="btn-brand-primary">
+          Получить B2B консультацию →
+        </a>
+        <a href="/prompt-ustaxonasi/" class="btn-brand-secondary">
+          Генератор промптов
+        </a>
+      </div>
+
+      <!-- CREDIBILITY STATS (Section C Compliant) -->
+      <div class="stats-bar">
+        <div class="stat-item">
+          <h3>30 000+</h3>
+          <p>Специалистов в AI-сообществе</p>
+        </div>
+        <div class="stat-item">
+          <h3>100%</h3>
+          <p>Практический стек инструментов</p>
+        </div>
+        <div class="stat-item">
+          <h3>Ташкент — Берлин</h3>
+          <p>Международная сеть экспертов</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 PILLARS SERVICES -->
+    <section class="section-wrap" id="services">
+      <div class="section-head-center">
+        <span class="section-badge">Направления работы</span>
+        <h2>Комплексные B2B-услуги по внедрению AI</h2>
+        <p>От базовой подготовки сотрудников до разработки и внедрения собственных корпоративных AI-систем.</p>
+      </div>
+
+      <div class="pillars-grid">
+        <!-- Pillar 1 -->
+        <div class="pillar-card">
+          <div class="pillar-icon-box">🎓</div>
+          <h3>1. Корпоративные AI-тренинги</h3>
+          <p>Практические воркшопы для команд. Обучаем сотрудников применять ChatGPT, Claude, Perplexity и визуальные нейросети для ускорения рутины в 3–5 раз.</p>
+          <ul class="pillar-features">
+            <li>Промпт-инжиниринг для B2B-задач</li>
+            <li>Автоматизация создания контента и отчетов</li>
+            <li>AI-ассистенты для клиентской поддержки</li>
+            <li>Официальные сертификаты с QR-проверкой</li>
+          </ul>
+          <a href="#contact" class="pillar-cta">Заказать тренинг для команды →</a>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="pillar-card">
+          <div class="pillar-icon-box">📊</div>
+          <h3>2. AI-стратегия и консалтинг</h3>
+          <p>Аудит бизнес-процессов компании. Определяем, в каких отделах внедрение AI принесет максимальный ROI, и составляем пошаговую дорожную карту.</p>
+          <ul class="pillar-features">
+            <li>Аудит рутинных операций компании</li>
+            <li>Расчет окупаемости и выбор моделей</li>
+            <li>Политика безопасности и этики использования AI</li>
+            <li>Индивидуальный план внедрения под ключ</li>
+          </ul>
+          <a href="#contact" class="pillar-cta">Запросить стратегический аудит →</a>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="pillar-card">
+          <div class="pillar-icon-box">⚙️</div>
+          <h3>3. Автоматизация и AI-агенты</h3>
+          <p>Разработка и внедрение автономных AI-агентов. Интеграция языковых моделей с CRM-системами (amoCRM, Bitrix24), мессенджерами и базами данных.</p>
+          <ul class="pillar-features">
+            <li>Автономные сценарии на базе n8n и Make</li>
+            <li>Умные AI-боты в Telegram для лидогенерации</li>
+            <li>RAG-системы на базе корпоративных знаний</li>
+            <li>Подключение локальных моделей без утечки данных</li>
+          </ul>
+          <a href="#contact" class="pillar-cta">Обсудить техническую задачу →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECURITY BOX -->
+    <div style="max-width:1200px; margin:0 auto; padding:0 24px;" id="security">
+      <div class="security-box">
+        <div class="security-grid">
+          <div>
+            <h3>🔒 Безопасность данных и корпоративная конфиденциальность</h3>
+            <p>
+              При работе с корпоративными клиентами мы ставим защиту коммерческой тайны на первое место. Мы обучаем сотрудников безопасным практикам работы с нейросетями, предотвращающим утечку чувствительной информации.
+            </p>
+            <p>
+              Для закрытых контуров внедряем локальные LLM-модели (на серверах клиента), которые работают полностью автономно без передачи данных третьим сторонам.
+            </p>
+          </div>
+          <div class="security-points">
+            <div class="security-point-item">
+              <span>🛡️</span>
+              <span>Обязательное подписание NDA перед аудитом</span>
+            </div>
+            <div class="security-point-item">
+              <span>🔐</span>
+              <span>Изоляция корпоративных данных и баз знаний</span>
+            </div>
+            <div class="security-point-item">
+              <span>🖥️</span>
+              <span>Возможность развертывания локальных On-Premise LLM</span>
+            </div>
+            <div class="security-point-item">
+              <span>📜</span>
+              <span>Соответствие стандартам безопасности и GDPR</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTACT FORM SECTION -->
+    <section class="contact-section-wrap" id="contact">
+      <div class="contact-container">
+        <div class="section-head-center" style="margin-bottom:36px;">
+          <span class="section-badge">Свяжитесь с нами</span>
+          <h2>Обсудить проект или заказать тренинг</h2>
+          <p>Оставьте заявку, и наш AI-стратег свяжется с вами для обсуждения задач вашей компании.</p>
+        </div>
+
+        <div class="contact-form-card">
+          <div id="gen-success-msg" class="form-success-box">
+            ✓ Спасибо! Ваша заявка принята. Мы свяжемся с вами в ближайшее время.
+          </div>
+
+          <form id="gptify-general-form" onsubmit="handleRussianInquiry(event)">
+            <div class="form-grid-row">
+              <div class="form-group">
+                <label for="ru-name">Ваше имя *</label>
+                <input type="text" id="ru-name" class="form-control" placeholder="Имя Фамилия" required autocomplete="name">
+              </div>
+              <div class="form-group">
+                <label for="ru-contact">Телефон или Telegram *</label>
+                <input type="text" id="ru-contact" class="form-control" placeholder="+998 90 123 45 67 или @username" required autocomplete="tel">
+              </div>
+            </div>
+
+            <div class="form-grid-row">
+              <div class="form-group">
+                <label for="ru-company">Компания / Организация</label>
+                <input type="text" id="ru-company" class="form-control" placeholder="Название компании">
+              </div>
+              <div class="form-group">
+                <label for="ru-service">Интересующая услуга *</label>
+                <select id="ru-service" class="form-control">
+                  <option value="Корпоративный AI-тренинг">Корпоративный AI-тренинг для сотрудников</option>
+                  <option value="AI-стратегия и аудит">AI-стратегия и аудит процессов</option>
+                  <option value="Внедрение AI-агентов">Разработка и внедрение AI-агентов</option>
+                  <option value="Комплексный консалтинг">Комплексный консалтинг под ключ</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="ru-message">Краткое описание задачи</label>
+              <textarea id="ru-message" class="form-control" rows="3" placeholder="Опишите текущие процессы или задачи, которые вы хотите решить с помощью AI..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">
+              Отправить заявку на консультацию →
+            </button>
+            <p style="text-align:center; font-size:12px; color:#64748b; margin-top:12px;">
+              Отправляя заявку, вы соглашаетесь с <a href="/maxfiylik/" style="color:#087f6a; text-decoration:underline;">Политикой конфиденциальности</a>.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="gptify-standalone-footer" role="contentinfo">
+    <div class="gptify-footer-container">
+      <div>
+        <p>© 2026 GPTify Uzbekistan. Все права защищены.</p>
+        <p style="font-size:12px; margin-top:4px;">📍 Ташкент — Берлин | Центр практических AI-решений</p>
+      </div>
+      <div class="gptify-footer-links">
+        <a href="/ru/">Главная (RU)</a>
+        <a href="#services">Услуги</a>
+        <a href="/akademiya/">Академия</a>
+        <a href="https://ainoma.uz" target="_blank" rel="noopener noreferrer">Новости AI ↗</a>
+        <a href="https://t.me/gptifyuz" target="_blank" rel="noopener">Канал</a>
+        <a href="https://t.me/GPTify_uz_bot" target="_blank" rel="noopener">Бот</a>
+        <a href="https://gptify.co" target="_blank" rel="noopener noreferrer">Global: gptify.co ↗</a>
+        <a href="/maxfiylik/">Конфиденциальность</a>
+        <a href="#contact">Контакты</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMobileNav() {
+      const drawer = document.getElementById('gptify-mobile-drawer');
+      if (!drawer) return;
+      const isOpen = drawer.style.display === 'block';
+      drawer.style.display = isOpen ? 'none' : 'block';
+      drawer.hidden = isOpen;
+      drawer.setAttribute('aria-hidden', isOpen ? 'true' : 'false');
+    }
+
+    function handleRussianInquiry(e) {
+      e.preventDefault();
+      var name = document.getElementById('ru-name').value.trim();
+      var contact = document.getElementById('ru-contact').value.trim();
+      var company = document.getElementById('ru-company') ? document.getElementById('ru-company').value.trim() : '';
+      var service = document.getElementById('ru-service').value;
+      var message = document.getElementById('ru-message') ? document.getElementById('ru-message').value.trim() : '';
+      var successMsg = document.getElementById('gen-success-msg');
+
+      if (!name || !contact) return;
+
+      if (successMsg) {
+        successMsg.style.display = 'block';
+        successMsg.textContent = "✓ Спасибо! Ваша заявка принята. Мы свяжемся с вами в ближайшее время.";
+      }
+
+      var note = "Услуга: " + service;
+      if (company) note += " | Компания: " + company;
+      if (message) note += " | Задача: " + message;
+
+      var payload = {
+        full_name: name,
+        phone: contact,
+        category: "B2B Консалтинг (RU)",
+        course_name: note,
+        created_at: new Date().toISOString()
+      };
+
+      try {
+        fetch('https://script.google.com/macros/s/AKfycbzM3GZEDsWDc-3SUI4sySAWnJFn6ZolQaYkwo7W4VWG-79J3WVLYeQL7qs5jgAtkK_C_g/exec', {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+      } catch(err) {
+        console.error('Submission error:', err);
+      }
+    }
+  </script>
+
+  <!-- COOKIE CONSENT BANNER -->
+  <div id="gptify-cookie-banner" role="dialog" aria-label="Cookie xabarnomasi" style="display:none; position:fixed; bottom:20px; left:20px; max-width:380px; background:#ffffff; border:1px solid #e2e8f0; border-radius:14px; padding:16px 18px; box-shadow:0 12px 32px rgba(15,23,42,0.12); z-index:1001; font-size:13px; color:#475569; line-height:1.5;">
+    <div style="display:flex; align-items:flex-start; gap:12px;">
+      <span style="font-size:20px; line-height:1; flex-shrink:0;">🍪</span>
+      <div style="flex:1;">
+        <div style="font-weight:700; color:#0f172a; margin-bottom:4px; font-size:13.5px;">Использование файлов cookie</div>
+        <p style="margin-bottom:10px; font-size:12.5px; color:#475569;">Мы используем cookie-файлы для аналитики и улучшения работы сайта. <a href="/maxfiylik/" style="color:#087f6a; font-weight:600; text-decoration:underline;">Подробнее</a>.</p>
+        <button type="button" onclick="acceptGptifyCookies()" style="background:#087f6a; color:#fff; border:none; padding:7px 18px; border-radius:8px; font-weight:700; font-size:12px; cursor:pointer; transition:background 0.15s ease;">Понятно</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    function initCookieBanner() {
+      try {
+        if (!localStorage.getItem('gptify_cookie_consent')) {
+          var b = document.getElementById('gptify-cookie-banner');
+          if (b) b.style.display = 'block';
+        }
+      } catch (e) {}
+    }
+    function acceptGptifyCookies() {
+      try {
+        localStorage.setItem('gptify_cookie_consent', 'accepted');
+      } catch (e) {}
+      var b = document.getElementById('gptify-cookie-banner');
+      if (b) b.style.display = 'none';
+    }
+    document.addEventListener('DOMContentLoaded', initCookieBanner);
+  </script>
+</body>
+</html>
