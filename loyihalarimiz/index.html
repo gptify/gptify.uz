@@ -7,16 +7,84 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <title>Biz Ishlab Chiqqan va Hamkorlikdagi AI Loyihalar — GPTify Uzbekistan</title>
-  <meta name="description" content="GPTify ekotizimidagi amaliy sun’iy intellekt mahsulotlari: ServisBek (avtoservis CRM), GPTify OS (avtonom agentlar), MedPro24, EduPro24, AINoma, Cubeo AI va Prompt Ustaxonasi.">
+  <title>Sun’iy intellekt loyihalarimiz — GPTify Uzbekistan</title>
+  <meta name="description" content="GPTify ekotizimidagi 8 ta sun’iy intellekt mahsuloti: ServisBek, GPTify OS, MedPro24, EduPro24, AINoma, Cubeo AI, KashfStart va Prompt Ustaxonasi.">
   <link rel="canonical" href="https://gptify.uz/loyihalarimiz/">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Biz Ishlab Chiqqan va Hamkorlikdagi AI Loyihalar — GPTify Uzbekistan">
-  <meta property="og:description" content="Avtoservis, tibbiyot, ta’lim, avtonom agentlar va media sohalarida biznes samaradorligini oshiruvchi amaliy sun’iy intellekt mahsulotlarimiz.">
+  <meta property="og:title" content="Sun’iy intellekt loyihalarimiz — GPTify Uzbekistan">
+  <meta property="og:description" content="Avtoservis, tibbiyot, ta’lim, media va biznes jarayonlari uchun amaliy sun’iy intellekt mahsulotlarimiz.">
   <meta property="og:url" content="https://gptify.uz/loyihalarimiz/">
   <meta property="og:image" content="https://gptify.uz/assets/images/og-image.png">
+
+  <!-- Schema.org ItemList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Sun’iy intellekt loyihalarimiz — GPTify Uzbekistan",
+    "description": "GPTify ekotizimidagi 8 ta sun’iy intellekt mahsuloti: ServisBek, GPTify OS, MedPro24, EduPro24, AINoma, Cubeo AI, KashfStart va Prompt Ustaxonasi.",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "ServisBek",
+        "description": "Avtoservis va texnik xizmat markazlari uchun CRM va Telegram mini-ilova",
+        "url": "https://servisbek.uz"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "GPTify OS",
+        "description": "B2B jarayonlarni boshqaruvchi ko‘p agentli sun’iy intellekt tizimi",
+        "url": "https://gptify.si/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "MedPro24",
+        "description": "Klinika va tibbiyot markazlari uchun sun’iy intellekt administratori va CRM",
+        "url": "https://gptify.uz/loyihalarimiz/#medpro24"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "EduPro24 (BilimOS)",
+        "description": "O‘quv markazlari va maktablar uchun LMS va moliya CRM",
+        "url": "https://gptify.uz/loyihalarimiz/#edupro24"
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "name": "AINoma",
+        "description": "Sun’iy intellekt yangiliklari va tahlillari — o‘zbek tilidagi mustaqil nashr",
+        "url": "https://ainoma.uz"
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
+        "name": "Cubeo AI",
+        "description": "Korporativ bilimlar bazasi va RAG platformasi",
+        "url": "https://cubeo.ai"
+      },
+      {
+        "@type": "ListItem",
+        "position": 7,
+        "name": "KashfStart",
+        "description": "Sun’iy intellekt g‘oyasini 14–30 kunda ishlaydigan MVP’ga aylantirish dasturi",
+        "url": "https://gptify.uz/loyihalarimiz/#kashfstart"
+      },
+      {
+        "@type": "ListItem",
+        "position": 8,
+        "name": "Prompt Ustaxonasi",
+        "description": "O‘zbek tilidagi interaktiv prompt generatori",
+        "url": "https://gptify.uz/loyihalarimiz/#prompt-ustaxonasi"
+      }
+    ]
+  }
+  </script>
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -157,7 +225,6 @@
       font-size: 12.5px;
       font-weight: 700;
       letter-spacing: 0.5px;
-      text-transform: uppercase;
       margin-bottom: 16px;
       border: 1px solid #a7f3d0;
     }
@@ -188,6 +255,7 @@
       max-width: 860px;
     }
     .gptify-filter-btn {
+      font-family: inherit;
       background: #ffffff;
       border: 1px solid #cbd5e1;
       padding: 8px 18px;
@@ -219,6 +287,7 @@
       gap: 28px;
     }
     .gptify-card {
+      scroll-margin-top: 80px;
       background: #ffffff;
       border: 1px solid #e2e8f0;
       border-radius: 16px;
@@ -496,7 +565,7 @@
       <div class="gptify-nav-right">
         <!-- Language Switcher -->
         <div class="gptify-lang-switcher" aria-label="Tilni tanlash">
-          <span class="active-lang">UZ</span>
+          <a href="/loyihalarimiz/" class="lang-btn active-lang" style="color:#087f6a; text-decoration:none; font-weight:700;">UZ</a>
           <span class="lang-divider">/</span>
           <a href="/ru/proekty/" class="lang-btn">RU</a>
         </div>
@@ -515,7 +584,7 @@
   <div id="gptify-mobile-drawer" aria-hidden="true" hidden>
     <div style="display:flex; flex-direction:column; gap:16px; font-size:16px; font-weight:600;">
       <div style="display:flex; gap:12px; font-size:14px; margin-bottom:4px; padding-bottom:8px; border-bottom:1px solid #f1f5f9;">
-        <span style="color:#087f6a; font-weight:700;">O‘zbekcha (UZ)</span>
+        <a href="/loyihalarimiz/" style="color:#087f6a; font-weight:700; text-decoration:none;">O‘zbekcha (UZ)</a>
         <span style="color:#cbd5e1;">/</span>
         <a href="/ru/proekty/" style="color:#64748b; text-decoration:none; font-weight:600;">Русский (RU)</a>
       </div>
@@ -532,19 +601,19 @@
   <!-- HERO SECTION -->
   <section class="gptify-page-hero">
     <div class="gptify-container">
-      <span class="gptify-badge">GPTIFY EKOSISTEMASI VA MAHSULOTLAR</span>
-      <h1>Biz Ishlab Chiqqan va Hamkorlikdagi AI Loyihalar</h1>
+      <span class="gptify-badge">GPTify ekotizimi va mahsulotlari</span>
+      <h1>Sun’iy intellekt loyihalarimiz</h1>
       <p>
-        Avtoservis, tibbiyot, ta’lim, operatsion boshqaruv, avtonom agentlar va sun’iy intellekt media sohalarida biznes samaradorligini oshiruvchi amaliy raqamli platformalarimiz.
+        Avtoservis, tibbiyot, ta’lim, media va biznes jarayonlari uchun ishlab chiqqan amaliy sun’iy intellekt mahsulotlarimiz.
       </p>
 
       <!-- Category Filter Chips -->
       <div class="gptify-filters" role="tablist">
-        <button type="button" class="gptify-filter-btn active" onclick="filterProjects('all', this)">Barcha Loyihalar (8)</button>
-        <button type="button" class="gptify-filter-btn" onclick="filterProjects('crm', this)">Biznes & CRM</button>
-        <button type="button" class="gptify-filter-btn" onclick="filterProjects('agents', this)">Avtonom AI & Platformalar</button>
-        <button type="button" class="gptify-filter-btn" onclick="filterProjects('industry', this)">Tibbiyot & Ta’lim</button>
-        <button type="button" class="gptify-filter-btn" onclick="filterProjects('media', this)">Media & Vositalar</button>
+        <button type="button" class="gptify-filter-btn active" aria-pressed="true" onclick="filterProjects('all', this)">Barcha loyihalar (8)</button>
+        <button type="button" class="gptify-filter-btn" aria-pressed="false" onclick="filterProjects('crm', this)">Biznes va startaplar</button>
+        <button type="button" class="gptify-filter-btn" aria-pressed="false" onclick="filterProjects('agents', this)">Avtonom agentlar va platformalar</button>
+        <button type="button" class="gptify-filter-btn" aria-pressed="false" onclick="filterProjects('industry', this)">Tibbiyot va ta’lim</button>
+        <button type="button" class="gptify-filter-btn" aria-pressed="false" onclick="filterProjects('media', this)">Media va vositalar</button>
       </div>
     </div>
   </section>
@@ -555,24 +624,24 @@
       <div class="gptify-grid" id="projects-grid">
 
         <!-- 1. ServisBek -->
-        <article class="gptify-card" data-category="crm">
+        <article class="gptify-card" id="servisbek" data-category="crm">
           <div>
             <div class="gptify-card-header">
               <span class="gptify-cat-badge" style="background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe;">
-                🚗 Avtoservis & Ustaxonalar
+                🚗 Avtoservis va ustaxonalar
               </span>
-              <span class="gptify-status-pill status-live">Live</span>
+              <span class="gptify-status-pill status-live">Ishlamoqda</span>
             </div>
             <h2 class="gptify-card-title">ServisBek</h2>
-            <div class="gptify-card-subtitle">Avtoservis va texnik xizmat markazlari uchun CRM & TMA</div>
+            <div class="gptify-card-subtitle">Avtoservis va texnik xizmat markazlari uchun CRM va Telegram mini-ilova</div>
             <p class="gptify-card-desc">
-              Avtoservislar, moy almashtirish shoxobchalari va ehtiyot qismlar do‘konlari uchun to‘liq raqamlashtirish tizimi. Avtomobillar tarixi, mijozlar bazasi, Telegram Mini App orqali buyurtma qabul qilish, SMS/Telegram eslatmalar, xodimlar KPI va real vaqt kassa hisoboti.
+              Avtoservis, moy almashtirish shoxobchasi va ehtiyot qismlar do‘koni ishini bitta tizimga jamlaydi: har bir avtomobil tarixi, mijozlar bazasi, Telegram orqali buyurtma qabul qilish, SMS va Telegram eslatmalari, xodimlar KPI ko‘rsatkichlari va real vaqtdagi kassa hisoboti.
             </p>
             <div class="gptify-tech-stack">
-              <span class="gptify-tech-pill">Telegram Mini App</span>
-              <span class="gptify-tech-pill">Cloud CRM</span>
-              <span class="gptify-tech-pill">SMS Gateway</span>
-              <span class="gptify-tech-pill">Moliya va Kassa</span>
+              <span class="gptify-tech-pill">Telegram mini-ilova</span>
+              <span class="gptify-tech-pill">Bulutli CRM</span>
+              <span class="gptify-tech-pill">SMS eslatmalar</span>
+              <span class="gptify-tech-pill">Moliya va kassa</span>
             </div>
           </div>
           <div class="gptify-card-action">
@@ -583,108 +652,108 @@
         </article>
 
         <!-- 2. GPTify OS -->
-        <article class="gptify-card" data-category="agents">
+        <article class="gptify-card" id="gptify-os" data-category="agents">
           <div>
             <div class="gptify-card-header">
               <span class="gptify-cat-badge" style="background:#ecfdf5; color:#047857; border:1px solid #a7f3d0;">
-                🤖 Avtonom Agentlar
+                🤖 Avtonom agentlar
               </span>
-              <span class="gptify-status-pill status-live">Live Platform</span>
+              <span class="gptify-status-pill status-live">Ishlamoqda</span>
             </div>
             <h2 class="gptify-card-title">GPTify OS</h2>
-            <div class="gptify-card-subtitle">B2B operatsiyalarni boshqaruvchi ko‘p agentli sun’iy intellekt tizimi</div>
+            <div class="gptify-card-subtitle">B2B jarayonlarni boshqaruvchi ko‘p agentli sun’iy intellekt tizimi</div>
             <p class="gptify-card-desc">
-              Korxona ichidagi takrorlanuvchi operatsion jarayonlarni avtonom tarzda bajaruvchi sun’iy intellekt agentlar platformasi. Hujjatlar va shartnomalar tahlili, mijozlar bilan birlamchi muloqot, hisobotlar tuzish va ma’lumotlarni ichki CRM tizimlariga inson aralashuvisiz uzatish.
+              Korxonadagi takrorlanuvchi ishlarni sun’iy intellekt agentlari mustaqil bajaradi: hujjat va shartnomalarni tahlil qiladi, mijozlar bilan birlamchi muloqotni olib boradi, hisobot tuzadi va ma’lumotlarni CRM tizimingizga o‘zi kiritadi.
             </p>
             <div class="gptify-tech-stack">
-              <span class="gptify-tech-pill">Multi-Agent Systems</span>
-              <span class="gptify-tech-pill">Autonomous Workflows</span>
+              <span class="gptify-tech-pill">Ko‘p agentli tizim</span>
+              <span class="gptify-tech-pill">Avtonom jarayonlar</span>
               <span class="gptify-tech-pill">FastAPI</span>
-              <span class="gptify-tech-pill">B2B Integrations</span>
+              <span class="gptify-tech-pill">B2B integratsiyalar</span>
             </div>
           </div>
           <div class="gptify-card-action">
-            <a class="gptify-card-btn" href="http://gptify.si/" target="_blank" rel="noopener noreferrer">
-              gptify.si platformasini ko‘rish <span>↗</span>
+            <a class="gptify-card-btn" href="https://gptify.si/" target="_blank" rel="noopener noreferrer">
+              GPTify OS platformasini ko‘rish <span>↗</span>
             </a>
           </div>
         </article>
 
         <!-- 3. MedPro24 -->
-        <article class="gptify-card" data-category="industry">
+        <article class="gptify-card" id="medpro24" data-category="industry">
           <div>
             <div class="gptify-card-header">
               <span class="gptify-cat-badge" style="background:#fef2f2; color:#b91c1c; border:1px solid #fecaca;">
-                🏥 Tibbiyot & Klinikalar
+                🏥 Tibbiyot va klinikalar
               </span>
-              <span class="gptify-status-pill status-ready">Joriy etishga tayyor</span>
+              <span class="gptify-status-pill status-ready">Tayyor</span>
             </div>
             <h2 class="gptify-card-title">MedPro24</h2>
-            <div class="gptify-card-subtitle">Klinika va tibbiyot markazlari uchun AI Administrator & CRM</div>
+            <div class="gptify-card-subtitle">Klinika va tibbiyot markazlari uchun sun’iy intellekt administratori va CRM</div>
             <p class="gptify-card-desc">
-              Bemorlarni tunu-kun 24/7 qabulga yozish, Telegram va WhatsApp orqali savollarga avtomatik javob berish, shifokorlar ish jadvalini muvofiqlashtirish va qabul eslatmalarini yuborish orqali bemorlarning kelmay qolish (no-show) ko‘rsatkichini 40% ga qisqartiradi.
+              Bemorlarni kunu tun qabulga yozadi, Telegram va WhatsApp’dagi savollarga avtomatik javob beradi, shifokorlar jadvalini muvofiqlashtiradi va qabul oldidan eslatma yuboradi. Natijada bemorlarning qabulga kelmay qolishi kamayadi.
             </p>
             <div class="gptify-tech-stack">
-              <span class="gptify-tech-pill">Tibbiy NLP</span>
-              <span class="gptify-tech-pill">24/7 Bemorlar Boti</span>
-              <span class="gptify-tech-pill">Shifokorlar Jadvali</span>
-              <span class="gptify-tech-pill">Klinik CRM</span>
+              <span class="gptify-tech-pill">24/7 bemorlar boti</span>
+              <span class="gptify-tech-pill">Qabulga yozish</span>
+              <span class="gptify-tech-pill">Shifokorlar jadvali</span>
+              <span class="gptify-tech-pill">Klinika CRM</span>
             </div>
           </div>
           <div class="gptify-card-action">
-            <a class="gptify-card-btn gptify-card-btn--outline" href="/#gptify-contact">
+            <a class="gptify-card-btn gptify-card-btn--outline" href="/?mahsulot=medpro24#gptify-contact">
               Klinika uchun demo so‘rash <span>→</span>
             </a>
           </div>
         </article>
 
         <!-- 4. EduPro24 (BilimOS) -->
-        <article class="gptify-card" data-category="industry">
+        <article class="gptify-card" id="edupro24" data-category="industry">
           <div>
             <div class="gptify-card-header">
               <span class="gptify-cat-badge" style="background:#faf5ff; color:#7e22ce; border:1px solid #e9d5ff;">
-                🎓 Ta’lim & O‘quv Markazlari
+                🎓 Ta’lim va o‘quv markazlari
               </span>
-              <span class="gptify-status-pill status-ready">Joriy etishga tayyor</span>
+              <span class="gptify-status-pill status-ready">Tayyor</span>
             </div>
             <h2 class="gptify-card-title">EduPro24 (BilimOS)</h2>
-            <div class="gptify-card-subtitle">O‘quv markazlari va maktablar uchun LMS & Moliya CRM</div>
+            <div class="gptify-card-subtitle">O‘quv markazlari va maktablar uchun LMS va moliya CRM</div>
             <p class="gptify-card-desc">
-              O‘quvchilar davomati, guruhlar jadvali, to‘lovlar nazorati, to‘lov muddati yaqinlashganda ota-onalarga avtomatik bildirishnoma yuborish, test topshirish va o‘qituvchilar dars samaradorligini monitoring qilish uchun yaxlit ta’lim platformasi.
+              Davomat, guruhlar jadvali va to‘lovlar nazorati bitta platformada. To‘lov muddati yaqinlashganda ota-onalarga avtomatik bildirishnoma boradi, o‘quvchilar test topshiradi, rahbar esa har bir o‘qituvchining dars samaradorligini ko‘rib turadi.
             </p>
             <div class="gptify-tech-stack">
-              <span class="gptify-tech-pill">EdTech LMS</span>
-              <span class="gptify-tech-pill">Davomat Tizimi</span>
-              <span class="gptify-tech-pill">To‘lovlar Boshqaruvi</span>
-              <span class="gptify-tech-pill">Ota-onalar Kabineti</span>
+              <span class="gptify-tech-pill">LMS</span>
+              <span class="gptify-tech-pill">Davomat nazorati</span>
+              <span class="gptify-tech-pill">To‘lovlar boshqaruvi</span>
+              <span class="gptify-tech-pill">Ota-onalarga bildirishnoma</span>
             </div>
           </div>
           <div class="gptify-card-action">
-            <a class="gptify-card-btn gptify-card-btn--outline" href="/#gptify-contact">
-              Markaz uchun joriy etish <span>→</span>
+            <a class="gptify-card-btn gptify-card-btn--outline" href="/?mahsulot=edupro24#gptify-contact">
+              O‘quv markazi uchun demo so‘rash <span>→</span>
             </a>
           </div>
         </article>
 
         <!-- 5. AINoma -->
-        <article class="gptify-card" data-category="media">
+        <article class="gptify-card" id="ainoma" data-category="media">
           <div>
             <div class="gptify-card-header">
               <span class="gptify-cat-badge" style="background:#f0fdfa; color:#0f766e; border:1px solid #99f6e4;">
-                📰 AI Media Portali
+                📰 Sun’iy intellekt media portali
               </span>
-              <span class="gptify-status-pill status-live">Live</span>
+              <span class="gptify-status-pill status-live">Ishlamoqda</span>
             </div>
             <h2 class="gptify-card-title">AINoma</h2>
-            <div class="gptify-card-subtitle">Sun’iy intellekt sohasidagi yangiliklar va tahlillar mustaqil nashri</div>
+            <div class="gptify-card-subtitle">Sun’iy intellekt yangiliklari va tahlillari — o‘zbek tilidagi mustaqil nashr</div>
             <p class="gptify-card-desc">
-              O‘zbekiston va jahon texnologiya olamidagi eng dolzarb sun’iy intellekt yangiliklari, amaliy qo‘llanmalar, neyrotarmoqlar tahlili va biznes amaliyotlarini professional o‘zbek tilida muntazam yoritib boruvchi yetakchi media platforma.
+              O‘zbekiston va jahondagi eng muhim sun’iy intellekt yangiliklari, amaliy qo‘llanmalar, neyrotarmoqlar tahlili va biznes tajribalarini sodda o‘zbek tilida muntazam yoritib boradi.
             </p>
             <div class="gptify-tech-stack">
-              <span class="gptify-tech-pill">AI Yangiliklar</span>
-              <span class="gptify-tech-pill">Biznes Sharhlar</span>
-              <span class="gptify-tech-pill">Telegram Integratsiya</span>
-              <span class="gptify-tech-pill">Amaliy Qo‘llanmalar</span>
+              <span class="gptify-tech-pill">Yangiliklar</span>
+              <span class="gptify-tech-pill">Biznes sharhlar</span>
+              <span class="gptify-tech-pill">Amaliy qo‘llanmalar</span>
+              <span class="gptify-tech-pill">Telegram integratsiya</span>
             </div>
           </div>
           <div class="gptify-card-action">
@@ -695,24 +764,24 @@
         </article>
 
         <!-- 6. Cubeo AI -->
-        <article class="gptify-card" data-category="agents">
+        <article class="gptify-card" id="cubeo-ai" data-category="agents">
           <div>
             <div class="gptify-card-header">
               <span class="gptify-cat-badge" style="background:#fff7ed; color:#c2410c; border:1px solid #fed7aa;">
-                🌐 Enterprise AI & RAG
+                🌐 Enterprise sun’iy intellekt va RAG
               </span>
-              <span class="gptify-status-pill status-live">Xalqaro Hamkorlik</span>
+              <span class="gptify-status-pill status-live">Ishlamoqda</span>
             </div>
             <h2 class="gptify-card-title">Cubeo AI</h2>
-            <div class="gptify-card-subtitle">Korporativ bilimlar bazasi va intellektual RAG platformasi</div>
+            <div class="gptify-card-subtitle">Korporativ bilimlar bazasi va RAG platformasi</div>
             <p class="gptify-card-desc">
-              Kompaniya ichki hujjatlari, texnik bazalari va qoidalari bilan xavfsiz ishlovchi xalqaro B2B AI platformasi. Xodimlar va mijozlarga 100% aniq kontekstli javob beruvchi korporativ assistentlar hamda analitika tizimi.
+              Kompaniyaning ichki hujjatlari, texnik bazalari va qoidalari bilan xavfsiz ishlaydigan xalqaro B2B platforma. Xodimlar va mijozlarga faqat sizning manbalaringizga asoslangan javob beruvchi korporativ yordamchilar va analitika tizimi.
             </p>
             <div class="gptify-tech-stack">
-              <span class="gptify-tech-pill">Enterprise RAG</span>
-              <span class="gptify-tech-pill">Vector DB</span>
-              <span class="gptify-tech-pill">Data Privacy</span>
-              <span class="gptify-tech-pill">Xalqaro Platforma</span>
+              <span class="gptify-tech-pill">Korporativ RAG</span>
+              <span class="gptify-tech-pill">Vektor baza</span>
+              <span class="gptify-tech-pill">Ma’lumotlar maxfiyligi</span>
+              <span class="gptify-tech-pill">Xalqaro platforma</span>
             </div>
           </div>
           <div class="gptify-card-action">
@@ -723,52 +792,52 @@
         </article>
 
         <!-- 7. KashfStart -->
-        <article class="gptify-card" data-category="crm">
+        <article class="gptify-card" id="kashfstart" data-category="crm">
           <div>
             <div class="gptify-card-header">
               <span class="gptify-cat-badge" style="background:#ecfeff; color:#0e7490; border:1px solid #a5f3fc;">
-                🚀 Startaplar & Akselerator
+                🚀 Startaplar va akselerator
               </span>
-              <span class="gptify-status-pill status-ready">Akseleratsiya</span>
+              <span class="gptify-status-pill status-ready">Dastur</span>
             </div>
             <h2 class="gptify-card-title">KashfStart</h2>
-            <div class="gptify-card-subtitle">AI startaplar va mahsulotlarni tezkor MVP formatida ishga tushirish</div>
+            <div class="gptify-card-subtitle">Sun’iy intellekt g‘oyasini 14–30 kunda ishlaydigan MVP’ga aylantirish dasturi</div>
             <p class="gptify-card-desc">
-              O‘zbekistondagi novatorlar va korxonalar uchun sun’iy intellekt g‘oyalarini 14-30 kun ichida ishlovchi MVP formatida ishlab chiqish, bozorga chiqarish (GTM) va B2B savdo kanallarini yo‘lga qo‘yish dasturi.
+              O‘zbekistondagi tashabbuskorlar va korxonalar uchun: g‘oyani 14–30 kun ichida ishlaydigan mahsulotga aylantiramiz, bozorga chiqish rejasini tuzamiz va birinchi B2B mijozlar bilan sinov loyihalarini yo‘lga qo‘yamiz.
             </p>
             <div class="gptify-tech-stack">
-              <span class="gptify-tech-pill">Rapid MVP Prototyping</span>
-              <span class="gptify-tech-pill">GTM Funnels</span>
-              <span class="gptify-tech-pill">Venture Validation</span>
-              <span class="gptify-tech-pill">B2B Pilots</span>
+              <span class="gptify-tech-pill">Tezkor MVP</span>
+              <span class="gptify-tech-pill">Bozorga chiqish</span>
+              <span class="gptify-tech-pill">G‘oyani sinash</span>
+              <span class="gptify-tech-pill">B2B pilotlar</span>
             </div>
           </div>
           <div class="gptify-card-action">
-            <a class="gptify-card-btn gptify-card-btn--outline" href="/#gptify-contact">
+            <a class="gptify-card-btn gptify-card-btn--outline" href="/?mahsulot=kashfstart#gptify-contact">
               Loyihani taqdim etish <span>→</span>
             </a>
           </div>
         </article>
 
         <!-- 8. Prompt Ustaxonasi -->
-        <article class="gptify-card" data-category="media">
+        <article class="gptify-card" id="prompt-ustaxonasi" data-category="media">
           <div>
             <div class="gptify-card-header">
               <span class="gptify-cat-badge" style="background:#fefce8; color:#a16207; border:1px solid #fef08a;">
-                🛠 Bepul AI Vositasi
+                🛠 Bepul vosita
               </span>
-              <span class="gptify-status-pill status-live">100% Bepul</span>
+              <span class="gptify-status-pill status-live" style="background:#fefce8; color:#a16207; border:1px solid #fef08a;">Bepul</span>
             </div>
             <h2 class="gptify-card-title">Prompt Ustaxonasi</h2>
-            <div class="gptify-card-subtitle">O‘zbek tilidagi interaktiv, tizimli AI buyruqlari generatori</div>
+            <div class="gptify-card-subtitle">O‘zbek tilidagi interaktiv prompt generatori</div>
             <p class="gptify-card-desc">
-              ChatGPT, Claude va Gemini uchun professional darajadagi ko‘rsatmalarni bir necha soniyada shakllantirish imkonini beruvchi bepul amaliy vosita. Biznes, marketing, kopirayting, tahlil va kod yozish uchun tayyor tizimli parametrlar.
+              ChatGPT, Claude va Gemini uchun professional darajadagi promptlarni bir necha soniyada tuzib beradi. Biznes, marketing, kopirayting, tahlil va kod yozish uchun tayyor andozalar.
             </p>
             <div class="gptify-tech-stack">
-              <span class="gptify-tech-pill">Interactive Generator</span>
-              <span class="gptify-tech-pill">O‘zbek Tili</span>
-              <span class="gptify-tech-pill">Prompt Engineering</span>
-              <span class="gptify-tech-pill">100% Ochiq</span>
+              <span class="gptify-tech-pill">Interaktiv generator</span>
+              <span class="gptify-tech-pill">O‘zbek tili</span>
+              <span class="gptify-tech-pill">Prompt muhandisligi</span>
+              <span class="gptify-tech-pill">Bepul va ochiq</span>
             </div>
           </div>
           <div class="gptify-card-action">
@@ -782,12 +851,12 @@
 
       <!-- Bottom Consultation Callout -->
       <section class="gptify-callout">
-        <h2>O‘z Biznesingiz Uchun Maxsus AI Tizim Qurmoqchimisiz?</h2>
+        <h2>Biznesingiz uchun maxsus sun’iy intellekt tizimi kerakmi?</h2>
         <p>
           Kompaniyangizdagi takrorlanuvchi jarayonlar, savdo voronkasi yoki mijozlarga xizmat ko‘rsatish tizimini tahlil qilamiz va qisqa muddatda amaliy prototip ishlab chiqamiz.
         </p>
         <div class="gptify-callout-actions">
-          <a href="/#gptify-contact" class="gptify-btn-primary">Loyihani Muhokama Qilish →</a>
+          <a href="/#gptify-contact" class="gptify-btn-primary">Loyihani muhokama qilish →</a>
           <a href="https://t.me/GPTifyUzbot" target="_blank" rel="noopener noreferrer" class="gptify-btn-secondary">Telegram orqali yozish ↗</a>
         </div>
       </section>
@@ -832,8 +901,12 @@
 
     function filterProjects(cat, btn) {
       var buttons = document.querySelectorAll('.gptify-filter-btn');
-      buttons.forEach(function(b) { b.classList.remove('active'); });
+      buttons.forEach(function(b) {
+        b.classList.remove('active');
+        b.setAttribute('aria-pressed', 'false');
+      });
       btn.classList.add('active');
+      btn.setAttribute('aria-pressed', 'true');
 
       var cards = document.querySelectorAll('#projects-grid .gptify-card');
       cards.forEach(function(card) {

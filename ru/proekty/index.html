@@ -188,6 +188,7 @@
       max-width: 860px;
     }
     .gptify-filter-btn {
+      font-family: inherit;
       background: #ffffff;
       border: 1px solid #cbd5e1;
       padding: 8px 18px;
@@ -219,6 +220,7 @@
       gap: 28px;
     }
     .gptify-card {
+      scroll-margin-top: 80px;
       background: #ffffff;
       border: 1px solid #e2e8f0;
       border-radius: 16px;
@@ -473,6 +475,73 @@
       }
     }
   </style>
+  <!-- Schema.org ItemList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Наши Проекты и AI-Экосистема — GPTify Uzbekistan",
+    "description": "Разработанные и партнерские продукты искусственного интеллекта GPTify: ServisBek, GPTify OS, MedPro24, EduPro24, AINoma, Cubeo AI, KashfStart и Генератор промптов.",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "ServisBek",
+        "description": "CRM и Telegram Mini App для автосервисов и техцентров",
+        "url": "https://servisbek.uz"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "GPTify OS",
+        "description": "Мультиагентная операционная система для управления B2B процессами",
+        "url": "https://gptify.si/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "MedPro24",
+        "description": "AI-Администратор и медицинская CRM для клиник и стоматологий",
+        "url": "https://gptify.uz/ru/proekty/#medpro24"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "EduPro24 (BilimOS)",
+        "description": "LMS и биллинговая CRM для учебных центров и частных школ",
+        "url": "https://gptify.uz/ru/proekty/#edupro24"
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "name": "AINoma",
+        "description": "Независимое издание о новостях, исследованиях и внедрении AI",
+        "url": "https://ainoma.uz"
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
+        "name": "Cubeo AI",
+        "description": "Корпоративная база знаний и интеллектуальная RAG-платформа",
+        "url": "https://cubeo.ai"
+      },
+      {
+        "@type": "ListItem",
+        "position": 7,
+        "name": "KashfStart",
+        "description": "Быстрый запуск AI-стартапов и валидация MVP за 14–30 дней",
+        "url": "https://gptify.uz/ru/proekty/#kashfstart"
+      },
+      {
+        "@type": "ListItem",
+        "position": 8,
+        "name": "Prompt Ustaxonasi",
+        "description": "Интерактивный конструктор структурированных промптов",
+        "url": "https://gptify.uz/ru/proekty/#prompt-ustaxonasi"
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -489,7 +558,7 @@
         <a href="/ru/proekty/" class="active">Проекты</a>
         <a href="https://ainoma.uz" target="_blank" rel="noopener noreferrer">AI Новости ↗</a>
         <a href="/prompt-ustaxonasi/">Инструменты</a>
-        <a href="/ru/#contact">Контакты</a>
+        <a href="/ru/?mahsulot=medpro24#contact">Контакты</a>
       </nav>
 
       <div class="gptify-nav-right">
@@ -523,7 +592,7 @@
       <a href="/ru/proekty/" onclick="toggleMobileNav()" style="color:#087f6a; text-decoration:none; font-weight:750;">Проекты</a>
       <a href="https://ainoma.uz" target="_blank" rel="noopener noreferrer" style="color:#0f172a; text-decoration:none;">AI Новости ↗</a>
       <a href="/prompt-ustaxonasi/" style="color:#0f172a; text-decoration:none;">Инструменты</a>
-      <a href="/ru/#contact" onclick="toggleMobileNav()" style="color:#0f172a; text-decoration:none;">Контакты</a>
+      <a href="/ru/?mahsulot=medpro24#contact" onclick="toggleMobileNav()" style="color:#0f172a; text-decoration:none;">Контакты</a>
     </div>
   </div>
 
@@ -538,11 +607,11 @@
 
       <!-- Category Filter Chips -->
       <div class="gptify-filters" role="tablist">
-        <button type="button" class="gptify-filter-btn active" onclick="filterProjects('all', this)">Все Проекты (8)</button>
-        <button type="button" class="gptify-filter-btn" onclick="filterProjects('crm', this)">Бизнес и CRM</button>
-        <button type="button" class="gptify-filter-btn" onclick="filterProjects('agents', this)">Автономные Агенты</button>
-        <button type="button" class="gptify-filter-btn" onclick="filterProjects('industry', this)">Медицина и Образование</button>
-        <button type="button" class="gptify-filter-btn" onclick="filterProjects('media', this)">Медиа и Инструменты</button>
+        <button type="button" class="gptify-filter-btn active" aria-pressed="true" onclick="filterProjects('all', this)">Все Проекты (8)</button>
+        <button type="button" class="gptify-filter-btn" aria-pressed="false" onclick="filterProjects('crm', this)">Бизнес и CRM</button>
+        <button type="button" class="gptify-filter-btn" aria-pressed="false" onclick="filterProjects('agents', this)">Автономные Агенты</button>
+        <button type="button" class="gptify-filter-btn" aria-pressed="false" onclick="filterProjects('industry', this)">Медицина и Образование</button>
+        <button type="button" class="gptify-filter-btn" aria-pressed="false" onclick="filterProjects('media', this)">Медиа и Инструменты</button>
       </div>
     </div>
   </section>
@@ -553,7 +622,7 @@
       <div class="gptify-grid" id="projects-grid">
 
         <!-- 1. ServisBek -->
-        <article class="gptify-card" data-category="crm">
+        <article class="gptify-card" id="servisbek" data-category="crm">
           <div>
             <div class="gptify-card-header">
               <span class="gptify-cat-badge" style="background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe;">
@@ -581,7 +650,7 @@
         </article>
 
         <!-- 2. GPTify OS -->
-        <article class="gptify-card" data-category="agents">
+        <article class="gptify-card" id="gptify-os" data-category="agents">
           <div>
             <div class="gptify-card-header">
               <span class="gptify-cat-badge" style="background:#ecfdf5; color:#047857; border:1px solid #a7f3d0;">
@@ -602,14 +671,14 @@
             </div>
           </div>
           <div class="gptify-card-action">
-            <a class="gptify-card-btn" href="http://gptify.si/" target="_blank" rel="noopener noreferrer">
+            <a class="gptify-card-btn" href="https://gptify.si/" target="_blank" rel="noopener noreferrer">
               Открыть платформу gptify.si <span>↗</span>
             </a>
           </div>
         </article>
 
         <!-- 3. MedPro24 -->
-        <article class="gptify-card" data-category="industry">
+        <article class="gptify-card" id="medpro24" data-category="industry">
           <div>
             <div class="gptify-card-header">
               <span class="gptify-cat-badge" style="background:#fef2f2; color:#b91c1c; border:1px solid #fecaca;">
@@ -630,14 +699,14 @@
             </div>
           </div>
           <div class="gptify-card-action">
-            <a class="gptify-card-btn gptify-card-btn--outline" href="/ru/#contact">
+            <a class="gptify-card-btn gptify-card-btn--outline" href="/ru/?mahsulot=medpro24#contact">
               Запросить демо для клиники <span>→</span>
             </a>
           </div>
         </article>
 
         <!-- 4. EduPro24 (BilimOS) -->
-        <article class="gptify-card" data-category="industry">
+        <article class="gptify-card" id="edupro24" data-category="industry">
           <div>
             <div class="gptify-card-header">
               <span class="gptify-cat-badge" style="background:#faf5ff; color:#7e22ce; border:1px solid #e9d5ff;">
@@ -658,14 +727,14 @@
             </div>
           </div>
           <div class="gptify-card-action">
-            <a class="gptify-card-btn gptify-card-btn--outline" href="/ru/#contact">
+            <a class="gptify-card-btn gptify-card-btn--outline" href="/ru/?mahsulot=medpro24#contact">
               Внедрить в учебный центр <span>→</span>
             </a>
           </div>
         </article>
 
         <!-- 5. AINoma -->
-        <article class="gptify-card" data-category="media">
+        <article class="gptify-card" id="ainoma" data-category="media">
           <div>
             <div class="gptify-card-header">
               <span class="gptify-cat-badge" style="background:#f0fdfa; color:#0f766e; border:1px solid #99f6e4;">
@@ -693,7 +762,7 @@
         </article>
 
         <!-- 6. Cubeo AI -->
-        <article class="gptify-card" data-category="agents">
+        <article class="gptify-card" id="cubeo-ai" data-category="agents">
           <div>
             <div class="gptify-card-header">
               <span class="gptify-cat-badge" style="background:#fff7ed; color:#c2410c; border:1px solid #fed7aa;">
@@ -721,7 +790,7 @@
         </article>
 
         <!-- 7. KashfStart -->
-        <article class="gptify-card" data-category="crm">
+        <article class="gptify-card" id="kashfstart" data-category="crm">
           <div>
             <div class="gptify-card-header">
               <span class="gptify-cat-badge" style="background:#ecfeff; color:#0e7490; border:1px solid #a5f3fc;">
@@ -742,14 +811,14 @@
             </div>
           </div>
           <div class="gptify-card-action">
-            <a class="gptify-card-btn gptify-card-btn--outline" href="/ru/#contact">
+            <a class="gptify-card-btn gptify-card-btn--outline" href="/ru/?mahsulot=medpro24#contact">
               Подать проект <span>→</span>
             </a>
           </div>
         </article>
 
         <!-- 8. Prompt Ustaxonasi -->
-        <article class="gptify-card" data-category="media">
+        <article class="gptify-card" id="prompt-ustaxonasi" data-category="media">
           <div>
             <div class="gptify-card-header">
               <span class="gptify-cat-badge" style="background:#fefce8; color:#a16207; border:1px solid #fef08a;">
@@ -785,7 +854,7 @@
           Мы проведем аудит повторяющихся процессов вашей компании, определим точки роста и соберем работающий прототип системы в сжатые сроки.
         </p>
         <div class="gptify-callout-actions">
-          <a href="/ru/#contact" class="gptify-btn-primary">Обсудить Проект →</a>
+          <a href="/ru/?mahsulot=medpro24#contact" class="gptify-btn-primary">Обсудить Проект →</a>
           <a href="https://t.me/GPTifyUzbot" target="_blank" rel="noopener noreferrer" class="gptify-btn-secondary">Написать в Telegram ↗</a>
         </div>
       </section>
@@ -829,8 +898,12 @@
 
     function filterProjects(cat, btn) {
       var buttons = document.querySelectorAll('.gptify-filter-btn');
-      buttons.forEach(function(b) { b.classList.remove('active'); });
+      buttons.forEach(function(b) {
+        b.classList.remove('active');
+        b.setAttribute('aria-pressed', 'false');
+      });
       btn.classList.add('active');
+      btn.setAttribute('aria-pressed', 'true');
 
       var cards = document.querySelectorAll('#projects-grid .gptify-card');
       cards.forEach(function(card) {
