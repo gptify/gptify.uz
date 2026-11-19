@@ -16,9 +16,9 @@
   <meta property="og:title" content="Наши Проекты и AI-Экосистема — GPTify Uzbekistan">
   <meta property="og:description" content="Практические цифровые платформы и AI-решения для автосервисов, медицины, образования, автономных агентов и медиа.">
   <meta property="og:url" content="https://gptify.uz/ru/proekty/">
-  <meta property="og:image" content="https://gptify.uz/assets/images/og-image.png">
+  <meta property="og:image" content="https://gptify.uz/assets/images/gptify-og-1200x630.jpg">
 
-  <style>
+    <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
@@ -26,6 +26,10 @@
       color: #0f172a;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
+    }
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid #087f6a;
+      outline-offset: 2px;
     }
     .gptify-container {
       max-width: 1200px;
@@ -141,7 +145,7 @@
 
     /* Hero Header */
     .gptify-page-hero {
-      padding: 56px 0 36px 0;
+      padding: 52px 0 36px 0;
       text-align: center;
       background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
       border-bottom: 1px solid #e2e8f0;
@@ -156,8 +160,7 @@
       border-radius: 9999px;
       font-size: 12.5px;
       font-weight: 700;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
+      letter-spacing: 0.3px;
       margin-bottom: 16px;
       border: 1px solid #a7f3d0;
     }
@@ -166,37 +169,38 @@
       font-size: 38px;
       font-weight: 800;
       color: #0f172a;
-      line-height: 1.25;
-      margin-bottom: 16px;
+      line-height: 1.2;
+      margin-bottom: 14px;
       letter-spacing: -0.02em;
     }
     .gptify-page-hero p {
-      font-size: 18px;
+      font-size: 17px;
       color: #475569;
-      max-width: 760px;
+      max-width: 720px;
       margin: 0 auto 28px auto;
       line-height: 1.6;
     }
 
-    /* Filter Chips */
+    /* Filter Chips — fits cleanly on 1 row on desktop */
     .gptify-filters {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 10px;
+      gap: 8px;
       margin: 0 auto;
-      max-width: 860px;
+      max-width: 1120px;
     }
     .gptify-filter-btn {
       font-family: inherit;
       background: #ffffff;
       border: 1px solid #cbd5e1;
-      padding: 8px 18px;
+      padding: 8px 16px;
       border-radius: 9999px;
       font-size: 13.5px;
       font-weight: 600;
       color: #475569;
       cursor: pointer;
+      white-space: nowrap;
       transition: all 0.2s ease;
     }
     .gptify-filter-btn:hover {
@@ -207,62 +211,76 @@
       background: #087f6a;
       border-color: #087f6a;
       color: #ffffff;
-      box-shadow: 0 4px 12px rgba(8, 127, 106, 0.25);
+      box-shadow: 0 4px 12px rgba(8, 127, 106, 0.22);
     }
 
     /* Projects Grid */
     .gptify-projects-section {
-      padding: 48px 0 72px 0;
+      padding: 44px 0 68px 0;
     }
     .gptify-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 28px;
+      gap: 24px;
     }
     .gptify-card {
-      scroll-margin-top: 80px;
+      scroll-margin-top: 84px;
       background: #ffffff;
       border: 1px solid #e2e8f0;
       border-radius: 16px;
-      padding: 32px;
+      padding: 28px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      transition: all 0.25s ease;
-      box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      box-shadow: 0 2px 12px rgba(15, 23, 42, 0.03);
       position: relative;
     }
     .gptify-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 16px 36px rgba(15, 23, 42, 0.09);
+      transform: translateY(-3px);
+      box-shadow: 0 14px 32px rgba(15, 23, 42, 0.08);
       border-color: #cbd5e1;
     }
     .gptify-card-header {
       display: flex;
-      align-items: flex-start;
+      align-items: center;
       justify-content: space-between;
       gap: 12px;
-      margin-bottom: 16px;
+      margin-bottom: 18px;
     }
-    .gptify-cat-badge {
-      display: inline-flex;
+    .gptify-card-identity {
+      display: flex;
       align-items: center;
-      gap: 6px;
-      font-size: 12px;
+      gap: 10px;
+      min-width: 0;
+    }
+    .gptify-icon-box {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .gptify-cat-label {
+      font-size: 12.5px;
       font-weight: 700;
-      padding: 4px 10px;
-      border-radius: 6px;
+      color: #475569;
+      line-height: 1.3;
     }
     .gptify-status-pill {
       display: inline-flex;
       align-items: center;
-      gap: 5px;
+      gap: 6px;
       font-size: 11.5px;
       font-weight: 700;
-      padding: 3px 9px;
+      padding: 4px 10px;
       border-radius: 9999px;
       background: #f1f5f9;
       color: #475569;
+      flex-shrink: 0;
+      white-space: nowrap;
     }
     .status-live {
       background: #ecfdf5;
@@ -290,6 +308,19 @@
       border-radius: 50%;
       background: #3b82f6;
     }
+    .status-free {
+      background: #fefce8;
+      color: #a16207;
+      border: 1px solid #fde68a;
+    }
+    .status-free::before {
+      content: '';
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #d97706;
+    }
     .gptify-card-title {
       font-family: 'Space Grotesk', system-ui, sans-serif;
       font-size: 22px;
@@ -303,49 +334,51 @@
       font-weight: 600;
       color: #087f6a;
       margin-bottom: 12px;
+      line-height: 1.45;
     }
     .gptify-card-desc {
       font-size: 14.5px;
       color: #475569;
-      line-height: 1.6;
+      line-height: 1.62;
       margin-bottom: 20px;
     }
     .gptify-tech-stack {
       display: flex;
       flex-wrap: wrap;
       gap: 6px;
-      margin-bottom: 24px;
+      margin-bottom: 22px;
       padding-top: 14px;
       border-top: 1px solid #f1f5f9;
     }
     .gptify-tech-pill {
       background: #f8fafc;
       border: 1px solid #e2e8f0;
-      color: #64748b;
+      color: #475569;
       font-size: 11.5px;
       font-weight: 600;
-      padding: 3px 8px;
+      padding: 4px 9px;
       border-radius: 6px;
     }
     .gptify-card-action {
       margin-top: auto;
       display: flex;
       align-items: center;
-      justify-content: space-between;
       gap: 12px;
     }
     .gptify-card-btn {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 8px;
       background: #087f6a;
       color: #ffffff;
-      padding: 10px 18px;
+      padding: 11px 18px;
       border-radius: 10px;
       font-size: 13.5px;
       font-weight: 700;
       text-decoration: none;
-      transition: all 0.2s ease;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease, color 0.2s ease;
     }
     .gptify-card-btn:hover {
       background: #065f4f;
@@ -362,35 +395,48 @@
       color: #087f6a;
     }
 
-    /* Bottom Consultation Callout */
+    /* Bottom Consultation Callout — Modern Light Executive Banner */
     .gptify-callout {
-      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-      color: #ffffff;
+      background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%);
+      color: #0f172a;
+      border: 1px solid #cbd5e1;
       border-radius: 20px;
-      padding: 48px;
+      padding: 44px 40px;
       text-align: center;
-      margin: 40px 0 60px 0;
-      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.15);
+      margin: 44px 0 12px 0;
+      box-shadow: 0 12px 32px rgba(15, 23, 42, 0.05);
+      position: relative;
+      overflow: hidden;
+    }
+    .gptify-callout::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #087f6a 0%, #10b981 100%);
     }
     .gptify-callout h2 {
       font-family: 'Space Grotesk', system-ui, sans-serif;
-      font-size: 30px;
+      font-size: 28px;
       font-weight: 800;
+      color: #0f172a;
       margin-bottom: 12px;
-      letter-spacing: -0.01em;
+      letter-spacing: -0.02em;
     }
     .gptify-callout p {
-      font-size: 16.5px;
-      color: #cbd5e1;
-      max-width: 680px;
+      font-size: 16px;
+      color: #475569;
+      max-width: 660px;
       margin: 0 auto 28px auto;
-      line-height: 1.6;
+      line-height: 1.65;
     }
     .gptify-callout-actions {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 16px;
+      gap: 14px;
       flex-wrap: wrap;
     }
     .gptify-btn-primary {
@@ -401,25 +447,30 @@
       font-size: 15px;
       font-weight: 700;
       text-decoration: none;
-      transition: all 0.2s ease;
-      box-shadow: 0 4px 14px rgba(8, 127, 106, 0.35);
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.2s ease;
+      box-shadow: 0 4px 14px rgba(8, 127, 106, 0.24);
     }
     .gptify-btn-primary:hover {
       background: #066b59;
+      transform: translateY(-1px);
     }
     .gptify-btn-secondary {
-      background: rgba(255, 255, 255, 0.1);
-      color: #ffffff;
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: #ffffff;
+      color: #0f172a;
+      border: 1px solid #cbd5e1;
       padding: 13px 26px;
       border-radius: 12px;
       font-size: 15px;
       font-weight: 700;
       text-decoration: none;
+      cursor: pointer;
       transition: all 0.2s ease;
     }
     .gptify-btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.18);
+      border-color: #087f6a;
+      color: #087f6a;
+      background: #f8fafc;
     }
 
     /* Standalone Footer */
@@ -468,10 +519,51 @@
         font-size: 30px;
       }
       .gptify-callout {
-        padding: 32px 20px;
+        padding: 32px 24px;
       }
       .gptify-callout h2 {
-        font-size: 24px;
+        font-size: 23px;
+      }
+    }
+    @media (max-width: 640px) {
+      .gptify-container {
+        padding: 0 16px;
+      }
+      .gptify-nav-container {
+        padding: 0 16px;
+      }
+      .gptify-page-hero {
+        padding: 36px 0 28px 0;
+      }
+      .gptify-page-hero h1 {
+        font-size: 27px;
+      }
+      .gptify-page-hero p {
+        font-size: 15.5px;
+        margin-bottom: 22px;
+      }
+      .gptify-filter-btn {
+        font-size: 12.5px;
+        padding: 7px 13px;
+      }
+      .gptify-projects-section {
+        padding: 32px 0 48px 0;
+      }
+      .gptify-card {
+        padding: 20px;
+      }
+      .gptify-card-btn {
+        width: 100%;
+        padding: 12px 16px;
+      }
+      .gptify-callout-actions a {
+        width: 100%;
+        text-align: center;
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        transition: none !important;
       }
     }
   </style>
@@ -606,7 +698,7 @@
       </p>
 
       <!-- Category Filter Chips -->
-      <div class="gptify-filters" role="tablist">
+      <div class="gptify-filters" role="group" aria-label="Фильтрация проектов">
         <button type="button" class="gptify-filter-btn active" aria-pressed="true" onclick="filterProjects('all', this)">Все Проекты (8)</button>
         <button type="button" class="gptify-filter-btn" aria-pressed="false" onclick="filterProjects('crm', this)">Бизнес и CRM</button>
         <button type="button" class="gptify-filter-btn" aria-pressed="false" onclick="filterProjects('agents', this)">Автономные Агенты</button>
@@ -625,9 +717,7 @@
         <article class="gptify-card" id="servisbek" data-category="crm">
           <div>
             <div class="gptify-card-header">
-              <span class="gptify-cat-badge" style="background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe;">
-                🚗 Автосервисы и Мастерские
-              </span>
+              <div class="gptify-card-identity"><div class="gptify-icon-box" style="background:#eff6ff; color:#1d4ed8;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.5 2.8C2.1 10.9 2 11.2 2 11.5V16c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg></div><span class="gptify-cat-label">Автосервисы и Мастерские</span></div>
               <span class="gptify-status-pill status-live">Live</span>
             </div>
             <h2 class="gptify-card-title">ServisBek</h2>
@@ -653,9 +743,7 @@
         <article class="gptify-card" id="gptify-os" data-category="agents">
           <div>
             <div class="gptify-card-header">
-              <span class="gptify-cat-badge" style="background:#ecfdf5; color:#047857; border:1px solid #a7f3d0;">
-                🤖 Автономные AI-Агенты
-              </span>
+              <div class="gptify-card-identity"><div class="gptify-icon-box" style="background:#ecfdf5; color:#047857;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><line x1="8" y1="16" x2="8.01" y2="16"/><line x1="16" y1="16" x2="16.01" y2="16"/></svg></div><span class="gptify-cat-label">Автономные AI-Агенты</span></div>
               <span class="gptify-status-pill status-live">Live Platform</span>
             </div>
             <h2 class="gptify-card-title">GPTify OS</h2>
@@ -681,9 +769,7 @@
         <article class="gptify-card" id="medpro24" data-category="industry">
           <div>
             <div class="gptify-card-header">
-              <span class="gptify-cat-badge" style="background:#fef2f2; color:#b91c1c; border:1px solid #fecaca;">
-                🏥 Медицина и Клиники
-              </span>
+              <div class="gptify-card-identity"><div class="gptify-icon-box" style="background:#fef2f2; color:#b91c1c;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div><span class="gptify-cat-label">Медицина и Клиники</span></div>
               <span class="gptify-status-pill status-ready">Готово к внедрению</span>
             </div>
             <h2 class="gptify-card-title">MedPro24</h2>
@@ -709,9 +795,7 @@
         <article class="gptify-card" id="edupro24" data-category="industry">
           <div>
             <div class="gptify-card-header">
-              <span class="gptify-cat-badge" style="background:#faf5ff; color:#7e22ce; border:1px solid #e9d5ff;">
-                🎓 Образование и Учебные Центры
-              </span>
+              <div class="gptify-card-identity"><div class="gptify-icon-box" style="background:#faf5ff; color:#7e22ce;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div><span class="gptify-cat-label">Образование и Учебные Центры</span></div>
               <span class="gptify-status-pill status-ready">Готово к внедрению</span>
             </div>
             <h2 class="gptify-card-title">EduPro24 (BilimOS)</h2>
@@ -737,9 +821,7 @@
         <article class="gptify-card" id="ainoma" data-category="media">
           <div>
             <div class="gptify-card-header">
-              <span class="gptify-cat-badge" style="background:#f0fdfa; color:#0f766e; border:1px solid #99f6e4;">
-                📰 Медиапортал об AI
-              </span>
+              <div class="gptify-card-identity"><div class="gptify-icon-box" style="background:#f0fdfa; color:#0f766e;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8V6Z"/></svg></div><span class="gptify-cat-label">Медиапортал об AI</span></div>
               <span class="gptify-status-pill status-live">Live</span>
             </div>
             <h2 class="gptify-card-title">AINoma</h2>
@@ -765,9 +847,7 @@
         <article class="gptify-card" id="cubeo-ai" data-category="agents">
           <div>
             <div class="gptify-card-header">
-              <span class="gptify-cat-badge" style="background:#fff7ed; color:#c2410c; border:1px solid #fed7aa;">
-                🌐 Enterprise AI & RAG
-              </span>
+              <div class="gptify-card-identity"><div class="gptify-icon-box" style="background:#fff7ed; color:#c2410c;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div><span class="gptify-cat-label">Enterprise AI & RAG</span></div>
               <span class="gptify-status-pill status-live">Международный Проект</span>
             </div>
             <h2 class="gptify-card-title">Cubeo AI</h2>
@@ -793,9 +873,7 @@
         <article class="gptify-card" id="kashfstart" data-category="crm">
           <div>
             <div class="gptify-card-header">
-              <span class="gptify-cat-badge" style="background:#ecfeff; color:#0e7490; border:1px solid #a5f3fc;">
-                🚀 Стартапы и Акселератор
-              </span>
+              <div class="gptify-card-identity"><div class="gptify-icon-box" style="background:#ecfeff; color:#0e7490;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></div><span class="gptify-cat-label">Стартапы и Акселератор</span></div>
               <span class="gptify-status-pill status-ready">Акселератор</span>
             </div>
             <h2 class="gptify-card-title">KashfStart</h2>
@@ -821,10 +899,8 @@
         <article class="gptify-card" id="prompt-ustaxonasi" data-category="media">
           <div>
             <div class="gptify-card-header">
-              <span class="gptify-cat-badge" style="background:#fefce8; color:#a16207; border:1px solid #fef08a;">
-                🛠 Бесплатный AI-Инструмент
-              </span>
-              <span class="gptify-status-pill status-live">100% Бесплатно</span>
+              <div class="gptify-card-identity"><div class="gptify-icon-box" style="background:#fefce8; color:#a16207;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg></div><span class="gptify-cat-label">Бесплатный AI-Инструмент</span></div>
+              <span class="gptify-status-pill status-free">100% Бесплатно</span>
             </div>
             <h2 class="gptify-card-title">Prompt Ustaxonasi</h2>
             <div class="gptify-card-subtitle">Интерактивный конструктор структурированных промптов</div>
@@ -873,6 +949,7 @@
           <a href="/ru/">Главная</a>
           <a href="/ru/proekty/">Проекты</a>
           <a href="https://ainoma.uz" target="_blank" rel="noopener noreferrer">AINoma ↗</a>
+          <a href="https://gptify.co" target="_blank" rel="noopener noreferrer">GPTify.co ↗</a>
           <a href="/maxfiylik/">Конфиденциальность</a>
           <a href="/verify/">Проверка сертификатов</a>
         </nav>
